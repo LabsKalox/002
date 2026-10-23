@@ -76,3 +76,9 @@ Amostra muito pequena: nenhum dado de retenção do canal é estatisticamente co
 - A política de egress responde 403 para nhtsa.gov, static/api.nhtsa.gov, federalregister.gov, govinfo.gov, regulations.gov, web.archive.org e sites de notícias. Só pypi.org e github.com respondem. O README do proxy proíbe contornar.
 - Rota legítima que funciona: transcrições completas de vídeos do YouTube via conector vidIQ (canal oficial USDOTNHTSA + emissoras).
 - WebSearch devolve só snippets, que não contam como leitura.
+
+## Buying decision (2026-10-23)
+- "2027 Subaru Outback Base vs Premium: What Does $2,000 Buy?" (pauta do Growth Intelligence V10.0)
+  - Pacote: `/os2-buying/2026-10-23_outback-base-vs-premium_MASTER_PACKAGE.md`. VO: `/os2-buying/scripts/2026-10-23_outback-base-vs-premium_VO_PLAIN.txt` (1.105 palavras, ~6:50 em TTS)
+  - prnewswire.com, subaru.com, media.subaru.com e morningstar.com: DNS bloqueado neste ambiente. Confirmação feita via snippets, cópia do press release na descrição de mGjjNVYHwhY e transcrições
+  - Pendências antes de publicar: acabamento das rodas da Base (divergência no hero de subaru.com); confirmar que o estepe e os itens traseiros não estão na Base
