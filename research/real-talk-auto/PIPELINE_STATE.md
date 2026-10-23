@@ -1,6 +1,6 @@
 # Real Talk Auto — Pipeline State
 
-Última atualização: 2026-10-02
+Última atualização: 2026-10-23
 
 ## Fonte de verdade
 - Canal: Real Talk Auto — `UCsevpZpQnMV2_iDsFfdcouQ` (conectado via vidIQ)
@@ -72,7 +72,17 @@ Amostra muito pequena: nenhum dado de retenção do canal é estatisticamente co
   - Fontes salvas: `/os2-20min/data/sources/` (NTSB, Ford How-To, Autoline, TechCrunch via reprodução)
   - Pendências: sincronizar capítulos após a narração; checar se a investigação da NHTSA (EA25-001) foi encerrada antes de publicar
 
+- BUYING GUIDE 5–7 MIN — "2027 Kia Sorento PHEV vs Hybrid: What Does the $6,300 Gap Buy?" (2026-10-23, Production Master V11.1)
+  - Pauta definida pelo Growth Intelligence V11.0
+  - Pacote com as 10 entregas: `/os3-sorento/2026-10-23_sorento-phev-vs-hybrid_MASTER_PACKAGE.md`
+  - VO limpo: `/os3-sorento/scripts/2026-10-23_sorento-phev-vs-hybrid_VO_PLAIN.txt`. São 1.327 palavras = 7:04 a 188 wpm
+  - Status: APPROVED FOR EDITORIAL REVIEW, com 5 verificações pré-publicação: hp/bateria do PHEV 2027, EPA 2027 no fueleconomy.gov, versões do HEV, teto/Bose do PHEV, URL do vídeo do RAV4
+  - Dados do PHEV 2027 em conflito (não afirmados no roteiro): 268 × 261 hp; 31 × 33 mi de autonomia elétrica; 74 × 83 MPGe
+  - Novas zonas de exclusão: Kia Sorento; comparativo HEV × PHEV; "a versão mais barata sumiu"
+
 ## Limitações conhecidas do ambiente
 - A política de egress responde 403 para nhtsa.gov, static/api.nhtsa.gov, federalregister.gov, govinfo.gov, regulations.gov, web.archive.org e sites de notícias. Só pypi.org e github.com respondem. O README do proxy proíbe contornar.
 - Rota legítima que funciona: transcrições completas de vídeos do YouTube via conector vidIQ (canal oficial USDOTNHTSA + emissoras).
 - WebSearch devolve só snippets, que não contam como leitura.
+- 2026-10-23: WebFetch falha por DNS (ENOTFOUND). prnewswire.com, kia.com, kiamedia.com e fueleconomy.gov respondem 403 no proxy.
+- 2026-10-23: vidIQ sem créditos. Não deu para pesquisar palavras-chave nem listar os vídeos do canal.
