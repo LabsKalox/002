@@ -77,6 +77,11 @@ Amostra muito pequena: nenhum dado de retenção do canal é estatisticamente co
   - Pacote com as 10 entregas: `/os3-sorento/2026-10-23_sorento-phev-vs-hybrid_MASTER_PACKAGE.md`
   - VO limpo: `/os3-sorento/scripts/2026-10-23_sorento-phev-vs-hybrid_VO_PLAIN.txt`. São 1.327 palavras = 7:04 a 188 wpm
   - Status: APPROVED FOR EDITORIAL REVIEW, com 5 verificações pré-publicação: hp/bateria do PHEV 2027, EPA 2027 no fueleconomy.gov, versões do HEV, teto/Bose do PHEV, URL do vídeo do RAV4
+  - **V11.2 FINAL (2026-10-23)**: auditoria editorial externa deu 9,2/10. Foram aplicadas só 2 correções:
+    - potência: "up to 268 hp" com aviso para confirmar, sem citar 261;
+    - autonomia: saiu "plan around 30 miles", entrou "EPA não confirmado".
+  - Pacote final: `/os3-sorento/2026-10-23_sorento-phev-vs-hybrid_FINAL_PACKAGE_V11.2.md`. VO: `scripts/2026-10-23_sorento-phev-vs-hybrid_VO_FINAL_V11.2.txt`. São 1.292 palavras = 6:52 a 188 wpm
+  - Status: READY FOR TTS. Upload depois de um checklist de 6 itens. Um deles: decidir a microedição de "more horsepower" na Parte 4 (resíduo sinalizado, não alterado)
   - Dados do PHEV 2027 em conflito (não afirmados no roteiro): 268 × 261 hp; 31 × 33 mi de autonomia elétrica; 74 × 83 MPGe
   - Novas zonas de exclusão: Kia Sorento; comparativo HEV × PHEV; "a versão mais barata sumiu"
 
