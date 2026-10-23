@@ -145,31 +145,52 @@ Base or Premium? Tell me which one you'd pick, and why, in the comments. And sub
 
 ---
 
-## 03 — DESCRIÇÃO SEO (3.738 caracteres)
+## 03 — DESCRIÇÃO SEO v2 (4.017 caracteres)
 
 ```
-The new 2027 Subaru Outback Base starts at $32,995 MSRP. The 2027 Outback Premium starts at $34,995 MSRP. So what does the extra $2,000 actually buy, and is the Base already enough?
+Is the new $32,995 2027 Subaru Outback Base enough, or is the Premium worth $2,000 more? Here's exactly what that upgrade buys, and who should actually pay for it.
 
-In this video, we compare the 2027 Subaru Outback Base vs Premium using Subaru's official pricing and equipment lists: what the Base already includes, exactly what the Premium adds, what that $2,000 works out to per month, how the destination charge changes the numbers, which features are optional, four buying mistakes to avoid, and a simple two-out-of-four test to pick the right trim.
+Subaru just added a new entry-level Base trim to the 2027 Outback lineup. It's not a stripped-out model: it keeps all-wheel drive, the same 180-hp BOXER engine as the Premium, the 12.1-inch touchscreen, EyeSight, heated front seats and a power rear gate. So what's left for the Premium to justify its higher price?
 
-This is a pricing and equipment comparison, not a test drive.
+In this video, I break it down using Subaru's official pricing and equipment lists. No hype, no test-drive claims, just the numbers and the features that matter when you're about to sign.
 
-KEY NUMBERS (standard figures, before taxes, options and other fees)
-• 2027 Outback Base: $32,995 MSRP, or $34,540 with the $1,545 destination charge
-• 2027 Outback Premium: $34,995 MSRP, or $36,540 with the $1,545 destination charge
-• Gap between the two 2027 trims: $2,000 (about $33 a month over five years, simple cash math)
-• 2026 Outback Premium: $34,995 MSRP + $1,450 destination = $36,445. With destination included, a 2027 Premium costs $95 more than a 2026 Premium.
-• Premium option package (includes moonroof and navigation): $2,045 MSRP, subject to configuration. Premium with package: $38,585 with destination, $4,045 more than a Base.
-Destination differs in Alaska and may vary in some states. These totals are not out-the-door prices.
+━━━━━━━━━━━━━━━━━━━━
+QUICK ANSWER
+━━━━━━━━━━━━━━━━━━━━
+✔ Get the BASE if the lowest price matters most and you rarely carry rear passengers.
+✔ Get the PREMIUM if at least 2 of these 4 matter to you: power driver's seat, rear-seat air vents, rear USB ports, temporary spare tire.
 
-WHAT THE 2027 OUTBACK BASE INCLUDES
-Symmetrical All-Wheel Drive, 2.5-liter BOXER engine (180 hp), Lineartronic CVT, X-MODE with Hill Descent Control, 8.7 inches of ground clearance, 12.1-inch touchscreen, 12.3-inch digital instrument cluster, wireless Apple CarPlay and Android Auto, EyeSight Driver Assist, DriverFocus, heated front seats, heated side mirrors, windshield wiper de-icer, power rear gate, dual-zone automatic climate control, 18-inch silver-finish alloy wheels and Black Tricot cloth upholstery.
+━━━━━━━━━━━━━━━━━━━━
+WHAT THE $2,000 BUYS YOU
+━━━━━━━━━━━━━━━━━━━━
+The 2027 Outback Premium adds:
+• 10-way power driver's seat with 2-way power lumbar
+• Rear-seat climate control vents
+• Illuminated rear USB-A and USB-C ports
+• Temporary space-saver spare tire
+• StarTex upholstery (instead of cloth)
+• Leather-wrapped steering wheel
+• Multi-use cargo cover
+• Vibrating steering-wheel alerts
+• 18-inch dark gray alloy wheels
 
-WHAT THE 2027 OUTBACK PREMIUM ADDS
-StarTex upholstery, 10-way power-adjustable driver's seat with 2-way power lumbar support, leather-wrapped steering wheel, rear-seat climate control vents, illuminated rear USB-A and USB-C ports, temporary space-saver spare tire, multi-use cargo cover, vibrating steering-wheel alerts and 18-inch dark gray alloy wheels.
-Moonroof and navigation are NOT standard on the Premium. They come with the optional package.
+What it does NOT add: more power, a bigger screen, or different all-wheel drive. And the moonroof and navigation are not standard on the Premium. They come in a $2,045 option package.
 
+━━━━━━━━━━━━━━━━━━━━
+THE REAL NUMBERS
+━━━━━━━━━━━━━━━━━━━━
+2027 Outback Base: $32,995 MSRP | $34,540 with destination
+2027 Outback Premium: $34,995 MSRP | $36,540 with destination
+2027 Premium + option package: $38,585 with destination
+
+Standard destination for 2027: $1,545 (Alaska differs; some states may vary).
+All figures are before taxes, options and dealer fees. These are not out-the-door prices.
+
+Heads-up: Subaru says the Outback's entry price is $2,000 lower, but that compares the new 2027 Base with the 2026 Premium. The 2027 Premium keeps the same $34,995 MSRP and, with the higher destination charge, actually costs $95 more than a 2026 Premium.
+
+━━━━━━━━━━━━━━━━━━━━
 CHAPTERS
+━━━━━━━━━━━━━━━━━━━━
 00:00 $32,995: the new 2027 Outback Base
 00:39 What the Base already gets
 02:23 The $2,000 Premium upgrade
@@ -182,14 +203,31 @@ CHAPTERS
 09:58 Final buyer checklist
 10:34 Final verdict
 
+━━━━━━━━━━━━━━━━━━━━
+WATCH NEXT
+━━━━━━━━━━━━━━━━━━━━
+Car Dealer Fees: 7 Numbers to Check Before You Sign
+https://www.youtube.com/watch?v=ZDDNfiHgtCk
+
+2026 Mazda CX-50 Hybrid vs Turbo: Which Should You Buy?
+https://www.youtube.com/watch?v=pc_fq1mV1OE
+
+━━━━━━━━━━━━━━━━━━━━
 OFFICIAL SOURCES
-• Subaru of America, 2027 Outback pricing announcement (Oct. 22, 2026): https://www.prnewswire.com/news-releases/2027-subaru-outback-delivers-affordability-with-new-pricing-new-outback-entry-level-model-starting-at-32-995-msrp-302916647.html
-• Subaru, 2027 Outback trims and features: https://www.subaru.com/vehicles/outback/2027.html
-• Subaru, 2026 Outback Premium build and price summary: https://www.subaru.com/services/vehicles/pdf/buildAndPrice/3WPS6chEHqEeUGPOFbEX7fbu8pLsAKs4OF1sJLLk0/1450
+━━━━━━━━━━━━━━━━━━━━
+Subaru of America 2027 Outback pricing announcement (Oct. 22, 2026):
+https://www.prnewswire.com/news-releases/2027-subaru-outback-delivers-affordability-with-new-pricing-new-outback-entry-level-model-starting-at-32-995-msrp-302916647.html
 
-Prices and equipment reflect Subaru of America announcements as of October 23, 2026, and may change. Subaru says the 2027 Outback arrives at retailers later in 2026. Always confirm with the window sticker and a written quote from your retailer. Real Talk Auto is not affiliated with Subaru.
+2027 Subaru Outback trims and features:
+https://www.subaru.com/vehicles/outback/2027.html
 
-Base or Premium: which one would you pick, and why? Tell us in the comments, and subscribe to Real Talk Auto for more straight-talk car-buying breakdowns.
+2026 Subaru Outback Premium build and price:
+https://www.subaru.com/services/vehicles/pdf/buildAndPrice/3WPS6chEHqEeUGPOFbEX7fbu8pLsAKs4OF1sJLLk0/1450
+
+Prices and equipment are based on Subaru of America information as of October 23, 2026, and may change. Subaru says the 2027 Outback arrives at retailers later in 2026, so availability can vary by dealer and region. Always confirm with the window sticker and a written quote. This is a pricing and equipment comparison, not a test drive. Real Talk Auto is not affiliated with Subaru.
+
+💬 Base or Premium: which one would you buy, and why? Tell me in the comments.
+🔔 Subscribe to Real Talk Auto for straight-talk car-buying breakdowns.
 
 #SubaruOutback #2027Outback #CarBuying
 ```
