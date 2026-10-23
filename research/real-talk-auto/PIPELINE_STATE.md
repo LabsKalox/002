@@ -82,6 +82,9 @@ Amostra muito pequena: nenhum dado de retenção do canal é estatisticamente co
     - autonomia: saiu "plan around 30 miles", entrou "EPA não confirmado".
   - Pacote final: `/os3-sorento/2026-10-23_sorento-phev-vs-hybrid_FINAL_PACKAGE_V11.2.md`. VO: `scripts/2026-10-23_sorento-phev-vs-hybrid_VO_FINAL_V11.2.txt`. São 1.292 palavras = 6:52 a 188 wpm
   - Status: READY FOR TTS. Upload depois de um checklist de 6 itens. Um deles: decidir a microedição de "more horsepower" na Parte 4 (resíduo sinalizado, não alterado)
+  - **V11.3 (2026-10-23)**: a pedido do usuário, o roteiro foi expandido para exatamente 1.800 palavras (9:34 a 188 wpm), com 8 blocos práticos. A microedição de "more horsepower" foi aplicada.
+    - Arquivo: `/os3-sorento/2026-10-23_sorento-phev-vs-hybrid_FINAL_V11.3_1800.md`
+    - VO: `scripts/2026-10-23_sorento-phev-vs-hybrid_VO_FINAL_1800.txt`
   - Dados do PHEV 2027 em conflito (não afirmados no roteiro): 268 × 261 hp; 31 × 33 mi de autonomia elétrica; 74 × 83 MPGe
   - Novas zonas de exclusão: Kia Sorento; comparativo HEV × PHEV; "a versão mais barata sumiu"
 
