@@ -1,8 +1,8 @@
 # Progresso — KaloxSooth v2
 
 ## Entregue
-- `out/kalox-v2-r6.mp4`: 26,3 s, legendas brancas, voz do usuário no A-roll, 1080×1920, 30 fps, -16,9 LUFS (pico -0,4 dBFS).
-  Build `bld_20261027T032725050Z_D6F04696F4`. Sem custo: tudo renderizado localmente.
+- `out/kalox-v2-r7.mp4`: 26,6 s, legendas brancas, voz do usuário no A-roll, 1080×1920, 30 fps, -16,9 LUFS (pico -0,4 dBFS).
+  Build `bld_20261027T033448296Z_A3AF77C97E`. Sem custo: tudo renderizado localmente.
 
 ## Como está montado
 - Fonte: `authors/main.svml`; cores e tamanhos: `recipes/look.svs`; render: `runs/final.svrun`.
@@ -48,3 +48,11 @@
 - Agora: depois de "tá de graça", corta (689f) para IMG 10,31 s (309f) e segue até o fim de
   "o bagulho é louco". O filme termina em 790f (26,3 s). Zoom e whoosh no corte.
 - Legendas: "Link na bio," 690–735f; "o bagulho é louco." 735–790f.
+
+## Rodada 7
+- A tela do plugin (IMG_1740, src 13f) entra em 176f, logo depois de "olha isso aqui!": o giro do Veo
+  para o computador gerado saiu. O flash e o whoosh foram junto; a voz do usuário termina em 178f.
+- A frase final ficou mais clara: `assets/fx/cta-voice.wav` (IMG_1741 a partir de 10,31 s, com highpass,
+  realce de presença em 3 kHz, compressor e +3,5 dB a partir de "o bagulho") com ganho 0.7.
+  O final foi esticado até 797f.
+- Loudness -16,3 LUFS, pico -0,4 dBFS.

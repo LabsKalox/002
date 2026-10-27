@@ -33,6 +33,7 @@
   <media:Image id="flash" src="../assets/fx/flash.png"/>
   <media:Audio id="whoosh-file" src="../assets/fx/whoosh.wav"/>
   <media:Audio id="hit-file" src="../assets/fx/hit.wav"/>
+  <media:Audio id="cta-voice-file" src="../assets/fx/cta-voice.wav"/>
 
   <mediaop:Normalize id="aroll" source={aroll-file} clock={clock} video="primary-moving" audio="none" span-authority="video"/>
   <mediaop:Normalize id="voice" source={voice-file} clock={clock} video="none" audio="default" span-authority="audio"/>
@@ -41,26 +42,27 @@
   <mediaop:Normalize id="price" source={price-file} clock={clock} video="primary-moving" audio="default" span-authority="video"/>
   <mediaop:Normalize id="whoosh" source={whoosh-file} clock={clock} video="none" audio="default" span-authority="audio"/>
   <mediaop:Normalize id="hit" source={hit-file} clock={clock} video="none" audio="default" span-authority="audio"/>
+  <mediaop:Normalize id="cta-voice-media" source={cta-voice-file} clock={clock} video="none" audio="default" span-authority="audio"/>
 
   <!-- Time: frame positions measured from the transcripts and the original edit (30 fps). -->
-  <time:Timeline id="program" clock={clock} end="start+790f">
+  <time:Timeline id="program" clock={clock} end="start+797f">
     <time:Window id="a1" from="start" until="start+91f"/>
     <time:Window id="a2" from="start+91f" until="start+128f"/>
-    <time:Window id="a3" from="start+128f" until="start+222f"/>
-    <time:Window id="voice-sound" from="start" until="start+184f"/>
-    <time:Window id="s1-sound" from="start+184f" until="start+410f"/>
-    <time:Window id="s1" from="start+222f" until="start+410f"/>
+    <time:Window id="a3" from="start+128f" until="start+176f"/>
+    <time:Window id="voice-sound" from="start" until="start+178f"/>
+    <time:Window id="s1-sound" from="start+176f" until="start+410f"/>
+    <time:Window id="s1" from="start+176f" until="start+410f"/>
     <time:Window id="s2" from="start+410f" until="start+556f"/>
     <time:Window id="s3a" from="start+556f" until="start+590f"/>
     <time:Window id="s3b" from="start+590f" until="start+608f"/>
     <time:Window id="s3c" from="start+608f" until="start+689f"/>
-    <time:Window id="s3d" from="start+689f" until="start+790f"/>
+    <time:Window id="s3d" from="start+689f" until="start+797f"/>
     <time:Window id="s3-sound" from="start+556f" until="start+689f"/>
-    <time:Window id="s3d-sound" from="start+689f" until="start+790f"/>
+    <time:Window id="s3d-sound" from="start+689f" until="start+797f"/>
     <time:Window id="whoosh-5" from="start+683f" for="14f"/>
-    <time:Window id="flash-1" from="start+222f" for="7f"/>
+    <time:Window id="flash-1" from="start+176f" for="7f"/>
     <time:Window id="flash-2" from="start+590f" for="5f"/>
-    <time:Window id="whoosh-1" from="start+212f" for="18f"/>
+    <time:Window id="whoosh-1" from="start+166f" for="18f"/>
     <time:Window id="whoosh-2" from="start+400f" for="18f"/>
     <time:Window id="whoosh-3" from="start+546f" for="18f"/>
     <time:Window id="whoosh-4" from="start+84f" for="14f"/>
@@ -70,7 +72,7 @@
     <time:Window id="c2" from="start+49f" until="start+85f"/>
     <time:Window id="c3" from="start+86f" until="start+130f"/>
     <time:Window id="c4" from="start+136f" until="start+157f"/>
-    <time:Window id="c5" from="start+157f" until="start+200f"/>
+    <time:Window id="c5" from="start+157f" until="start+186f"/>
     <time:Window id="l1" from="start+228f" until="start+282f"/>
     <time:Window id="c6" from="start+285f" until="start+322f"/>
     <time:Window id="c7" from="start+323f" until="start+407f"/>
@@ -83,7 +85,7 @@
     <time:Window id="c13" from="start+611f" until="start+647f"/>
     <time:Window id="c14" from="start+649f" until="start+687f"/>
     <time:Window id="c15" from="start+690f" until="start+735f"/>
-    <time:Window id="c16" from="start+735f" until="start+790f"/>
+    <time:Window id="c16" from="start+735f" until="start+797f"/>
   </time:Timeline>
 
   <!-- Picture motion -->
@@ -145,12 +147,10 @@
       <visual:Map target-from="24f" target-until="32f" source-from="168f" source-until="182f"/>
       <visual:Map target-from="32f" target-until="40f" source-from="182f" source-until="189f"/>
       <visual:Map target-from="40f" target-until="48f" source-from="189f" source-until="197f"/>
-      <visual:Map target-from="48f" target-until="52f" source-from="197f" source-until="201f"/>
-      <visual:Map target-from="52f" target-until="94f" source-from="201f" source-until="239f"/>
     </visual:Clip>
     <visual:Clip id="s1" media={adjust.media} during={program.s1} frame={full} z="10" fit="cover"
       treatment={look.visual.screen} motion={screen-in}>
-      <visual:Map target-at="start" source-at="59f" rate="1"/>
+      <visual:Map target-at="start" source-at="13f" rate="1"/>
     </visual:Clip>
     <visual:Clip id="s2" media={spectrum.media} during={program.s2} frame={full} z="10" fit="cover"
       treatment={look.visual.screen} motion={screen-in}>
@@ -182,8 +182,8 @@
     <audio:Clip id="user-voice" source={voice.media} during={program.voice-sound} gain="1.05" fade-out="4f">
       <audio:Map target-at="start" source-at="20f" rate="1"/>
     </audio:Clip>
-    <audio:Clip id="adjust-voice" source={adjust.media} during={program.s1-sound} gain="1.5" fade-in="6f" fade-out="2f">
-      <audio:Map target-at="start" source-at="21f" rate="1"/>
+    <audio:Clip id="adjust-voice" source={adjust.media} during={program.s1-sound} gain="1.5" fade-in="4f" fade-out="2f">
+      <audio:Map target-at="start" source-at="13f" rate="1"/>
     </audio:Clip>
     <audio:Clip id="spectrum-voice" source={spectrum.media} during={program.s2} gain="1.35" fade-in="2f" fade-out="2f">
       <audio:Map target-at="start" source-at="61f" rate="1"/>
@@ -191,8 +191,8 @@
     <audio:Clip id="price-voice" source={price.media} during={program.s3-sound} gain="1.1" fade-in="2f" fade-out="2f">
       <audio:Map target-at="start" source-at="115f" rate="1"/>
     </audio:Clip>
-    <audio:Clip id="cta-voice" source={price.media} during={program.s3d-sound} gain="1.1" fade-in="2f" fade-out="8f">
-      <audio:Map target-at="start" source-at="309f" rate="1"/>
+    <audio:Clip id="cta-voice" source={cta-voice-media.media} during={program.s3d-sound} gain="0.7" fade-in="2f" fade-out="8f">
+      <audio:Map target-at="start" source-at="0f" rate="1"/>
     </audio:Clip>
     <audio:Clip id="whoosh-5" source={whoosh.media} during={program.whoosh-5} gain="0.2"/>
     <audio:Clip id="whoosh-1" source={whoosh.media} during={program.whoosh-1} gain="0.35"/>
