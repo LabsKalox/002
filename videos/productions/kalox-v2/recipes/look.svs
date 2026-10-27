@@ -5,7 +5,7 @@
   visual.aroll { contrast: 1.07; saturation: 1.06; brightness: 1.02; }
   visual.screen { contrast: 1.12; saturation: 1.14; brightness: 1.0; }
 
-  text.head-line { size: 60; weight: 900; line-height: 1.0; }
+  text.head-line { size: 64; weight: 900; line-height: 1.0; }
   text.head-big { size: 104; weight: 900; line-height: 1.0; }
   text.caption { size: 66; weight: 900; line-height: 1.08; }
   text.punch { size: 168; weight: 900; line-height: 1.0; }

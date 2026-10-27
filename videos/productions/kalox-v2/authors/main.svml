@@ -25,6 +25,7 @@
 
   <!-- Material -->
   <media:Video id="aroll-file" src="../../../assets/raw/aroll-preto-B.mp4"/>
+  <media:Video id="voice-file" src="../../../references/kalox/source.mp4"/>
   <media:Video id="adjust-file" src="../../../assets/raw/IMG_1740.mov"/>
   <media:Video id="spectrum-file" src="../../../assets/raw/IMG_1739.mov"/>
   <media:Video id="price-file" src="../../../assets/raw/IMG_1741.mov"/>
@@ -33,7 +34,8 @@
   <media:Audio id="whoosh-file" src="../assets/fx/whoosh.wav"/>
   <media:Audio id="hit-file" src="../assets/fx/hit.wav"/>
 
-  <mediaop:Normalize id="aroll" source={aroll-file} clock={clock} video="primary-moving" audio="default" span-authority="video"/>
+  <mediaop:Normalize id="aroll" source={aroll-file} clock={clock} video="primary-moving" audio="none" span-authority="video"/>
+  <mediaop:Normalize id="voice" source={voice-file} clock={clock} video="none" audio="default" span-authority="audio"/>
   <mediaop:Normalize id="adjust" source={adjust-file} clock={clock} video="primary-moving" audio="default" span-authority="video"/>
   <mediaop:Normalize id="spectrum" source={spectrum-file} clock={clock} video="primary-moving" audio="default" span-authority="video"/>
   <mediaop:Normalize id="price" source={price-file} clock={clock} video="primary-moving" audio="default" span-authority="video"/>
@@ -42,10 +44,11 @@
 
   <!-- Time: frame positions measured from the transcripts and the original edit (30 fps). -->
   <time:Timeline id="program" clock={clock} end="start+807f">
-    <time:Window id="a1" from="start" until="start+107f"/>
-    <time:Window id="a2" from="start+107f" until="start+154f"/>
-    <time:Window id="a3" from="start+154f" until="start+222f"/>
-    <time:Window id="aroll-sound" from="start" until="start+222f"/>
+    <time:Window id="a1" from="start" until="start+86f"/>
+    <time:Window id="a2" from="start+86f" until="start+128f"/>
+    <time:Window id="a3" from="start+128f" until="start+222f"/>
+    <time:Window id="voice-sound" from="start" until="start+184f"/>
+    <time:Window id="s1-sound" from="start+184f" until="start+410f"/>
     <time:Window id="s1" from="start+222f" until="start+410f"/>
     <time:Window id="s2" from="start+410f" until="start+556f"/>
     <time:Window id="s3a" from="start+556f" until="start+590f"/>
@@ -57,14 +60,14 @@
     <time:Window id="whoosh-1" from="start+212f" for="18f"/>
     <time:Window id="whoosh-2" from="start+400f" for="18f"/>
     <time:Window id="whoosh-3" from="start+546f" for="18f"/>
-    <time:Window id="whoosh-4" from="start+100f" for="14f"/>
+    <time:Window id="whoosh-4" from="start+79f" for="14f"/>
     <time:Window id="hit-1" from="start+590f" for="21f"/>
 
-    <time:Window id="c1" from="start+8f" until="start+49f"/>
-    <time:Window id="c2" from="start+49f" until="start+104f"/>
-    <time:Window id="c3" from="start+107f" until="start+150f"/>
-    <time:Window id="c4" from="start+154f" until="start+178f"/>
-    <time:Window id="c5" from="start+178f" until="start+220f"/>
+    <time:Window id="c1" from="start+10f" until="start+49f"/>
+    <time:Window id="c2" from="start+49f" until="start+85f"/>
+    <time:Window id="c3" from="start+86f" until="start+130f"/>
+    <time:Window id="c4" from="start+136f" until="start+157f"/>
+    <time:Window id="c5" from="start+157f" until="start+200f"/>
     <time:Window id="l1" from="start+228f" until="start+282f"/>
     <time:Window id="c6" from="start+285f" until="start+322f"/>
     <time:Window id="c7" from="start+323f" until="start+407f"/>
@@ -78,7 +81,6 @@
     <time:Window id="c14" from="start+649f" until="start+687f"/>
     <time:Window id="c15" from="start+689f" until="start+750f"/>
     <time:Window id="c16" from="start+754f" until="start+790f"/>
-    <time:Window id="cta" from="start+689f" until="start+807f"/>
   </time:Timeline>
 
   <!-- Picture motion -->
@@ -111,15 +113,19 @@
   <visual:Track id="picture" timeline={program.timeline}>
     <visual:Clip id="a1" media={aroll.media} during={program.a1} frame={full} z="10" fit="cover"
       treatment={look.visual.aroll} motion={push}>
-      <visual:Map target-at="start" source-at="0f" rate="1"/>
+      <visual:Map target-from="0f" target-until="9f" source-from="0f" source-until="9f"/>
+      <visual:Map target-from="9f" target-until="84f" source-from="9f" source-until="99f"/>
+      <visual:Map target-from="84f" target-until="86f" source-from="99f" source-until="108f"/>
     </visual:Clip>
     <visual:Clip id="a2" media={aroll.media} during={program.a2} frame={full} z="10" fit="cover"
       treatment={look.visual.aroll} motion={punch}>
-      <visual:Map target-at="start" source-at="107f" rate="1"/>
+      <visual:Map target-from="0f" target-until="42f" source-from="108f" source-until="144f"/>
     </visual:Clip>
     <visual:Clip id="a3" media={aroll.media} during={program.a3} frame={full} z="10" fit="cover"
       treatment={look.visual.aroll} motion={push}>
-      <visual:Map target-at="start" source-at="154f" rate="1"/>
+      <visual:Map target-from="0f" target-until="8f" source-from="144f" source-until="155f"/>
+      <visual:Map target-from="8f" target-until="48f" source-from="155f" source-until="196f"/>
+      <visual:Map target-from="48f" target-until="94f" source-from="196f" source-until="239f"/>
     </visual:Clip>
     <visual:Clip id="s1" media={adjust.media} during={program.s1} frame={full} z="10" fit="cover"
       treatment={look.visual.screen} motion={screen-in}>
@@ -148,11 +154,11 @@
 
   <!-- Sound: voices balanced by measured loudness, plus synthesized whooshes and an impact. -->
   <audio:Track id="sound" timeline={program.timeline}>
-    <audio:Clip id="aroll-voice" source={aroll.media} during={program.aroll-sound} gain="1.05" fade-out="3f">
-      <audio:Map target-at="start" source-at="0f" rate="1"/>
+    <audio:Clip id="user-voice" source={voice.media} during={program.voice-sound} gain="1.05" fade-out="4f">
+      <audio:Map target-at="start" source-at="20f" rate="1"/>
     </audio:Clip>
-    <audio:Clip id="adjust-voice" source={adjust.media} during={program.s1} gain="1.5" fade-in="2f" fade-out="2f">
-      <audio:Map target-at="start" source-at="59f" rate="1"/>
+    <audio:Clip id="adjust-voice" source={adjust.media} during={program.s1-sound} gain="1.5" fade-in="6f" fade-out="2f">
+      <audio:Map target-at="start" source-at="21f" rate="1"/>
     </audio:Clip>
     <audio:Clip id="spectrum-voice" source={spectrum.media} during={program.s2} gain="1.35" fade-in="2f" fade-out="2f">
       <audio:Map target-at="start" source-at="61f" rate="1"/>
@@ -173,14 +179,14 @@
   <fonts:Face id="mont-xbold" package="@fontsource-variable/montserrat" weight="800" style="normal"/>
 
   <typo:Style id="head-line" recipe={look.text.head-line} font={mont-black-italic}>
-    <typo:Stroke color="#05070A" width="5" placement="outside"/>
+    <typo:Shadow color="#000000" x="0" y="6" blur="12"/>
+    <typo:Stroke color="#000000" width="9" placement="outside"/>
     <typo:Fill color="#FFFFFF"/>
-    <typo:Shadow color="#000000" x="0" y="5" blur="14"/>
   </typo:Style>
   <typo:Style id="head-big" recipe={look.text.head-big} font={mont-black-italic}>
-    <typo:Glow color="#2EC5FF" blur="26"/>
-    <typo:Stroke color="#05070A" width="5" placement="outside"/>
-    <typo:Fill color="#A6ECFF"/>
+    <typo:Shadow color="#000000" x="0" y="8" blur="14"/>
+    <typo:Stroke color="#000000" width="11" placement="outside"/>
+    <typo:Fill color="#FFFFFF"/>
   </typo:Style>
   <typo:Style id="cap" recipe={look.text.caption} font={mont-black}>
     <typo:Shadow color="#000000" x="0" y="6" blur="16"/>
@@ -281,13 +287,10 @@
     <typo:P>tá <typo:Span style={cap-hi}>de graça.</typo:Span></typo:P>
   </typo:Flow>
   <typo:Flow id="c15" timeline={program.timeline} within={caption-frame} style={cap} z="60" motion={pop} during={program.c15}>
-    <typo:P>O link tá na<typo:Break/><typo:Span style={cap-hi}>minha bio,</typo:Span></typo:P>
+    <typo:P>Link na bio,</typo:P>
   </typo:Flow>
   <typo:Flow id="c16" timeline={program.timeline} within={caption-frame} style={cap} z="60" motion={pop} during={program.c16}>
     <typo:P>o bagulho é <typo:Span style={cap-hi}>louco.</typo:Span></typo:P>
-  </typo:Flow>
-  <typo:Flow id="cta" inline-size="hug" block-size="hug" timeline={program.timeline} within={cta-frame} style={cta-style} z="60" motion={pill-in} during={program.cta}>
-    <typo:P>BAIXA GRÁTIS · LINK NA BIO</typo:P>
   </typo:Flow>
 
   <film:Film id="main" canvas={canvas.canvas} timeline={program.timeline} appearance={look.film.main}>
@@ -312,7 +315,6 @@
     <film:Track source={c14.visual}/>
     <film:Track source={c15.visual}/>
     <film:Track source={c16.visual}/>
-    <film:Track source={cta.visual}/>
   </film:Film>
   <html:Video id="final" composition={main.composition} timeline={program.timeline}/>
   <html:Video id="check-a" composition={main.composition} timeline={program.timeline} start-frame="60" end-frame-exclusive="62"/>

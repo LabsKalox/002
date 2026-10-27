@@ -1,8 +1,8 @@
 # Progresso — KaloxSooth v2
 
 ## Entregue
-- `out/kalox-v2-r3.mp4`: 26,9 s, legendas brancas, 1080×1920, 30 fps, -16,9 LUFS (pico -0,4 dBFS).
-  Build `bld_20261027T025502194Z_97B8324630`. Sem custo: tudo renderizado localmente.
+- `out/kalox-v2-r4.mp4`: 26,9 s, legendas brancas, voz do usuário no A-roll, 1080×1920, 30 fps, -16,9 LUFS (pico -0,4 dBFS).
+  Build `bld_20261027T030328300Z_30632A5D6B`. Sem custo: tudo renderizado localmente.
 
 ## Como está montado
 - Fonte: `authors/main.svml`; cores e tamanhos: `recipes/look.svs`; render: `runs/final.svrun`.
@@ -25,3 +25,11 @@
 ## Próximo
 - Feedback do usuário sobre ritmo, cores e textos das etiquetas.
 - Para virar template: trocar os clipes e o bloco de Timeline/legendas a cada novo vídeo.
+
+## Rodada 4 (pedido do usuário)
+- Voz do personagem trocada pela voz do usuário (`references/kalox/source.mp4`, a partir de 0,68 s). O áudio do Veo foi desligado.
+- Imagem do Veo reajustada por frase para seguir a voz: F1 9–84f ← Veo 9–99f; F2 86–128f ← 108–144f;
+  F3 136–176f ← 155–196f; giro final 176–222f ← 196–239f.
+- A mix (IMG_1740) entra em 184f, por baixo do giro para a mesa.
+- Headline toda branca com contorno preto grosso (9 e 11 px).
+- Pílula de CTA removida (duplicava a legenda); legenda "Link na bio," → "o bagulho é louco.".
