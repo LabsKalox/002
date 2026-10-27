@@ -1,8 +1,8 @@
 # Progresso — KaloxSooth v2
 
 ## Entregue
-- `out/kalox-v2-r2.mp4`: 26,9 s, 1080×1920, 30 fps, -16,9 LUFS (pico -0,4 dBFS).
-  Build `bld_20261027T024756082Z_A13C5DF3C0`. Sem custo: tudo renderizado localmente.
+- `out/kalox-v2-r3.mp4`: 26,9 s, legendas brancas, 1080×1920, 30 fps, -16,9 LUFS (pico -0,4 dBFS).
+  Build `bld_20261027T025502194Z_97B8324630`. Sem custo: tudo renderizado localmente.
 
 ## Como está montado
 - Fonte: `authors/main.svml`; cores e tamanhos: `recipes/look.svs`; render: `runs/final.svrun`.

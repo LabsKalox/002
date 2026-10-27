@@ -190,12 +190,12 @@
   <typo:Style id="cap-hi" recipe={look.text.caption} font={mont-black}>
     <typo:Shadow color="#000000" x="0" y="6" blur="16"/>
     <typo:Stroke color="#000000" width="6" placement="outside"/>
-    <typo:Fill color="#8FE3FF"/>
+    <typo:Fill color="#FFFFFF"/>
   </typo:Style>
   <typo:Style id="punch-style" recipe={look.text.punch} font={mont-black}>
-    <typo:Glow color="#2EC5FF" blur="34"/>
+    <typo:Shadow color="#000000" x="0" y="8" blur="20"/>
     <typo:Stroke color="#000000" width="8" placement="outside"/>
-    <typo:Fill color="#A6ECFF"/>
+    <typo:Fill color="#FFFFFF"/>
   </typo:Style>
   <typo:Style id="label" recipe={look.text.label} font={mont-xbold}>
     <typo:Box target="content" color="#8FE3FF" padding="16 34" radius="44"/>
