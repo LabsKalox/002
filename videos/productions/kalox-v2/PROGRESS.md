@@ -1,8 +1,8 @@
 # Progresso — KaloxSooth v2
 
 ## Entregue
-- `out/kalox-v2-r5.mp4`: 26,9 s, legendas brancas, voz do usuário no A-roll, 1080×1920, 30 fps, -16,9 LUFS (pico -0,4 dBFS).
-  Build `bld_20261027T031908886Z_8E9150BEB3`. Sem custo: tudo renderizado localmente.
+- `out/kalox-v2-r6.mp4`: 26,3 s, legendas brancas, voz do usuário no A-roll, 1080×1920, 30 fps, -16,9 LUFS (pico -0,4 dBFS).
+  Build `bld_20261027T032725050Z_D6F04696F4`. Sem custo: tudo renderizado localmente.
 
 ## Como está montado
 - Fonte: `authors/main.svml`; cores e tamanhos: `recipes/look.svs`; render: `runs/final.svrun`.
@@ -41,3 +41,10 @@
   a boca (`tools/dtw.py` gera o mapa; `tools/maps.py` gera os `<visual:Map>` em peças de 8 quadros).
 - Corte com zoom no quadro 91, onde o Veo faz uma pausa maior entre "faz" e "nessa".
 - `tools/transcribe.py`: Whisper small + VAD via sherpa-onnx (modelos das releases do GitHub).
+
+## Rodada 6 — CTA sem repetição
+- IMG_1741 tem "O link tá na minha bio" duas vezes (8,34 s e 10,31 s) e depois "o bagulho é louco"
+  (11,82–13,25 s). O corte anterior terminava em ~12,2 s e cortava o fim.
+- Agora: depois de "tá de graça", corta (689f) para IMG 10,31 s (309f) e segue até o fim de
+  "o bagulho é louco". O filme termina em 790f (26,3 s). Zoom e whoosh no corte.
+- Legendas: "Link na bio," 690–735f; "o bagulho é louco." 735–790f.
