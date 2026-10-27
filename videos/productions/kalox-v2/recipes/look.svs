@@ -1,0 +1,14 @@
+<?svml using="@hypit/recipe@1"?>
+<sheet version="1">
+  film.main { background: "#000000"; }
+
+  visual.aroll { contrast: 1.07; saturation: 1.06; brightness: 1.02; }
+  visual.screen { contrast: 1.12; saturation: 1.14; brightness: 1.0; }
+
+  text.head-line { size: 60; weight: 900; line-height: 1.0; }
+  text.head-big { size: 104; weight: 900; line-height: 1.0; }
+  text.caption { size: 66; weight: 900; line-height: 1.08; }
+  text.punch { size: 168; weight: 900; line-height: 1.0; }
+  text.label { size: 46; weight: 800; line-height: 1.0; tracking: 2; }
+  text.cta { size: 50; weight: 900; line-height: 1.0; }
+</sheet>

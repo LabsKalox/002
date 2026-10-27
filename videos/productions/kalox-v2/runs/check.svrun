@@ -1,0 +1,7 @@
+<?svml using="@hypit/markup/run@1"?>
+<svrun version="1">
+  <author source="../authors/main.svml"/>
+  <target output="check-a.video"/>
+  <target output="check-b.video"/>
+  <target output="check-c.video"/>
+</svrun>
