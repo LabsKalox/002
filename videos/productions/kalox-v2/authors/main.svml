@@ -44,8 +44,8 @@
 
   <!-- Time: frame positions measured from the transcripts and the original edit (30 fps). -->
   <time:Timeline id="program" clock={clock} end="start+807f">
-    <time:Window id="a1" from="start" until="start+86f"/>
-    <time:Window id="a2" from="start+86f" until="start+128f"/>
+    <time:Window id="a1" from="start" until="start+91f"/>
+    <time:Window id="a2" from="start+91f" until="start+128f"/>
     <time:Window id="a3" from="start+128f" until="start+222f"/>
     <time:Window id="voice-sound" from="start" until="start+184f"/>
     <time:Window id="s1-sound" from="start+184f" until="start+410f"/>
@@ -60,7 +60,7 @@
     <time:Window id="whoosh-1" from="start+212f" for="18f"/>
     <time:Window id="whoosh-2" from="start+400f" for="18f"/>
     <time:Window id="whoosh-3" from="start+546f" for="18f"/>
-    <time:Window id="whoosh-4" from="start+79f" for="14f"/>
+    <time:Window id="whoosh-4" from="start+84f" for="14f"/>
     <time:Window id="hit-1" from="start+590f" for="21f"/>
 
     <time:Window id="c1" from="start+10f" until="start+49f"/>
@@ -113,19 +113,37 @@
   <visual:Track id="picture" timeline={program.timeline}>
     <visual:Clip id="a1" media={aroll.media} during={program.a1} frame={full} z="10" fit="cover"
       treatment={look.visual.aroll} motion={push}>
-      <visual:Map target-from="0f" target-until="9f" source-from="0f" source-until="9f"/>
-      <visual:Map target-from="9f" target-until="84f" source-from="9f" source-until="99f"/>
-      <visual:Map target-from="84f" target-until="86f" source-from="99f" source-until="108f"/>
+      <visual:Map target-from="0f" target-until="6f" source-from="0f" source-until="5f"/>
+      <visual:Map target-from="6f" target-until="14f" source-from="5f" source-until="12f"/>
+      <visual:Map target-from="14f" target-until="22f" source-from="12f" source-until="21f"/>
+      <visual:Map target-from="22f" target-until="30f" source-from="21f" source-until="29f"/>
+      <visual:Map target-from="30f" target-until="38f" source-from="29f" source-until="38f"/>
+      <visual:Map target-from="38f" target-until="46f" source-from="38f" source-until="46f"/>
+      <visual:Map target-from="46f" target-until="54f" source-from="46f" source-until="55f"/>
+      <visual:Map target-from="54f" target-until="62f" source-from="55f" source-until="63f"/>
+      <visual:Map target-from="62f" target-until="70f" source-from="63f" source-until="72f"/>
+      <visual:Map target-from="70f" target-until="78f" source-from="72f" source-until="80f"/>
+      <visual:Map target-from="78f" target-until="86f" source-from="80f" source-until="88f"/>
+      <visual:Map target-from="86f" target-until="91f" source-from="88f" source-until="94f"/>
     </visual:Clip>
     <visual:Clip id="a2" media={aroll.media} during={program.a2} frame={full} z="10" fit="cover"
       treatment={look.visual.aroll} motion={punch}>
-      <visual:Map target-from="0f" target-until="42f" source-from="108f" source-until="144f"/>
+      <visual:Map target-from="0f" target-until="8f" source-from="108f" source-until="118f"/>
+      <visual:Map target-from="8f" target-until="16f" source-from="118f" source-until="126f"/>
+      <visual:Map target-from="16f" target-until="24f" source-from="126f" source-until="132f"/>
+      <visual:Map target-from="24f" target-until="32f" source-from="132f" source-until="141f"/>
+      <visual:Map target-from="32f" target-until="37f" source-from="141f" source-until="146f"/>
     </visual:Clip>
     <visual:Clip id="a3" media={aroll.media} during={program.a3} frame={full} z="10" fit="cover"
       treatment={look.visual.aroll} motion={push}>
-      <visual:Map target-from="0f" target-until="8f" source-from="144f" source-until="155f"/>
-      <visual:Map target-from="8f" target-until="48f" source-from="155f" source-until="196f"/>
-      <visual:Map target-from="48f" target-until="94f" source-from="196f" source-until="239f"/>
+      <visual:Map target-from="0f" target-until="8f" source-from="146f" source-until="154f"/>
+      <visual:Map target-from="8f" target-until="16f" source-from="154f" source-until="159f"/>
+      <visual:Map target-from="16f" target-until="24f" source-from="159f" source-until="168f"/>
+      <visual:Map target-from="24f" target-until="32f" source-from="168f" source-until="182f"/>
+      <visual:Map target-from="32f" target-until="40f" source-from="182f" source-until="189f"/>
+      <visual:Map target-from="40f" target-until="48f" source-from="189f" source-until="197f"/>
+      <visual:Map target-from="48f" target-until="52f" source-from="197f" source-until="201f"/>
+      <visual:Map target-from="52f" target-until="94f" source-from="201f" source-until="239f"/>
     </visual:Clip>
     <visual:Clip id="s1" media={adjust.media} during={program.s1} frame={full} z="10" fit="cover"
       treatment={look.visual.screen} motion={screen-in}>

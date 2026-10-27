@@ -1,8 +1,8 @@
 # Progresso — KaloxSooth v2
 
 ## Entregue
-- `out/kalox-v2-r4.mp4`: 26,9 s, legendas brancas, voz do usuário no A-roll, 1080×1920, 30 fps, -16,9 LUFS (pico -0,4 dBFS).
-  Build `bld_20261027T030328300Z_30632A5D6B`. Sem custo: tudo renderizado localmente.
+- `out/kalox-v2-r5.mp4`: 26,9 s, legendas brancas, voz do usuário no A-roll, 1080×1920, 30 fps, -16,9 LUFS (pico -0,4 dBFS).
+  Build `bld_20261027T031908886Z_8E9150BEB3`. Sem custo: tudo renderizado localmente.
 
 ## Como está montado
 - Fonte: `authors/main.svml`; cores e tamanhos: `recipes/look.svs`; render: `runs/final.svrun`.
@@ -33,3 +33,11 @@
 - A mix (IMG_1740) entra em 184f, por baixo do giro para a mesa.
 - Headline toda branca com contorno preto grosso (9 e 11 px).
 - Pílula de CTA removida (duplicava a legenda); legenda "Link na bio," → "o bagulho é louco.".
+
+## Rodada 5 — lip sync
+- O usuário notou a voz atrasada. A causa: na frase 1, a imagem estava até 0,44 s adiantada
+  (o encaixe da r4 usava limites de frase medidos por energia).
+- Novo encaixe por DTW (MFCC) entre a voz do usuário e a voz original do Veo, que é sincronizada com
+  a boca (`tools/dtw.py` gera o mapa; `tools/maps.py` gera os `<visual:Map>` em peças de 8 quadros).
+- Corte com zoom no quadro 91, onde o Veo faz uma pausa maior entre "faz" e "nessa".
+- `tools/transcribe.py`: Whisper small + VAD via sherpa-onnx (modelos das releases do GitHub).
