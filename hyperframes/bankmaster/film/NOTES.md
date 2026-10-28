@@ -1,6 +1,6 @@
 # BankMaster 2.0 — teaser v1
 
-- Entrega: `out/bankmaster-teaser-v10-final.mp4` (22,3 s, 1080×1920, -15,7 LUFS, pico -1,3 dB).
+- Entrega: `out/bankmaster-teaser-v11-final.mp4` (22,3 s, 1080×1920, -15,7 LUFS, pico -1,3 dB).
 - Material: 3 clipes do Veo 3 (`assets/raw/clip-c|b|a.mp4`). No clip-b, o "Espera!" repetido
   (src 5,2–6,65 s) foi cortado.
 - Música: `assets/audio/beat-*.wav`, gerados por `tools-beat.py` (trap 140 bpm sintetizado). A versão
@@ -85,3 +85,6 @@
 - Voz final: `assets/voice/voz-v10-voicechanger.mp3` (Voice Changer do usuário sobre a fala do Veo), com
   `data-media-start="1.675"` (silêncio inicial do ElevenLabs). Sem cortes nem retime na imagem.
 - Medido no arquivo final: voz vs. boca de -35 a +10 ms (mediana 0) em 37 janelas de 0,6 s. -16,1 LUFS.
+
+## v11
+- Selo e cartela final: "JÁ DISPONÍVEL" (antes "EM BREVE"). A fala ainda diz "Tá chegando" (17,4 s).
