@@ -26,8 +26,8 @@
       #title .in small { display: block; font-size: 56px; font-style: normal; letter-spacing: 0; -webkit-text-stroke: 12px var(--line); margin-bottom: 10px; }
 
       #genres { position: absolute; top: 640px; left: 0; right: 0; height: 170px; z-index: 30; }
-      #genres .box { position: absolute; left: 50%; top: 0; width: 620px; height: 150px; margin-left: -310px; border-radius: 80px; background: rgba(0, 0, 0, 0.78); border: 6px solid var(--brand); }
-      #genres .g { position: absolute; left: 0; right: 0; top: 30px; text-align: center; font-weight: 900; font-size: 84px; line-height: 1; color: #fff; opacity: 0; }
+      #genres .box { position: absolute; left: 50%; top: 0; width: 860px; height: 150px; margin-left: -430px; border-radius: 80px; background: rgba(0, 0, 0, 0.78); border: 6px solid var(--brand); }
+      #genres .g { position: absolute; left: 0; right: 0; top: 38px; text-align: center; font-weight: 900; font-size: 74px; white-space: nowrap; line-height: 1; color: #fff; opacity: 0; }
 
       #wait { position: absolute; top: 640px; left: 0; right: 0; height: 220px; z-index: 30; text-align: center; }
       #wait .ring { position: absolute; left: 50%; top: 0; width: 140px; height: 140px; margin-left: -70px; border-radius: 50%; border: 12px solid rgba(255, 255, 255, 0.25); border-top-color: var(--brand); }
@@ -98,8 +98,7 @@
       <!-- Genre picker as kinetic type (not the plugin UI) -->
       <div id="genres" class="clip" data-start="11.2" data-duration="1.75" data-track-index="6">
         <div class="box"></div>
-        <div class="g" id="g1">TRAP</div><div class="g" id="g2">DRILL</div><div class="g" id="g3">R&amp;B</div>
-        <div class="g" id="g4">PHONK</div><div class="g" id="g5">POP</div><div class="g" id="g6">FUNK</div>
+        <div class="g" id="g1">DEEP HOUSE</div><div class="g" id="g2">INDIE DANCE</div><div class="g" id="g3">AFRO HOUSE</div>
       </div>
       <div id="wait" class="clip ink" data-start="12.95" data-duration="1.0" data-track-index="6">
         <div class="ring"></div><div class="lbl">MASTERIZANDO...</div>
@@ -172,14 +171,14 @@
 
       // Genre slot: words flip, then land on FUNK
       tl.fromTo("#genres .box", { scale: 0.7, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.15, ease: "back.out(2)" }, 11.2);
-      const order = ["#g1", "#g2", "#g3", "#g4", "#g5", "#g1", "#g2", "#g6"];
+      const order = ["#g1", "#g2", "#g3", "#g1", "#g2", "#g3", "#g1", "#g2", "#g3"];
       order.forEach((g, i) => {
         const t = 11.25 + i * 0.13;
         tl.set(g, { opacity: 1, y: 0 }, t);
         if (i < order.length - 1) tl.set(g, { opacity: 0 }, t + 0.13);
       });
-      tl.fromTo("#g6", { scale: 1.25 }, { scale: 1, duration: 0.2, ease: "back.out(3)" }, 11.25 + 7 * 0.13);
-      tl.to("#genres .box", { backgroundColor: "rgba(255,255,255,0.18)", duration: 0.15 }, 11.25 + 7 * 0.13);
+      tl.fromTo("#g3", { scale: 1.2 }, { scale: 1, duration: 0.2, ease: "back.out(3)" }, 11.25 + 8 * 0.13);
+      tl.to("#genres .box", { backgroundColor: "rgba(255,154,31,0.28)", duration: 0.15 }, 11.25 + 8 * 0.13);
 
       // Waiting ring, then ready badge
       tl.fromTo("#wait .ring", { rotation: 0 }, { rotation: 720, duration: 1.0, ease: "none" }, 12.95);

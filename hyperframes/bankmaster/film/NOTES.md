@@ -1,6 +1,6 @@
 # BankMaster 2.0 — teaser v1
 
-- Entrega: `out/bankmaster-teaser-v2-final.mp4` (22,2 s, 1080×1920, -15,7 LUFS, pico -1,3 dB).
+- Entrega: `out/bankmaster-teaser-v3-final.mp4` (22,2 s, 1080×1920, -15,7 LUFS, pico -1,3 dB).
 - Material: 3 clipes do Veo 3 (`assets/raw/clip-c|b|a.mp4`). No clip-b, o "Espera!" repetido
   (src 5,2–6,65 s) foi cortado.
 - Música: `assets/audio/beat-*.wav`, gerados por `tools-beat.py` (trap 140 bpm sintetizado). A versão
@@ -21,3 +21,7 @@
 - 21,3–22,2 s: cartela final com o logo BankMaster 2.0 + Kalox Audio + "EM BREVE".
 - A arte diz "AVAILABLE NOW" (com uma letra defeituosa); esse trecho não foi usado. Falta confirmar com o
   usuário se é "EM BREVE" ou "JÁ DISPONÍVEL".
+
+## v3
+- Gêneros: só Afro House, Deep House e Indie Dance (para em AFRO HOUSE).
+- Música trocada por um groove de house a 122 bpm (`tools-beat.py`).
