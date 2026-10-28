@@ -1,6 +1,6 @@
 # BankMaster 2.0 — teaser v1
 
-- Entrega: `out/bankmaster-teaser-v3-final.mp4` (22,2 s, 1080×1920, -15,7 LUFS, pico -1,3 dB).
+- Entrega: `out/bankmaster-teaser-v4-final.mp4` (18,7 s, 1080×1920, -15,7 LUFS, pico -1,3 dB).
 - Material: 3 clipes do Veo 3 (`assets/raw/clip-c|b|a.mp4`). No clip-b, o "Espera!" repetido
   (src 5,2–6,65 s) foi cortado.
 - Música: `assets/audio/beat-*.wav`, gerados por `tools-beat.py` (trap 140 bpm sintetizado). A versão
@@ -25,3 +25,12 @@
 ## v3
 - Gêneros: só Afro House, Deep House e Indie Dance (para em AFRO HOUSE).
 - Música trocada por um groove de house a 122 bpm (`tools-beat.py`).
+
+## v4 — voz do usuário (clone ElevenLabs)
+- Voz: `assets/voice/voz-elevenlabs.mp3` (17,9 s). Os clipes do Veo foram reajustados com
+  `tools-sync.py` (DTW entre a voz nova e a voz original do Veo, peças de 6 quadros, velocidade entre 0,5× e 1,8×;
+  acima disso vira corte seco). Saídas: `assets/synced/s1|s2|s3.mp4` (sem áudio) + `.pieces.json`.
+- s1 recebeu um ajuste fino no início (`-0.19:0.7:1.1`) porque a boca adiantava 190 ms.
+- Sincronia medida (envelope da voz vs. voz original reajustada): entre -40 e +20 ms nas partes visíveis.
+- Cortes secos do retime com troca de zoom (jump cut): 3,6 / 5,2 / 5,8 / 14,7 / 15,3 / 16,3 s.
+- Duração 18,7 s; -14,9 LUFS.

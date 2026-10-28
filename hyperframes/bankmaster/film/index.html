@@ -60,63 +60,65 @@
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="main" data-start="0" data-duration="22.2" data-width="1080" data-height="1920">
-      <!-- Shots: Veo presenter clips. Clip B skips the repeated "Espera!" (src 5.2-6.65 s). -->
-      <video id="hook" class="clip shot" src="assets/raw/clip-c.mp4" data-start="0" data-duration="7.75" data-media-start="0" data-track-index="0" data-has-audio="true" data-volume="1" playsinline style="z-index: 1"></video>
-      <video id="reveal" class="clip shot" src="assets/raw/clip-b.mp4" data-start="7.75" data-duration="5.2" data-media-start="0" data-track-index="0" data-has-audio="true" data-volume="1" playsinline style="z-index: 2"></video>
-      <video id="wait-shot" class="clip shot" src="assets/raw/clip-b.mp4" data-start="12.95" data-duration="1.3" data-media-start="6.65" data-track-index="0" data-has-audio="true" data-volume="1" playsinline style="z-index: 3"></video>
-      <video id="cta-shot" class="clip shot" src="assets/raw/clip-a.mp4" data-start="14.25" data-duration="7.95" data-media-start="0" data-track-index="0" data-has-audio="true" data-volume="1.15" data-fade-out="0.5" playsinline style="z-index: 4"></video>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="18.7" data-width="1080" data-height="1920">
+      <!-- Shots: Veo clips retimed so the mouth follows the user's ElevenLabs voice (tools-sync.py). -->
+      <video id="hook" class="clip shot" src="assets/synced/s1.mp4" data-start="0" data-duration="6.55" data-media-start="0" data-track-index="0" muted playsinline style="z-index: 1"></video>
+      <video id="reveal" class="clip shot" src="assets/synced/s2.mp4" data-start="6.55" data-duration="6.15" data-media-start="0" data-track-index="0" muted playsinline style="z-index: 2"></video>
+      <video id="cta-shot" class="clip shot" src="assets/synced/s3.mp4" data-start="12.7" data-duration="6.0" data-media-start="0" data-track-index="0" muted playsinline style="z-index: 3"></video>
+
+      <!-- Voice: user's ElevenLabs clone -->
+      <audio id="voice" class="clip" src="assets/voice/voz-elevenlabs.mp3" data-start="0" data-duration="18.0" data-media-start="0" data-track-index="1" data-volume="1" data-fade-out="0.1"></audio>
 
       <!-- Music bed: muffled while the master is "weak", full from the reveal -->
-      <audio id="beat-muffled" class="clip" src="assets/audio/beat-muffled.wav" data-start="0" data-duration="7.75" data-media-start="0" data-track-index="1" data-volume="0.16" data-fade-out="0.08"></audio>
-      <audio id="beat-full" class="clip" src="assets/audio/beat-full.wav" data-start="7.75" data-duration="14.45" data-media-start="7.75" data-track-index="1" data-volume="0.17" data-fade-out="0.8"></audio>
-      <audio id="whoosh-1" class="clip" src="assets/sfx/whoosh.wav" data-start="7.45" data-duration="0.6" data-track-index="2" data-volume="0.35"></audio>
-      <audio id="hit-1" class="clip" src="assets/sfx/hit.wav" data-start="7.78" data-duration="0.7" data-track-index="3" data-volume="0.5"></audio>
-      <audio id="whoosh-2" class="clip" src="assets/sfx/whoosh.wav" data-start="12.75" data-duration="0.6" data-track-index="2" data-volume="0.25"></audio>
-      <audio id="hit-2" class="clip" src="assets/sfx/hit.wav" data-start="13.95" data-duration="0.7" data-track-index="3" data-volume="0.35"></audio>
-      <audio id="whoosh-3" class="clip" src="assets/sfx/whoosh.wav" data-start="13.95" data-duration="0.6" data-track-index="2" data-volume="0.25"></audio>
+      <audio id="beat-muffled" class="clip" src="assets/audio/beat-muffled.wav" data-start="0" data-duration="6.55" data-media-start="0" data-track-index="2" data-volume="0.16" data-fade-out="0.08"></audio>
+      <audio id="beat-full" class="clip" src="assets/audio/beat-full.wav" data-start="6.55" data-duration="12.15" data-media-start="6.55" data-track-index="2" data-volume="0.17" data-fade-out="0.8"></audio>
+      <audio id="whoosh-1" class="clip" src="assets/sfx/whoosh.wav" data-start="6.25" data-duration="0.6" data-track-index="3" data-volume="0.35"></audio>
+      <audio id="hit-1" class="clip" src="assets/sfx/hit.wav" data-start="6.58" data-duration="0.7" data-track-index="4" data-volume="0.5"></audio>
+      <audio id="whoosh-ui" class="clip" src="assets/sfx/whoosh.wav" data-start="8.75" data-duration="0.6" data-track-index="3" data-volume="0.3"></audio>
+      <audio id="whoosh-2" class="clip" src="assets/sfx/whoosh.wav" data-start="11.65" data-duration="0.6" data-track-index="3" data-volume="0.25"></audio>
+      <audio id="hit-2" class="clip" src="assets/sfx/hit.wav" data-start="12.55" data-duration="0.7" data-track-index="4" data-volume="0.35"></audio>
+      <audio id="whoosh-3" class="clip" src="assets/sfx/whoosh.wav" data-start="12.5" data-duration="0.6" data-track-index="3" data-volume="0.25"></audio>
 
       <!-- Persistent headline -->
-      <div id="headline" class="clip ink" data-start="0" data-duration="21.3" data-track-index="4">
+      <div id="headline" class="clip ink" data-start="0" data-duration="17.95" data-track-index="5">
         <div class="hin"><span class="l1" data-var-text="headline1">Master automática pro teu beat</span><span class="l2" data-var-text="headline2">SÓ ESCOLHE O GÊNERO</span></div>
       </div>
 
-      <!-- Captions (white with black outline) -->
-      <div id="c1" class="clip cap ink" data-start="0.2" data-duration="1.05" data-track-index="5"><span class="in">Você passa horas</span></div>
-      <div id="c2" class="clip cap ink" data-start="1.25" data-duration="2.1" data-track-index="5"><span class="in">tentando deixar<br />tua master alta?</span></div>
-      <div id="c3" class="clip cap ink" data-start="3.56" data-duration="2.5" data-track-index="5"><span class="in">e ela continua fraca.</span></div>
-      <div id="c4" class="clip cap ink" data-start="6.73" data-duration="1.02" data-track-index="5"><span class="in">Olha isso aqui.</span></div>
-      <div id="logo-title" class="clip" data-start="7.85" data-duration="1.7" data-track-index="5"><span class="in"><small>Esse é o</small><img src="assets/brand/logo-bankmaster-alpha.png" alt="BankMaster 2.0" /></span></div>
-      <div id="c5" class="clip cap low ink" data-start="9.55" data-duration="1.4" data-track-index="5"><span class="in">meu plugin novo.</span></div>
-      <div id="c6" class="clip cap low ink" data-start="11.22" data-duration="1.7" data-track-index="5"><span class="in">Você só escolhe<br />o gênero</span></div>
-      <div id="c7" class="clip cap low ink" data-start="13.25" data-duration="0.95" data-track-index="5"><span class="in">e espera!</span></div>
-      <div id="c8" class="clip cap ink" data-start="14.36" data-duration="1.7" data-track-index="5"><span class="in">Ele faz a master<br />pra você.</span></div>
-      <div id="c9" class="clip cap ink" data-start="16.72" data-duration="0.95" data-track-index="5"><span class="in">Tá chegando.</span></div>
-      <div id="c10" class="clip cap ink" data-start="18.52" data-duration="1.12" data-track-index="5"><span class="in">Comenta MASTER</span></div>
-      <div id="c11" class="clip cap ink" data-start="19.64" data-duration="1.66" data-track-index="5"><span class="in">que eu te aviso<br />primeiro.</span></div>
+      <!-- Captions (white with black outline), timed to the voice -->
+      <div id="c1" class="clip cap ink" data-start="0.11" data-duration="1.04" data-track-index="6"><span class="in">Você passa horas</span></div>
+      <div id="c2" class="clip cap ink" data-start="1.15" data-duration="1.85" data-track-index="6"><span class="in">tentando deixar<br />tua master alta?</span></div>
+      <div id="c3" class="clip cap ink" data-start="3.11" data-duration="2.4" data-track-index="6"><span class="in">e ela continua fraca.</span></div>
+      <div id="c4" class="clip cap ink" data-start="5.71" data-duration="0.84" data-track-index="6"><span class="in">Olha isso aqui.</span></div>
+      <div id="logo-title" class="clip" data-start="6.73" data-duration="2.2" data-track-index="6"><span class="in"><small>Esse é o</small><img src="assets/brand/logo-bankmaster-alpha.png" alt="BankMaster 2.0" /></span></div>
+      <div id="c5" class="clip cap low ink" data-start="9.0" data-duration="1.2" data-track-index="6"><span class="in">meu plugin novo.</span></div>
+      <div id="c6" class="clip cap low ink" data-start="10.25" data-duration="1.55" data-track-index="6"><span class="in">Você só escolhe<br />o gênero</span></div>
+      <div id="c7" class="clip cap low ink" data-start="11.85" data-duration="0.85" data-track-index="6"><span class="in">e espera!</span></div>
+      <div id="c8" class="clip cap ink" data-start="12.84" data-duration="1.75" data-track-index="6"><span class="in">Ele faz a master<br />pra você.</span></div>
+      <div id="c9" class="clip cap ink" data-start="14.76" data-duration="0.7" data-track-index="6"><span class="in">Tá chegando.</span></div>
+      <div id="c10" class="clip cap ink" data-start="15.5" data-duration="0.72" data-track-index="6"><span class="in">Comenta MASTER</span></div>
+      <div id="c11" class="clip cap ink" data-start="16.22" data-duration="1.73" data-track-index="6"><span class="in">que eu envio<br />na sua DM.</span></div>
 
       <!-- Genre picker as kinetic type (not the plugin UI) -->
-      <div id="genres" class="clip" data-start="11.2" data-duration="1.75" data-track-index="6">
+      <div id="genres" class="clip" data-start="10.25" data-duration="1.6" data-track-index="7">
         <div class="box"></div>
         <div class="g" id="g1">DEEP HOUSE</div><div class="g" id="g2">INDIE DANCE</div><div class="g" id="g3">AFRO HOUSE</div>
       </div>
-      <div id="wait" class="clip ink" data-start="12.95" data-duration="1.0" data-track-index="6">
+      <div id="wait" class="clip ink" data-start="11.85" data-duration="0.7" data-track-index="7">
         <div class="ring"></div><div class="lbl">MASTERIZANDO...</div>
       </div>
-      <div id="ready" class="clip" data-start="13.95" data-duration="1.45" data-track-index="6"><span class="in">MASTER PRONTA ✓</span></div>
-      <div id="soon" class="clip" data-start="16.7" data-duration="4.6" data-track-index="6"><span class="in">EM BREVE</span></div>
+      <div id="ready" class="clip" data-start="12.55" data-duration="1.4" data-track-index="7"><span class="in">MASTER PRONTA ✓</span></div>
+      <div id="soon" class="clip" data-start="14.76" data-duration="3.19" data-track-index="7"><span class="in">EM BREVE</span></div>
 
-      <div id="ui" class="clip" data-start="9.55" data-duration="4.7" data-track-index="8">
+      <div id="ui" class="clip" data-start="9.0" data-duration="3.7" data-track-index="8">
         <img class="bg" src="assets/brand/ui-bg.png" alt="" />
         <div class="card"><img src="assets/brand/ui-window.png" alt="Interface do BankMaster 2.0" /><div class="ring-hl"></div></div>
       </div>
-      <audio id="whoosh-ui" class="clip" src="assets/sfx/whoosh.wav" data-start="9.3" data-duration="0.6" data-track-index="2" data-volume="0.3"></audio>
-      <div id="endcard" class="clip" data-start="21.3" data-duration="0.9" data-track-index="9">
+      <div id="endcard" class="clip" data-start="17.95" data-duration="0.75" data-track-index="9">
         <div class="dim"></div>
         <div class="lockup"><img class="bm" src="assets/brand/logo-bankmaster-alpha.png" alt="BankMaster 2.0" /><img class="kx" src="assets/brand/logo-kalox-alpha.png" alt="Kalox Audio" /><span class="tag">EM BREVE</span></div>
       </div>
-      <div id="flash-1" class="clip flash" data-start="7.75" data-duration="0.25" data-track-index="7"></div>
-      <div id="flash-2" class="clip flash" data-start="14.25" data-duration="0.2" data-track-index="7"></div>
+      <div id="flash-1" class="clip flash" data-start="6.55" data-duration="0.25" data-track-index="10"></div>
+      <div id="flash-2" class="clip flash" data-start="12.7" data-duration="0.2" data-track-index="10"></div>
     </div>
     <script>
       const tl = gsap.timeline({ paused: true });
@@ -125,69 +127,73 @@
           .to(sel, { scale: 1, duration: 0.1, ease: "power1.inOut" }, t + 0.13);
       };
 
-      // Headline drops in
       tl.fromTo("#headline .hin", { scale: 1.06 }, { scale: 1, duration: 0.35, ease: "power3.out" }, 0);
 
-      // Hook: slow push, punch-in on "e ela continua fraca"
-      tl.fromTo("#hook", { scale: 1.0 }, { scale: 1.04, duration: 3.56, ease: "none" }, 0);
-      tl.set("#hook", { scale: 1.14 }, 3.56).to("#hook", { scale: 1.16, duration: 2.44, ease: "none" }, 3.56);
-      tl.set("#hook", { scale: 1.02 }, 6.0).to("#hook", { scale: 1.05, duration: 1.75, ease: "none" }, 6.0);
+      // Hook: zoom changes on every retime cut (3.6, 5.2, 5.8) so they read as jump cuts
+      tl.fromTo("#hook", { scale: 1.0 }, { scale: 1.03, duration: 3.6, ease: "none" }, 0);
+      tl.set("#hook", { scale: 1.13 }, 3.6).to("#hook", { scale: 1.15, duration: 1.6, ease: "none" }, 3.6);
+      tl.set("#hook", { scale: 1.0 }, 5.2).to("#hook", { scale: 1.01, duration: 0.6, ease: "none" }, 5.2);
+      tl.set("#hook", { scale: 1.09 }, 5.8).to("#hook", { scale: 1.11, duration: 0.75, ease: "none" }, 5.8);
 
       // Reveal: impact entrance, then drift
-      tl.fromTo("#reveal", { scale: 1.16 }, { scale: 1.02, duration: 0.3, ease: "power3.out" }, 7.75)
-        .to("#reveal", { scale: 1.06, duration: 4.9, ease: "none" }, 8.05);
-      tl.fromTo("#wait-shot", { scale: 1.14 }, { scale: 1.17, duration: 1.3, ease: "none" }, 12.95);
-      tl.fromTo("#cta-shot", { scale: 1.14 }, { scale: 1.02, duration: 0.3, ease: "power3.out" }, 14.25)
-        .to("#cta-shot", { scale: 1.06, duration: 7.35, ease: "none" }, 14.55);
+      tl.fromTo("#reveal", { scale: 1.16 }, { scale: 1.02, duration: 0.3, ease: "power3.out" }, 6.55)
+        .to("#reveal", { scale: 1.05, duration: 5.85, ease: "none" }, 6.85);
+
+      // CTA: entrance, then zoom changes on the retime cuts (14.7, 15.3, 16.3)
+      tl.fromTo("#cta-shot", { scale: 1.14 }, { scale: 1.02, duration: 0.3, ease: "power3.out" }, 12.7)
+        .to("#cta-shot", { scale: 1.04, duration: 1.7, ease: "none" }, 13.0);
+      tl.set("#cta-shot", { scale: 1.12 }, 14.7).to("#cta-shot", { scale: 1.13, duration: 0.6, ease: "none" }, 14.7);
+      tl.set("#cta-shot", { scale: 1.0 }, 15.3).to("#cta-shot", { scale: 1.02, duration: 1.0, ease: "none" }, 15.3);
+      tl.set("#cta-shot", { scale: 1.1 }, 16.3).to("#cta-shot", { scale: 1.13, duration: 2.4, ease: "none" }, 16.3);
 
       // Flashes
-      tl.fromTo("#flash-1", { opacity: 0.75 }, { opacity: 0, duration: 0.24, ease: "power2.out" }, 7.75);
-      tl.fromTo("#flash-2", { opacity: 0.6 }, { opacity: 0, duration: 0.19, ease: "power2.out" }, 14.25);
+      tl.fromTo("#flash-1", { opacity: 0.75 }, { opacity: 0, duration: 0.24, ease: "power2.out" }, 6.55);
+      tl.fromTo("#flash-2", { opacity: 0.6 }, { opacity: 0, duration: 0.19, ease: "power2.out" }, 12.7);
 
       // Captions pop on their phrase
-      [["#c1 .in", 0.2], ["#c2 .in", 1.25], ["#c3 .in", 3.56], ["#c4 .in", 6.73], ["#c5 .in", 9.55], ["#c6 .in", 11.22],
-       ["#c7 .in", 13.25], ["#c8 .in", 14.36], ["#c9 .in", 16.72], ["#c10 .in", 18.52], ["#c11 .in", 19.64]].forEach(([s, t]) => pop(s, t));
+      [["#c1 .in", 0.11], ["#c2 .in", 1.15], ["#c3 .in", 3.11], ["#c4 .in", 5.71], ["#c5 .in", 9.0], ["#c6 .in", 10.25],
+       ["#c7 .in", 11.85], ["#c8 .in", 12.84], ["#c9 .in", 14.76], ["#c10 .in", 15.5], ["#c11 .in", 16.22]].forEach(([s, t]) => pop(s, t));
 
       // Logo slam
-      tl.fromTo("#logo-title .in", { scale: 1.6, opacity: 0 }, { scale: 0.97, opacity: 1, duration: 0.14, ease: "power3.out" }, 7.85)
-        .to("#logo-title .in", { scale: 1, duration: 0.12 }, 7.99)
-        .to("#logo-title .in", { scale: 1.04, duration: 1.4, ease: "none" }, 8.11);
+      tl.fromTo("#logo-title .in", { scale: 1.6, opacity: 0 }, { scale: 0.97, opacity: 1, duration: 0.14, ease: "power3.out" }, 6.73)
+        .to("#logo-title .in", { scale: 1, duration: 0.12 }, 6.87)
+        .to("#logo-title .in", { scale: 1.04, duration: 2.0, ease: "none" }, 6.99);
 
       // Product UI: enters, punches into the preset selector, then into the output meter
-      tl.fromTo("#ui .bg", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 9.55);
-      tl.set("#ui .card", { transformOrigin: "0px 0px" }, 9.55);
-      tl.fromTo("#ui .card", { x: 20, y: 980, scale: 1, opacity: 0 }, { x: 20, y: 700, opacity: 1, duration: 0.35, ease: "power3.out" }, 9.55)
-        .to("#ui .card", { y: 690, scale: 1.0, duration: 1.3, ease: "none" }, 9.9)
-        .to("#ui .card", { x: -176, y: 847, scale: 1.7, duration: 0.45, ease: "power3.inOut" }, 11.2)
-        .to("#ui .card", { x: -188, y: 846, scale: 1.73, duration: 1.3, ease: "none" }, 11.65)
-        .to("#ui .card", { x: -683, y: 157, scale: 1.5, duration: 0.45, ease: "power3.inOut" }, 12.95)
-        .to("#ui .card", { x: -699, y: 146, scale: 1.52, duration: 0.85, ease: "none" }, 13.4);
-      tl.fromTo("#ui .ring-hl", { opacity: 0 }, { opacity: 1, duration: 0.15 }, 11.5)
-        .to("#ui .ring-hl", { opacity: 0, duration: 0.1 }, 12.9);
+      tl.fromTo("#ui .bg", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 9.0);
+      tl.set("#ui .card", { transformOrigin: "0px 0px" }, 9.0);
+      tl.fromTo("#ui .card", { x: 20, y: 980, scale: 1, opacity: 0 }, { x: 20, y: 700, opacity: 1, duration: 0.35, ease: "power3.out" }, 9.0)
+        .to("#ui .card", { y: 690, scale: 1.0, duration: 0.9, ease: "none" }, 9.35)
+        .to("#ui .card", { x: -176, y: 847, scale: 1.7, duration: 0.4, ease: "power3.inOut" }, 10.25)
+        .to("#ui .card", { x: -188, y: 846, scale: 1.73, duration: 1.2, ease: "none" }, 10.65)
+        .to("#ui .card", { x: -683, y: 157, scale: 1.5, duration: 0.4, ease: "power3.inOut" }, 11.85)
+        .to("#ui .card", { x: -699, y: 146, scale: 1.52, duration: 0.45, ease: "none" }, 12.25);
+      tl.fromTo("#ui .ring-hl", { opacity: 0 }, { opacity: 1, duration: 0.15 }, 10.5)
+        .to("#ui .ring-hl", { opacity: 0, duration: 0.1 }, 11.8);
 
-      // End card
-      tl.fromTo("#endcard .dim", { opacity: 0 }, { opacity: 0.82, duration: 0.2 }, 21.3);
-      tl.fromTo("#endcard .lockup", { scale: 1.15, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.25, ease: "power3.out" }, 21.35);
-
-      // Genre slot: words flip, then land on FUNK
-      tl.fromTo("#genres .box", { scale: 0.7, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.15, ease: "back.out(2)" }, 11.2);
+      // Genre slot: words flip, then land on AFRO HOUSE
+      tl.fromTo("#genres .box", { scale: 0.7, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.15, ease: "back.out(2)" }, 10.25);
       const order = ["#g1", "#g2", "#g3", "#g1", "#g2", "#g3", "#g1", "#g2", "#g3"];
       order.forEach((g, i) => {
-        const t = 11.25 + i * 0.13;
+        const t = 10.3 + i * 0.12;
         tl.set(g, { opacity: 1, y: 0 }, t);
-        if (i < order.length - 1) tl.set(g, { opacity: 0 }, t + 0.13);
+        if (i < order.length - 1) tl.set(g, { opacity: 0 }, t + 0.12);
       });
-      tl.fromTo("#g3", { scale: 1.2 }, { scale: 1, duration: 0.2, ease: "back.out(3)" }, 11.25 + 8 * 0.13);
-      tl.to("#genres .box", { backgroundColor: "rgba(255,154,31,0.28)", duration: 0.15 }, 11.25 + 8 * 0.13);
+      tl.fromTo("#g3", { scale: 1.2 }, { scale: 1, duration: 0.2, ease: "back.out(3)" }, 10.3 + 8 * 0.12);
+      tl.to("#genres .box", { backgroundColor: "rgba(255,154,31,0.28)", duration: 0.15 }, 10.3 + 8 * 0.12);
 
       // Waiting ring, then ready badge
-      tl.fromTo("#wait .ring", { rotation: 0 }, { rotation: 720, duration: 1.0, ease: "none" }, 12.95);
-      tl.fromTo("#wait .lbl", { opacity: 0 }, { opacity: 1, duration: 0.15 }, 12.95);
-      tl.fromTo("#ready .in", { scale: 0.5, opacity: 0 }, { scale: 1.08, opacity: 1, duration: 0.14, ease: "back.out(2)" }, 13.95)
-        .to("#ready .in", { scale: 1, duration: 0.1 }, 14.09);
+      tl.fromTo("#wait .ring", { rotation: 0 }, { rotation: 540, duration: 0.7, ease: "none" }, 11.85);
+      tl.fromTo("#wait .lbl", { opacity: 0 }, { opacity: 1, duration: 0.12 }, 11.85);
+      tl.fromTo("#ready .in", { scale: 0.5, opacity: 0 }, { scale: 1.08, opacity: 1, duration: 0.14, ease: "back.out(2)" }, 12.55)
+        .to("#ready .in", { scale: 1, duration: 0.1 }, 12.69);
 
       // "EM BREVE" stamp
-      tl.fromTo("#soon .in", { scale: 1.8, opacity: 0, rotation: -8 }, { scale: 1, opacity: 1, rotation: -4, duration: 0.18, ease: "power3.out" }, 16.7);
+      tl.fromTo("#soon .in", { scale: 1.8, opacity: 0, rotation: -8 }, { scale: 1, opacity: 1, rotation: -4, duration: 0.18, ease: "power3.out" }, 14.76);
+
+      // End card
+      tl.fromTo("#endcard .dim", { opacity: 0 }, { opacity: 0.82, duration: 0.2 }, 17.95);
+      tl.fromTo("#endcard .lockup", { scale: 1.15, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.25, ease: "power3.out" }, 18.0);
 
       window.__timelines["main"] = tl;
       tl.seek(0);
