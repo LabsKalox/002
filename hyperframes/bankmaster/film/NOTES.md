@@ -1,6 +1,6 @@
 # BankMaster 2.0 — teaser v1
 
-- Entrega: `out/bankmaster-teaser-v8-final.mp4` (21,35 s, 1080×1920, -15,7 LUFS, pico -1,3 dB).
+- Entrega: `out/bankmaster-teaser-v9-final.mp4` (21,35 s, 1080×1920, -15,7 LUFS, pico -1,3 dB).
 - Material: 3 clipes do Veo 3 (`assets/raw/clip-c|b|a.mp4`). No clip-b, o "Espera!" repetido
   (src 5,2–6,65 s) foi cortado.
 - Música: `assets/audio/beat-*.wav`, gerados por `tools-beat.py` (trap 140 bpm sintetizado). A versão
@@ -65,3 +65,13 @@
 - Agora: `2213.mp3` até 15,5 s do filme (pausa antes de "Tá chegando"); dali até o fim, `voz-voicechanger.mp3`
   (`data-media-start="17.77"`, mesmo volume medido).
 - Verificado em janelas de 0,6 s no arquivo final: de -20 a +15 ms no vídeo todo.
+
+## v9 — só a voz do usuário (`2213.mp3`), imagem ajustada a ela
+- Pedido: usar apenas o arquivo do usuário, sem emendas do Voice Changer.
+- Erro da v7/v8: a pausa removida no `2213.mp3` fica entre "alta?" e "e ela continua" (≈3,3 s do filme), não no meio
+  de "continua" (o corte de imagem em 3,88 s tirou a boca falando).
+- Agora: `tools-sync.py` (MAXRATE=2.6) + `tools-render-pieces.py` geram `assets/synced/hook-2213.mp4` e
+  `assets/synced/cta-2213.mp4`. Gancho: velocidade 0,95–1,05× e um corte de 0,83 s em 3,4 s (no silêncio).
+  Final: um corte de 0,5 s em 19,0 s (dentro de "te aviso", onde a voz adianta 0,5 s); a alternativa sem corte errava até 120–200 ms.
+  Troca de zoom em cada corte.
+- Medido: boca vs. voz entre -15 e +15 ms (janelas de 0,5 s); imagem final vs. clipes ajustados: 0 quadro até 20,2 s.

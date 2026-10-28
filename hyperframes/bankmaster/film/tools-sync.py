@@ -2,7 +2,8 @@
 # then renders a retimed, silent copy of the clip whose mouth follows the new voice.
 # usage: tools-sync.py <voice> <voice_from> <voice_to> <clip> <ref_ranges "a-b,c-d"> <out.mp4> <tail_extra_s>
 import subprocess, numpy as np, sys, json
-SR=16000; HOP=160; NFFT=512
+import os
+SR=16000; HOP=160; NFFT=512; MAXRATE=float(os.environ.get("MAXRATE","1.8"))
 def load(p, ss=None, t=None):
     cmd=["ffmpeg","-v","error"]+(["-ss",str(ss)] if ss is not None else [])+(["-t",str(t)] if t is not None else [])+["-i",p,"-ac","1","-ar",str(SR),"-f","s16le","-"]
     return np.frombuffer(subprocess.run(cmd,capture_output=True,check=True).stdout,np.int16).astype(np.float32)/32768
@@ -49,7 +50,7 @@ pieces=[]; fr=0
 while fr<L:
     nx=min(fr+6,L); s0=float(np.interp(fr,f,s)); s1=float(np.interp(nx,f,s))
     dur=(nx-fr)/30
-    if (s1-s0)/dur>1.8: s0=s1-dur          # Veo pause longer than the voice: hard cut instead of fast-forward
+    if (s1-s0)/dur>MAXRATE: s0=s1-dur      # Veo pause much longer than the voice: hard cut instead of fast-forward
     if (s1-s0)/dur<0.5: s1=s0+0.5*dur      # never slower than half speed
     pieces.append((fr,nx,s0,s1)); fr=nx
 if tail>0:
