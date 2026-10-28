@@ -75,3 +75,10 @@
   Final: um corte de 0,5 s em 19,0 s (dentro de "te aviso", onde a voz adianta 0,5 s); a alternativa sem corte errava até 120–200 ms.
   Troca de zoom em cada corte.
 - Medido: boca vs. voz entre -15 e +15 ms (janelas de 0,5 s); imagem final vs. clipes ajustados: 0 quadro até 20,2 s.
+
+## v10 — takes novos do Veo (moletom preto, capuz abaixado)
+- `assets/raw2/take1.mp4` (gancho), `take3.mp4` (revelação; arquivo "3" do usuário), `take2.mp4` (chamada; arquivo "2").
+- Velocidade natural, sem cortes: gancho 0–7,75 s, revelação 7,75–14,3 s (take3 0–6,55), chamada 14,3–22,28 s.
+- Fala na ordem e no tempo do vídeo: `assets/voice/veo-v2-fala-completa-para-voice-changer.wav` (22,28 s), enviada
+  ao usuário para o Voice Changer. Quando voltar, trocar só o `src` de `#voice` (cortar silêncio inicial, se houver).
+- Prévia com a voz do Veo: `out/bankmaster-teaser-v10-previa-vozveo.mp4`.
