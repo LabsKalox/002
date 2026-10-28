@@ -1,6 +1,6 @@
 # BankMaster 2.0 — teaser v1
 
-- Entrega: `out/bankmaster-teaser-v7-final.mp4` (21,35 s, 1080×1920, -15,7 LUFS, pico -1,3 dB).
+- Entrega: `out/bankmaster-teaser-v8-final.mp4` (21,35 s, 1080×1920, -15,7 LUFS, pico -1,3 dB).
 - Material: 3 clipes do Veo 3 (`assets/raw/clip-c|b|a.mp4`). No clip-b, o "Espera!" repetido
   (src 5,2–6,65 s) foi cortado.
 - Música: `assets/audio/beat-*.wav`, gerados por `tools-beat.py` (trap 140 bpm sintetizado). A versão
@@ -59,3 +59,9 @@
   de zoom). Tudo depois do corte foi puxado 0,85 s para trás. Voz com `data-media-start="1.47"`.
 - Sincronia no arquivo final (voz vs. fala original do Veo com o mesmo corte): de 0 a +10 ms; -20 ms no fim.
 - Duração 21,35 s; -15,8 LUFS.
+
+## v8 — final da fala no tempo da boca
+- O `2213.mp3` também tinha "Tá chegando" (+110 ms) e "te aviso primeiro" alterados, fora do tempo da boca.
+- Agora: `2213.mp3` até 15,5 s do filme (pausa antes de "Tá chegando"); dali até o fim, `voz-voicechanger.mp3`
+  (`data-media-start="17.77"`, mesmo volume medido).
+- Verificado em janelas de 0,6 s no arquivo final: de -20 a +15 ms no vídeo todo.
