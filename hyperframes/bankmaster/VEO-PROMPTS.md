@@ -68,12 +68,12 @@ Ele fala direto com quem está assistindo, com energia brincalhona e convidativa
 novidade para um amigo antes de todo mundo.
 
 0-4s: balança a cabeça concordando, com um sorriso satisfeito.
-4-7s: aponta para a câmera e faz um gesto rápido de "escrever" com os dedos.
+4-7s: aponta para a câmera e faz um gesto rápido de "escrever" com os dedos, depois mostra o celular na mão como quem vai mandar uma mensagem.
 7-8s: dá uma piscadinha e sorri.
 
 Ele fala em português do Brasil, com sotaque brasileiro natural, voz masculina descontraída e
 cheia de energia, jeito de criador de conteúdo:
-"Ele faz a master pra você. Tá chegando: comenta MASTER que eu te aviso primeiro."
+"Ele faz a master pra você. Comenta MASTER que eu envio na sua DM."
 
 Áudio: só a voz dele em português e o som ambiente do estúdio. Sem música.
 Sem legendas, sem texto na tela.
@@ -105,4 +105,4 @@ Sem fala, sem legendas, sem texto na tela.
 - Se o Veo puser legenda na imagem, gere de novo.
 - **Grave a tela do BankMaster** (no Mac: Cmd+Shift+5; no Windows: Win+Alt+R) escolhendo um gênero,
   clicando e esperando até o fim.
-- "Comenta MASTER que eu te aviso" só funciona se você responder os comentários (na mão ou com o ManyChat).
+- "Comenta MASTER que eu envio na sua DM" só funciona se você mandar a DM para quem comentar (na mão ou com o ManyChat).
