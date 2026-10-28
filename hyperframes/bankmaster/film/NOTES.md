@@ -1,6 +1,6 @@
 # BankMaster 2.0 — teaser v1
 
-- Entrega: `out/bankmaster-teaser-v6-final.mp4` (22,2 s, 1080×1920, -15,7 LUFS, pico -1,3 dB).
+- Entrega: `out/bankmaster-teaser-v7-final.mp4` (21,35 s, 1080×1920, -15,7 LUFS, pico -1,3 dB).
 - Material: 3 clipes do Veo 3 (`assets/raw/clip-c|b|a.mp4`). No clip-b, o "Espera!" repetido
   (src 5,2–6,65 s) foi cortado.
 - Música: `assets/audio/beat-*.wav`, gerados por `tools-beat.py` (trap 140 bpm sintetizado). A versão
@@ -52,3 +52,10 @@
 - A fala final segue a do Veo: "comenta MASTER que eu te aviso primeiro" (legenda igual).
 - `assets/synced/` e `tools-sync.py`/`tools-render-pieces.py` ficam como ferramenta para quando não houver a
   fala original (ex.: uma voz gravada do zero).
+
+## v7 — áudio editado pelo usuário (`assets/audio/2213.mp3`)
+- É a voz do Voice Changer com 0,85 s a menos na pausa de "e ela continua… fraca" (corte no 5,355 s do arquivo).
+- A imagem recebeu o mesmo corte: `hook` vai até 3,88 s e `hook-b` retoma o clip-c em 4,73 s (jump cut com troca
+  de zoom). Tudo depois do corte foi puxado 0,85 s para trás. Voz com `data-media-start="1.47"`.
+- Sincronia no arquivo final (voz vs. fala original do Veo com o mesmo corte): de 0 a +10 ms; -20 ms no fim.
+- Duração 21,35 s; -15,8 LUFS.
