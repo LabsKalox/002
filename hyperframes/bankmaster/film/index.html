@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="pt-BR" data-resolution="portrait" data-composition-variables='[{"id":"headline1","type":"string","label":"Headline linha 1","default":"Master automática pro teu beat"},{"id":"headline2","type":"string","label":"Headline linha 2","default":"SÓ ESCOLHE O GÊNERO"}]'>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Mont"; src: url("assets/fonts/montserrat-latin-wght-normal.woff2") format("woff2"); font-weight: 100 900; font-style: normal; }
+      @font-face { font-family: "Mont"; src: url("assets/fonts/montserrat-latin-wght-italic.woff2") format("woff2"); font-weight: 100 900; font-style: italic; }
+      :root { --ink: #ffffff; --line: #000000; --accent: #ffffff; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+      #root { position: relative; width: 100%; height: 100%; font-family: "Mont", sans-serif; overflow: hidden; }
+      .shot { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; transform-origin: 50% 38%; }
+      .ink { color: var(--ink); paint-order: stroke fill; text-shadow: 0 8px 16px rgba(0, 0, 0, 0.75); }
+
+      #headline { position: absolute; top: 120px; left: 30px; right: 30px; white-space: nowrap; text-align: center; font-style: italic; font-weight: 900; z-index: 20; }
+      #headline .l1 { display: block; font-size: 50px; line-height: 1.1; -webkit-text-stroke: 14px var(--line); }
+      #headline .l2 { display: block; font-size: 72px; line-height: 1.1; -webkit-text-stroke: 18px var(--line); }
+
+      .cap { position: absolute; top: 1240px; left: 90px; right: 90px; text-align: center; z-index: 30; }
+      .cap .in { display: inline-block; font-weight: 900; font-size: 68px; line-height: 1.1; -webkit-text-stroke: 13px var(--line); }
+
+      #title { position: absolute; top: 1150px; left: 60px; right: 60px; text-align: center; z-index: 30; }
+      #title .in { display: inline-block; font-weight: 900; font-style: italic; font-size: 128px; line-height: 1; letter-spacing: -2px; -webkit-text-stroke: 22px var(--line); }
+      #title .in small { display: block; font-size: 56px; font-style: normal; letter-spacing: 0; -webkit-text-stroke: 12px var(--line); margin-bottom: 10px; }
+
+      #genres { position: absolute; top: 960px; left: 0; right: 0; height: 170px; z-index: 30; }
+      #genres .box { position: absolute; left: 50%; top: 0; width: 620px; height: 150px; margin-left: -310px; border-radius: 80px; background: rgba(0, 0, 0, 0.72); border: 5px solid #ffffff; }
+      #genres .g { position: absolute; left: 0; right: 0; top: 30px; text-align: center; font-weight: 900; font-size: 84px; line-height: 1; color: #fff; opacity: 0; }
+
+      #wait { position: absolute; top: 950px; left: 0; right: 0; height: 220px; z-index: 30; text-align: center; }
+      #wait .ring { position: absolute; left: 50%; top: 0; width: 140px; height: 140px; margin-left: -70px; border-radius: 50%; border: 12px solid rgba(255, 255, 255, 0.25); border-top-color: #fff; }
+      #wait .lbl { position: absolute; left: 0; right: 0; top: 160px; font-weight: 800; font-size: 44px; letter-spacing: 3px; }
+
+      #ready { position: absolute; top: 980px; left: 0; right: 0; text-align: center; z-index: 30; }
+      #ready .in { display: inline-block; padding: 26px 54px; border-radius: 70px; background: #ffffff; color: #000; font-weight: 900; font-size: 62px; letter-spacing: 1px; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6); }
+
+      #soon { position: absolute; top: 330px; left: 0; right: 0; text-align: center; z-index: 25; }
+      #soon .in { display: inline-block; padding: 14px 38px; border: 6px solid #fff; border-radius: 16px; background: rgba(0, 0, 0, 0.55); color: #fff; font-weight: 900; font-size: 50px; letter-spacing: 6px; }
+
+      .flash { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: #fff; z-index: 40; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="21.9" data-width="1080" data-height="1920">
+      <!-- Shots: Veo presenter clips. Clip B skips the repeated "Espera!" (src 5.2-6.65 s). -->
+      <video id="hook" class="clip shot" src="assets/raw/clip-c.mp4" data-start="0" data-duration="7.75" data-media-start="0" data-track-index="0" data-has-audio="true" data-volume="1" playsinline style="z-index: 1"></video>
+      <video id="reveal" class="clip shot" src="assets/raw/clip-b.mp4" data-start="7.75" data-duration="5.2" data-media-start="0" data-track-index="0" data-has-audio="true" data-volume="1" playsinline style="z-index: 2"></video>
+      <video id="wait-shot" class="clip shot" src="assets/raw/clip-b.mp4" data-start="12.95" data-duration="1.3" data-media-start="6.65" data-track-index="0" data-has-audio="true" data-volume="1" playsinline style="z-index: 3"></video>
+      <video id="cta-shot" class="clip shot" src="assets/raw/clip-a.mp4" data-start="14.25" data-duration="7.65" data-media-start="0" data-track-index="0" data-has-audio="true" data-volume="1.15" data-fade-out="0.4" playsinline style="z-index: 4"></video>
+
+      <!-- Music bed: muffled while the master is "weak", full from the reveal -->
+      <audio id="beat-muffled" class="clip" src="assets/audio/beat-muffled.wav" data-start="0" data-duration="7.75" data-media-start="0" data-track-index="1" data-volume="0.16" data-fade-out="0.08"></audio>
+      <audio id="beat-full" class="clip" src="assets/audio/beat-full.wav" data-start="7.75" data-duration="14.15" data-media-start="7.75" data-track-index="1" data-volume="0.17" data-fade-out="0.8"></audio>
+      <audio id="whoosh-1" class="clip" src="assets/sfx/whoosh.wav" data-start="7.45" data-duration="0.6" data-track-index="2" data-volume="0.35"></audio>
+      <audio id="hit-1" class="clip" src="assets/sfx/hit.wav" data-start="7.78" data-duration="0.7" data-track-index="3" data-volume="0.5"></audio>
+      <audio id="whoosh-2" class="clip" src="assets/sfx/whoosh.wav" data-start="12.75" data-duration="0.6" data-track-index="2" data-volume="0.25"></audio>
+      <audio id="hit-2" class="clip" src="assets/sfx/hit.wav" data-start="13.95" data-duration="0.7" data-track-index="3" data-volume="0.35"></audio>
+      <audio id="whoosh-3" class="clip" src="assets/sfx/whoosh.wav" data-start="13.95" data-duration="0.6" data-track-index="2" data-volume="0.25"></audio>
+
+      <!-- Persistent headline -->
+      <div id="headline" class="clip ink" data-start="0" data-duration="21.9" data-track-index="4">
+        <div class="hin"><span class="l1" data-var-text="headline1">Master automática pro teu beat</span><span class="l2" data-var-text="headline2">SÓ ESCOLHE O GÊNERO</span></div>
+      </div>
+
+      <!-- Captions (white with black outline) -->
+      <div id="c1" class="clip cap ink" data-start="0.2" data-duration="1.05" data-track-index="5"><span class="in">Você passa horas</span></div>
+      <div id="c2" class="clip cap ink" data-start="1.25" data-duration="2.1" data-track-index="5"><span class="in">tentando deixar<br />tua master alta?</span></div>
+      <div id="c3" class="clip cap ink" data-start="3.56" data-duration="2.5" data-track-index="5"><span class="in">e ela continua fraca.</span></div>
+      <div id="c4" class="clip cap ink" data-start="6.73" data-duration="1.02" data-track-index="5"><span class="in">Olha isso aqui.</span></div>
+      <div id="title" class="clip ink" data-start="7.85" data-duration="1.7" data-track-index="5"><span class="in"><small>Esse é o</small>BANKMASTER 2.0</span></div>
+      <div id="c5" class="clip cap ink" data-start="9.55" data-duration="1.4" data-track-index="5"><span class="in">meu plugin novo.</span></div>
+      <div id="c6" class="clip cap ink" data-start="11.22" data-duration="1.7" data-track-index="5"><span class="in">Você só escolhe<br />o gênero</span></div>
+      <div id="c7" class="clip cap ink" data-start="13.25" data-duration="0.95" data-track-index="5"><span class="in">e espera!</span></div>
+      <div id="c8" class="clip cap ink" data-start="14.36" data-duration="1.7" data-track-index="5"><span class="in">Ele faz a master<br />pra você.</span></div>
+      <div id="c9" class="clip cap ink" data-start="16.72" data-duration="0.95" data-track-index="5"><span class="in">Tá chegando.</span></div>
+      <div id="c10" class="clip cap ink" data-start="18.52" data-duration="1.12" data-track-index="5"><span class="in">Comenta MASTER</span></div>
+      <div id="c11" class="clip cap ink" data-start="19.64" data-duration="2.26" data-track-index="5"><span class="in">que eu te aviso<br />primeiro.</span></div>
+
+      <!-- Genre picker as kinetic type (not the plugin UI) -->
+      <div id="genres" class="clip" data-start="11.2" data-duration="1.75" data-track-index="6">
+        <div class="box"></div>
+        <div class="g" id="g1">TRAP</div><div class="g" id="g2">DRILL</div><div class="g" id="g3">R&amp;B</div>
+        <div class="g" id="g4">PHONK</div><div class="g" id="g5">POP</div><div class="g" id="g6">FUNK</div>
+      </div>
+      <div id="wait" class="clip ink" data-start="12.95" data-duration="1.0" data-track-index="6">
+        <div class="ring"></div><div class="lbl">MASTERIZANDO...</div>
+      </div>
+      <div id="ready" class="clip" data-start="13.95" data-duration="1.45" data-track-index="6"><span class="in">MASTER PRONTA ✓</span></div>
+      <div id="soon" class="clip" data-start="16.7" data-duration="5.2" data-track-index="6"><span class="in">EM BREVE</span></div>
+
+      <div id="flash-1" class="clip flash" data-start="7.75" data-duration="0.25" data-track-index="7"></div>
+      <div id="flash-2" class="clip flash" data-start="14.25" data-duration="0.2" data-track-index="7"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const pop = (sel, t) => {
+        tl.fromTo(sel, { scale: 0.62, opacity: 0 }, { scale: 1.08, opacity: 1, duration: 0.13, ease: "power2.out" }, t)
+          .to(sel, { scale: 1, duration: 0.1, ease: "power1.inOut" }, t + 0.13);
+      };
+
+      // Headline drops in
+      tl.fromTo("#headline .hin", { scale: 1.06 }, { scale: 1, duration: 0.35, ease: "power3.out" }, 0);
+
+      // Hook: slow push, punch-in on "e ela continua fraca"
+      tl.fromTo("#hook", { scale: 1.0 }, { scale: 1.04, duration: 3.56, ease: "none" }, 0);
+      tl.set("#hook", { scale: 1.14 }, 3.56).to("#hook", { scale: 1.16, duration: 2.44, ease: "none" }, 3.56);
+      tl.set("#hook", { scale: 1.02 }, 6.0).to("#hook", { scale: 1.05, duration: 1.75, ease: "none" }, 6.0);
+
+      // Reveal: impact entrance, then drift
+      tl.fromTo("#reveal", { scale: 1.16 }, { scale: 1.02, duration: 0.3, ease: "power3.out" }, 7.75)
+        .to("#reveal", { scale: 1.06, duration: 4.9, ease: "none" }, 8.05);
+      tl.fromTo("#wait-shot", { scale: 1.14 }, { scale: 1.17, duration: 1.3, ease: "none" }, 12.95);
+      tl.fromTo("#cta-shot", { scale: 1.14 }, { scale: 1.02, duration: 0.3, ease: "power3.out" }, 14.25)
+        .to("#cta-shot", { scale: 1.06, duration: 7.35, ease: "none" }, 14.55);
+
+      // Flashes
+      tl.fromTo("#flash-1", { opacity: 0.75 }, { opacity: 0, duration: 0.24, ease: "power2.out" }, 7.75);
+      tl.fromTo("#flash-2", { opacity: 0.6 }, { opacity: 0, duration: 0.19, ease: "power2.out" }, 14.25);
+
+      // Captions pop on their phrase
+      [["#c1 .in", 0.2], ["#c2 .in", 1.25], ["#c3 .in", 3.56], ["#c4 .in", 6.73], ["#c5 .in", 9.55], ["#c6 .in", 11.22],
+       ["#c7 .in", 13.25], ["#c8 .in", 14.36], ["#c9 .in", 16.72], ["#c10 .in", 18.52], ["#c11 .in", 19.64]].forEach(([s, t]) => pop(s, t));
+
+      // Title slam
+      tl.fromTo("#title .in", { scale: 1.7, opacity: 0 }, { scale: 0.96, opacity: 1, duration: 0.14, ease: "power3.out" }, 7.85)
+        .to("#title .in", { scale: 1, duration: 0.12 }, 7.99)
+        .to("#title .in", { scale: 1.05, duration: 1.4, ease: "none" }, 8.11);
+
+      // Genre slot: words flip, then land on FUNK
+      tl.fromTo("#genres .box", { scale: 0.7, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.15, ease: "back.out(2)" }, 11.2);
+      const order = ["#g1", "#g2", "#g3", "#g4", "#g5", "#g1", "#g2", "#g6"];
+      order.forEach((g, i) => {
+        const t = 11.25 + i * 0.13;
+        tl.set(g, { opacity: 1, y: 0 }, t);
+        if (i < order.length - 1) tl.set(g, { opacity: 0 }, t + 0.13);
+      });
+      tl.fromTo("#g6", { scale: 1.25 }, { scale: 1, duration: 0.2, ease: "back.out(3)" }, 11.25 + 7 * 0.13);
+      tl.to("#genres .box", { backgroundColor: "rgba(255,255,255,0.18)", duration: 0.15 }, 11.25 + 7 * 0.13);
+
+      // Waiting ring, then ready badge
+      tl.fromTo("#wait .ring", { rotation: 0 }, { rotation: 720, duration: 1.0, ease: "none" }, 12.95);
+      tl.fromTo("#wait .lbl", { opacity: 0 }, { opacity: 1, duration: 0.15 }, 12.95);
+      tl.fromTo("#ready .in", { scale: 0.5, opacity: 0 }, { scale: 1.08, opacity: 1, duration: 0.14, ease: "back.out(2)" }, 13.95)
+        .to("#ready .in", { scale: 1, duration: 0.1 }, 14.09);
+
+      // "EM BREVE" stamp
+      tl.fromTo("#soon .in", { scale: 1.8, opacity: 0, rotation: -8 }, { scale: 1, opacity: 1, rotation: -4, duration: 0.18, ease: "power3.out" }, 16.7);
+
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
