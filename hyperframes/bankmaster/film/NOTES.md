@@ -1,6 +1,6 @@
 # BankMaster 2.0 — teaser v1
 
-- Entrega: `out/bankmaster-teaser-v4-final.mp4` (18,7 s, 1080×1920, -15,7 LUFS, pico -1,3 dB).
+- Entrega: `out/bankmaster-teaser-v5-final.mp4` (18,7 s, 1080×1920, -15,7 LUFS, pico -1,3 dB).
 - Material: 3 clipes do Veo 3 (`assets/raw/clip-c|b|a.mp4`). No clip-b, o "Espera!" repetido
   (src 5,2–6,65 s) foi cortado.
 - Música: `assets/audio/beat-*.wav`, gerados por `tools-beat.py` (trap 140 bpm sintetizado). A versão
@@ -34,3 +34,10 @@
 - Sincronia medida (envelope da voz vs. voz original reajustada): entre -40 e +20 ms nas partes visíveis.
 - Cortes secos do retime com troca de zoom (jump cut): 3,6 / 5,2 / 5,8 / 14,7 / 15,3 / 16,3 s.
 - Duração 18,7 s; -14,9 LUFS.
+
+## v5 — correção de sincronia
+- Bug da v4: os clipes retimados perdiam quadros (filtros por peça com fps/trim arredondando): s1 6,43 s em vez de
+  6,53; s2 5,97 em vez de 6,13; s3 5,70 em vez de 6,00. A imagem escorregava até 8 quadros (≈0,27 s) no final.
+- Correção: `tools-render-pieces.py` gera cada quadro de saída a partir do quadro de origem mais próximo do
+  tempo mapeado (contagem exata: 196/184/180). `tools-sync.py` continua gerando o mapa (`.pieces.json`).
+- Verificado no arquivo final: imagem vs. clipe sincronizado com 0 quadro de diferença em janelas de 1 s.
