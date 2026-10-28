@@ -1,6 +1,6 @@
 # BankMaster 2.0 — teaser v1
 
-- Entrega: `out/bankmaster-teaser-v5-final.mp4` (18,7 s, 1080×1920, -15,7 LUFS, pico -1,3 dB).
+- Entrega: `out/bankmaster-teaser-v6-final.mp4` (22,2 s, 1080×1920, -15,7 LUFS, pico -1,3 dB).
 - Material: 3 clipes do Veo 3 (`assets/raw/clip-c|b|a.mp4`). No clip-b, o "Espera!" repetido
   (src 5,2–6,65 s) foi cortado.
 - Música: `assets/audio/beat-*.wav`, gerados por `tools-beat.py` (trap 140 bpm sintetizado). A versão
@@ -41,3 +41,14 @@
 - Correção: `tools-render-pieces.py` gera cada quadro de saída a partir do quadro de origem mais próximo do
   tempo mapeado (contagem exata: 196/184/180). `tools-sync.py` continua gerando o mapa (`.pieces.json`).
 - Verificado no arquivo final: imagem vs. clipe sincronizado com 0 quadro de diferença em janelas de 1 s.
+
+## v6 — Voice Changer (versão atual)
+- Abandonado o retime da imagem (v4/v5): os cortes e as acelerações ficavam visíveis.
+- A fala original do Veo, no tempo do corte (`assets/voice/veo-fala-original-para-voice-changer.wav`, 22,2 s),
+  passou pelo Voice Changer do ElevenLabs com o clone do usuário → `assets/voice/voz-voicechanger.mp3`.
+  O ElevenLabs adicionou 1,42 s de silêncio no início; cortado com `data-media-start="1.42"`.
+- A imagem volta a ser a original da v3 (clipes do Veo sem retime, agora mudos). Verificado: voz no arquivo
+  final vs. fala original do Veo entre -5 e +5 ms.
+- A fala final segue a do Veo: "comenta MASTER que eu te aviso primeiro" (legenda igual).
+- `assets/synced/` e `tools-sync.py`/`tools-render-pieces.py` ficam como ferramenta para quando não houver a
+  fala original (ex.: uma voz gravada do zero).
