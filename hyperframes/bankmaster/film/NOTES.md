@@ -88,3 +88,6 @@
 
 ## v11
 - Selo e cartela final: "JÁ DISPONÍVEL" (antes "EM BREVE"). A fala ainda diz "Tá chegando" (17,4 s).
+
+## v11 1.3×
+- `out/bankmaster-teaser-v11-1.3x.mp4`: v11 acelerado 1,3× (setpts + atempo, tom preservado), 17,2 s.
