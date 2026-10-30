@@ -91,3 +91,4 @@
 
 ## v11 1.3×
 - `out/bankmaster-teaser-v11-1.3x.mp4`: v11 acelerado 1,3× (setpts + atempo, tom preservado), 17,2 s.
+- `out/bankmaster-teaser-v11-1.2x.mp4`: v11 acelerado 1,2× (18,6 s).
