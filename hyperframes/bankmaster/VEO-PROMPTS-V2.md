@@ -47,8 +47,8 @@ Ele fala direto com quem está assistindo, num ritmo natural e contínuo, com en
 3-6s: aponta com o dedo para a câmera e depois faz um gesto de "me chama" com a mão aberta, chamando o espectador.
 6-8s: dá uma piscadinha e sorri.
 Ele fala em português do Brasil, com sotaque brasileiro natural, voz masculina descontraída e cheia de energia, ritmo de conversa:
-"Ele faz a master pra você. Tá chegando. Comenta MASTER que eu envio na sua DM."
+"Ele faz a master pra você. Já tá disponível. Comenta MASTER que eu envio na sua DM."
 Áudio: só a voz dele em português e o som ambiente do estúdio. Sem música. Sem legendas, sem texto na tela. Nenhum celular, telefone ou objeto aparece na mão dele.
 ```
 
-Se o plugin já estiver disponível, troque "Tá chegando" por "Já tá disponível" e avise, para trocar a cartela final.
+Para trocar o fundo, use o quadro inicial e a linha "Para o Veo" de `VARIACOES-CENARIO.md` no lugar do trecho entre parênteses do estúdio.
