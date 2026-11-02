@@ -38,3 +38,14 @@ Headline sugerida: "Como eu finalizo / MINHAS FAIXAS DE HOUSE"
 
 Os prompts do Veo seguem a estrutura de `VEO-PROMPTS-V2.md` (mesmo personagem, roupa e câmera; fundo do
 `VARIACOES-CENARIO.md`). Muda só a fala e os gestos de cada take.
+
+---
+
+## Escolhido pelo usuário (A, ajustado)
+- Take 1: "Você que produz Afro House, Deep House ou Indie Dance? Então para tudo, esse vídeo é pra você."
+- Take 2: "No BankMaster 2.0 você escolhe o teu gênero, e ele faz EQ, compressão e limiter sozinho."
+- Take 3: "Sem passar horas na master. Já tá disponível. Comenta MASTER que eu te mando na DM."
+- Fundo: F1 (LED laranja). Headline da edição: "Produtor de house? / ISSO É PRA VOCÊ".
+- Prompts do Veo: mesma estrutura de `VEO-PROMPTS-V2.md`, com as falas acima, gestos novos (T1: aponta → lista
+  gêneros → "para tudo"; T2: mão no peito → escolhe no ar → conta no ar; T3: "relaxa" → concorda → "me chama" +
+  piscadinha) e "Bénk Máster dois ponto zero" na fala do Take 2.
