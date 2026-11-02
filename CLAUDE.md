@@ -18,6 +18,10 @@ Regras de entrega definidas pelo usuário. Valem para todo vídeo novo deste rep
 - Personagem: estúdio todo preto com LED branco-gelo; **moletom todo preto, capuz abaixado, cordões pretos**,
   mãos vazias (sem celular). Prompts em português, fala em português do Brasil (ver
   `hyperframes/bankmaster/VEO-PROMPTS-V2.md`).
+- Rosto (o personagem é o próprio usuário): sempre partir de uma **foto real dele de boa qualidade** (de frente,
+  luz suave), nunca de um quadro extraído de vídeo já gerado (edição em cima de edição envelhece e cria pintas).
+  Nos prompts (Gemini e Veo): "jovem de 27 anos, pele lisa, saudável e uniforme, sem rugas, sem manchas, sem
+  verrugas; luz suave e frontal tipo ring light, sem sombras duras; nítido, alta qualidade". Veo no modo Quality.
 - Voz do usuário: fala original do Veo (já no tempo final do vídeo) → Voice Changer do ElevenLabs com o clone
   dele → volta sem edição. Cortar só o silêncio inicial que o ElevenLabs adiciona. Isso mantém a boca sincronizada
   sem cortar nem acelerar a imagem.
