@@ -53,3 +53,9 @@
   cartela. Volumes baixos (0,16–0,3) para não mascarar a voz (com 0,4–0,45 a transcrição perdeu "tremolo").
 - Sincronia no final: 0 ms; as janelas fora de ±40 ms caem nos SFX (conferido sílaba por sílaba).
 - Saídas: `out/vocalriser-v6-final.mp4` e `out/vocalriser-v6-1.2x.mp4` (20,8 s, -16,1 LUFS, pico -1,4 dB).
+
+## Edição v7
+- Tirada a tremida de câmera no "drop" (o usuário não gostou); o impacto sonoro continua.
+- Entrega em **1,1×** a pedido do usuário ("pra ver se não fica tão acelerado"): `out/vocalriser-v7-1.1x.mp4`
+  (22,6 s, -16,0 LUFS, pico -1,4 dB). O padrão do CLAUDE.md segue 1,2× até ele confirmar a mudança.
+- Sincronia no final: 0 ms (janelas fora de ±40 ms só nos SFX).
