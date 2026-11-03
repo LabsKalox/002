@@ -1,12 +1,14 @@
-# Vocal Riser by Kalox — prompts completos (Gemini + Veo 3)
+# Vocal Riser by Kalox — prompts completos (roteiro A, "O resultado primeiro")
 
-Roteiro:
-- Take 1: "Sabe aquele vocal subindo antes do drop no Afro House? Olha o que meu plugin faz."  → plugin gerando o riser
-- Take 2: "É o Vocal Riser da Kalox. Joga o vocal, escolhe o preset e gira o botão."
-- Take 3: "Ainda liga chorus, tremolo ou efeito de telefone. Comenta RISER que eu te mando na DM."
+Estrutura do vídeo: abre com 2–3 s do plugin gerando o riser entrando no drop (gravação de tela + som) →
+Take 1 → Take 2 (com close no plugin) → Take 3 → cartela.
 
-Regras de rosto: base = foto real do usuário de boa qualidade (nunca quadro de vídeo gerado); 27 anos, pele lisa,
-luz suave frontal; Veo no modo Quality, 1080p, Frames to Video, 9:16, com áudio.
+- Take 1: "Esse riser que você acabou de ouvir? Saiu de um pedaço de vocal qualquer."
+- Take 2: "É o Vocal Riser da Kalox: reverse de um compasso, chorus e tremolo, num botão só."
+- Take 3: "Feito pensando em Afro House, mas encaixa em qualquer drop. Comenta RISER que eu te mando."
+
+Regras de rosto: base = foto real do usuário de boa qualidade; 27 anos, pele lisa, luz suave frontal;
+Veo no modo Quality, 1080p, Frames to Video, 9:16, com áudio.
 
 ---
 
@@ -18,51 +20,50 @@ Edite esta foto mantendo o mesmo homem, com o mesmo rosto, traços, cabelo e exp
 
 ---
 
-## Take 1 — Gancho
+## Take 1
 
 ```
 Vídeo vertical estilo selfie, câmera frontal do celular na mão, natural e com leve movimento. O mesmo homem da imagem, um produtor musical brasileiro jovem de 27 anos, com o rosto igual ao da imagem: pele lisa, saudável e uniforme, sem rugas, sem manchas e sem verrugas. Luz suave e frontal no rosto, tipo ring light, sem sombras duras. Vídeo nítido, alta qualidade.
 Ele veste um moletom todo preto com o capuz abaixado nas costas e cordões pretos (nada branco na roupa), cabeça descoberta com o cabelo à mostra, o mesmo moletom do primeiro ao último quadro, sem trocar de roupa. Estúdio de música escuro à noite (parede de painéis pretos ripados com linhas de LED verticais verde neon, monitores de estúdio desfocados nas laterais). A mão livre fica sempre vazia.
-Ele fala direto com a câmera, com um sorriso cúmplice, como quem vai mostrar um segredo de produtor para um amigo.
-0-4s: fala animado, com leve balanço de cabeça e a mão subindo devagar no ar, como um som que vai crescendo.
-4-6s: levanta um dedo, como quem vai mostrar uma coisa.
-6-8s: aponta duas vezes para baixo, empolgado.
-Ele fala em português do Brasil, com sotaque brasileiro natural, voz masculina descontraída e cheia de energia, ritmo de conversa. "Afro House" é falado em inglês, do jeito que os produtores brasileiros falam:
-"Sabe aquele vocal subindo antes do drop no Afro House? Olha o que meu plugin faz."
+Ele fala direto com a câmera, com as sobrancelhas levantadas e um sorriso de quem sabe que impressionou, como se o espectador tivesse acabado de ouvir um som incrível.
+0-3s: aponta com o polegar para trás, por cima do ombro, como quem diz "isso aí que tocou".
+3-6s: junta o polegar e o indicador quase encostados, mostrando "um pedacinho", e dá de ombros.
+6-8s: sorri de canto, confiante, olhando para a lente.
+Ele fala em português do Brasil, com sotaque brasileiro natural, voz masculina descontraída e cheia de energia, ritmo de conversa. "Riser" é falado em inglês, do jeito que os produtores brasileiros falam ("ráizer"):
+"Esse riser que você acabou de ouvir? Saiu de um pedaço de vocal qualquer."
 Áudio: só a voz dele em português e o som ambiente do estúdio. Sem música. Sem legendas, sem texto na tela.
 ```
 
-## Take 2 — O plugin
+## Take 2
 
 ```
 Vídeo vertical estilo selfie, câmera frontal do celular na mão, natural e com leve movimento. O mesmo homem da imagem, um produtor musical brasileiro jovem de 27 anos, com o rosto igual ao da imagem: pele lisa, saudável e uniforme, sem rugas, sem manchas e sem verrugas. Luz suave e frontal no rosto, tipo ring light, sem sombras duras. Vídeo nítido, alta qualidade.
 Ele veste um moletom todo preto com o capuz abaixado nas costas e cordões pretos (nada branco na roupa), cabeça descoberta com o cabelo à mostra, o mesmo moletom do primeiro ao último quadro: o capuz fica abaixado o tempo todo, nunca na cabeça, e ele não troca de roupa. Estúdio de música escuro à noite (parede de painéis pretos ripados com linhas de LED verticais verde neon, monitores de estúdio desfocados nas laterais). A mão livre fica sempre vazia.
 Ele fala com orgulho e empolgação, como quem apresenta uma coisa que ele mesmo criou, num ritmo natural e contínuo.
-0-3s: coloca a mão aberta no peito, sobre o moletom, orgulhoso.
-3-5s: faz o gesto de jogar alguma coisa para dentro com a mão, e depois de escolher com um dedo no ar.
-5-8s: faz o gesto de girar um botão grande no ar com a mão, sorrindo confiante.
-Ele fala em português do Brasil, com sotaque brasileiro natural, voz masculina descontraída e cheia de energia, ritmo de conversa. Ele diz a frase uma única vez, sem repetir nenhuma palavra:
-"É o Vôcal Ráizer da Kálox. Joga o vocal, escolhe o preset e gira o botão."
+0-2s: coloca a mão aberta no peito, sobre o moletom, orgulhoso.
+2-6s: vai contando no ar com os dedos, de leve, enquanto fala os efeitos.
+6-8s: faz o gesto de girar um botão grande no ar com a mão, sorrindo confiante.
+Ele fala em português do Brasil, com sotaque brasileiro natural, voz masculina descontraída e cheia de energia, ritmo de conversa. As palavras em inglês são faladas do jeito que os produtores brasileiros falam ("rivérs", "córus", "trêmolo"). Ele diz a frase uma única vez, sem repetir nenhuma palavra:
+"É o Vôcal Ráizer da Kálox: reverse de um compasso, chorus e tremolo, num botão só."
 Áudio: só a voz dele em português e o som ambiente do estúdio. Sem música. Sem legendas, sem texto na tela.
 ```
 
-## Take 3 — Chamada final
+## Take 3
 
 ```
 Vídeo vertical estilo selfie, câmera frontal do celular na mão, natural e com leve movimento. O celular que filma nunca aparece na imagem. O mesmo homem da imagem, um produtor musical brasileiro jovem de 27 anos, com o rosto igual ao da imagem: pele lisa, saudável e uniforme, sem rugas, sem manchas e sem verrugas. Luz suave e frontal no rosto, tipo ring light, sem sombras duras. Vídeo nítido, alta qualidade.
 Ele veste um moletom todo preto com o capuz abaixado nas costas e cordões pretos (nada branco na roupa), cabeça descoberta com o cabelo à mostra, o mesmo moletom do primeiro ao último quadro, sem trocar de roupa. Estúdio de música escuro à noite (parede de painéis pretos ripados com linhas de LED verticais verde neon, monitores de estúdio desfocados nas laterais). A mão livre fica sempre vazia, sem segurar nenhum objeto.
 Ele fala direto com quem está assistindo, num ritmo natural e contínuo, com energia brincalhona, como quem dá uma dica boa para um amigo.
-0-4s: vai contando no ar com a mão, de leve, enquanto fala os efeitos.
-4-6s: aponta para a câmera.
-6-8s: faz um gesto de "me chama" com a mão aberta e dá uma piscadinha.
-Ele fala em português do Brasil, com sotaque brasileiro natural, voz masculina descontraída e cheia de energia, ritmo de conversa:
-"Ainda liga chorus, tremolo ou efeito de telefone. Comenta RISER que eu te mando na DM."
+0-3s: balança a cabeça no ritmo, como quem curte uma batida.
+3-5s: faz um gesto com a mão descendo forte, como um drop entrando.
+5-8s: aponta para a câmera, faz um gesto de "me chama" com a mão aberta e dá uma piscadinha.
+Ele fala em português do Brasil, com sotaque brasileiro natural, voz masculina descontraída e cheia de energia, ritmo de conversa. "Afro House" e "riser" são falados em inglês, do jeito que os produtores brasileiros falam:
+"Feito pensando em Afro House, mas encaixa em qualquer drop. Comenta RISER que eu te mando."
 Áudio: só a voz dele em português e o som ambiente do estúdio. Sem música. Sem legendas, sem texto na tela. Nenhum celular, telefone ou objeto aparece na mão dele.
 ```
 
 ---
 
-## Plugin funcionando
-Gravação de tela (~10 s) do Vocal Riser gerando o riser, com o som (Mac: Cmd+Shift+5; Windows: Win+Alt+R):
-escolhe o preset, gira o botão, toca. Alternativa: animar `assets/brand/vocal-riser-ui.png` com um áudio real de
-riser gerado pelo plugin.
+## Plugin funcionando (abre o vídeo e entra no Take 2)
+Gravação de tela, 10–15 s, com o som (Mac: Cmd+Shift+5; Windows: Win+Alt+R): o riser tocando e entrando no
+drop de uma faixa de Afro House; depois troca o preset, gira o botão REVERSE, liga CHORUS e TREMOLO.
