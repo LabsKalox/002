@@ -33,3 +33,11 @@
 - O render começa 1,1 s depois do início do riser (cabeça silenciosa cortada no ffmpeg); a sincronia foi medida
   com a fala do Veo deslocada para 1,4 s: 0 ms (33/34 janelas em ±40 ms; a de fora é o riser antes da fala).
 - Saídas: `out/vocalriser-v3-final.mp4` (1×, 25 s) e `out/vocalriser-v3-1.2x.mp4` (20,8 s, -16,1 LUFS, pico -1,4 dB).
+
+## Edição v4 (pedido do usuário: plugin menor, estático e inteiro)
+- Abertura: imagem real da interface inteira, a 72% do tamanho, parada (sem zoom), com o riser 02 por baixo.
+  A gravação de tela saiu da abertura.
+- Meio do vídeo (11,2–15,1 s): a interface inteira a 58% por cima do Take 2, abaixo do rosto (o usuário não gostou
+  do zoom cortando o plugin pela metade); os contornos verdes seguem a fala (REVERSE | 1 BAR, CHORUS, TREMOLO).
+- Sincronia no arquivo final: 0 ms (33/34 janelas em ±40 ms; a de fora é o riser antes da fala).
+- Saídas: `out/vocalriser-v4-final.mp4` (1×) e `out/vocalriser-v4-1.2x.mp4` (20,8 s, -16,1 LUFS, pico -1,4 dB).

@@ -66,8 +66,11 @@
   </head>
   <body>
     <div id="root" data-composition-id="main" data-start="0" data-duration="26" data-width="1080" data-height="1920">
-      <!-- Intro: real screen recording of Vocal Riser in Ableton (19h20 take), riser 02 ends on the cut. -->
-      <video id="intro" class="clip shot" src="assets/rec/intro-plugin.mp4" data-start="0" data-duration="2.5" data-media-start="0" data-track-index="0" muted playsinline style="z-index: 1"></video>
+      <!-- Intro: full plugin UI, smaller and static; riser 02 ends on the cut. -->
+      <div id="ui" class="clip" data-start="0" data-duration="2.5" data-track-index="8">
+        <img class="bg" src="assets/brand/ui-bg.png" alt="" />
+        <div class="card" id="card0" style="left: 184px; top: 607px; transform-origin: 0 0; transform: scale(0.72)"><img src="assets/brand/ui-window.png" alt="Interface do Vocal Riser" /></div>
+      </div>
       <audio id="riser" class="clip" src="assets/riser/riser-02.mp3" data-start="0.567" data-duration="1.933" data-media-start="0" data-track-index="2" data-volume="1"></audio>
 
       <!-- Shots: Veo takes at natural speed (no retime, no cuts inside a take). -->
@@ -101,9 +104,8 @@
       <div id="c10" class="clip cap ink" data-start="22.705" data-duration="0.69" data-track-index="6"><span class="in">que eu te mando.</span></div>
 
       <!-- Real plugin UI close-up while he names the controls -->
-      <div id="ui2" class="clip" data-start="11.2" data-duration="3.9" data-track-index="8" style="position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:12;overflow:hidden">
-        <img class="bg" src="assets/brand/ui-bg.png" alt="" style="position:absolute;left:0;top:0;width:1080px;height:1920px" />
-        <div class="card" id="card2" style="position:absolute;left:0;top:0;width:988px;height:981px;border-radius:18px;box-shadow:0 30px 90px rgba(0,0,0,0.8),0 0 60px rgba(98,245,10,0.22)"><img src="assets/brand/ui-window.png" alt="Interface do Vocal Riser" style="display:block;width:988px;height:981px;border-radius:18px" />
+      <div id="ui2" class="clip" data-start="11.2" data-duration="3.9" data-track-index="8" style="position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:12;overflow:hidden;pointer-events:none">
+        <div class="card" id="card2" style="position:absolute;left:0;top:0;width:988px;height:981px;border-radius:18px;box-shadow:0 30px 90px rgba(0,0,0,0.85),0 0 0 3px rgba(98,245,10,0.55),0 0 60px rgba(98,245,10,0.3)"><img src="assets/brand/ui-window.png" alt="Interface do Vocal Riser" style="display:block;width:988px;height:981px;border-radius:18px" />
           <div class="ring-hl" id="hl-rev" style="position:absolute"></div><div class="ring-hl" id="hl-ch" style="position:absolute"></div><div class="ring-hl" id="hl-tr" style="position:absolute"></div></div>
       </div>
 
@@ -123,9 +125,7 @@
 
       tl.fromTo("#headline .hin", { scale: 1.06 }, { scale: 1, duration: 0.35, ease: "power3.out" }, 0);
 
-      // Intro: push-in that accelerates with the riser
-      tl.fromTo("#intro", { scale: 1.0 }, { scale: 1.12, duration: 2.5, ease: "power2.in" }, 0);
-
+      
       // T1: impact entrance, drift, punch-in on "saiu de um pedaço"
       tl.fromTo("#t1", { scale: 1.14 }, { scale: 1.0, duration: 0.3, ease: "power3.out" }, 2.5)
         .to("#t1", { scale: 1.04, duration: 2.94, ease: "none" }, 2.8);
@@ -152,14 +152,11 @@
         .to("#logo-title .in", { scale: 1, duration: 0.12 }, 9.245)
         .to("#logo-title .in", { scale: 1.04, duration: 1.7, ease: "none" }, 9.365);
 
-      // UI close-up: knob + REVERSE | 1 BAR, then the CHORUS / TREMOLO row
-      tl.fromTo("#ui2 .bg", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 11.2);
-      tl.set("#card2", { transformOrigin: "0px 0px" }, 11.2);
-      tl.fromTo("#card2", { x: 46, y: 900, scale: 1, opacity: 0 }, { x: 46, y: 470, opacity: 1, duration: 0.25, ease: "power3.out" }, 11.2)
-        .to("#card2", { x: -296, y: 40, scale: 1.7, duration: 0.35, ease: "power3.inOut" }, 11.45)
-        .to("#card2", { x: -312, y: 18, scale: 1.735, duration: 3.1, ease: "none" }, 11.8)
-        .to("#card2", { opacity: 0, duration: 0.2 }, 14.9);
-      tl.to("#ui2 .bg", { opacity: 0, duration: 0.2 }, 14.9);
+      // UI: whole plugin, smaller, over the presenter; pops in, stays still, highlights follow the words
+      tl.set("#card2", { transformOrigin: "50% 50%", x: 46, y: 870 }, 11.2);
+      tl.fromTo("#card2", { scale: 0.46, opacity: 0 }, { scale: 0.6, opacity: 1, duration: 0.18, ease: "back.out(1.6)" }, 11.2)
+        .to("#card2", { scale: 0.58, duration: 0.12, ease: "power1.out" }, 11.38)
+        .to("#card2", { opacity: 0, scale: 0.54, duration: 0.2, ease: "power2.in" }, 14.9);
       tl.fromTo("#hl-rev", { opacity: 0 }, { opacity: 1, duration: 0.12 }, 11.5).to("#hl-rev", { opacity: 0, duration: 0.1 }, 13.4);
       tl.fromTo("#hl-ch", { opacity: 0 }, { opacity: 1, duration: 0.12 }, 13.55).to("#hl-ch", { opacity: 0, duration: 0.1 }, 14.9);
       tl.fromTo("#hl-tr", { opacity: 0 }, { opacity: 1, duration: 0.12 }, 14.2).to("#hl-tr", { opacity: 0, duration: 0.1 }, 14.9);
