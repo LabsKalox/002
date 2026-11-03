@@ -43,3 +43,13 @@
 - Saídas: `out/vocalriser-v4-*` (substituídas pela v5) (20,8 s, -16,1 LUFS, pico -1,4 dB).
 - v5: caixa "É o Vocal Riser" desceu 150 px (top 1230), abaixo do queixo. Saídas `out/vocalriser-v5-final.mp4` e
   `out/vocalriser-v5-1.2x.mp4`; sincronia no final: 0 ms (33/34 janelas em ±40 ms).
+
+## Edição v6 (animação no plugin + sons de atenção)
+- Plugin: ponteiro do botão separado da imagem (`ui-window-noind.png` + ponteiro em CSS) e girando até ~58°
+  (1 BAR, como na gravação real); CHORUS/TREMOLO com versão apagada (`chorus-off.png`, `tremolo-off.png`) que
+  acende piscando quando ele fala o nome; brilho da onda pulsando em 1/16 (abertura) e 1/8 (meio).
+- SFX sintetizados no ffmpeg (`assets/sfx/pop|click|tick|ding.wav`) + hit/whoosh: pop no punch-in, impacto no
+  nome, ticks no botão, cliques nos FX, impacto + tremida no "drop" (20,2 s), ding no "Comenta RISER", impacto na
+  cartela. Volumes baixos (0,16–0,3) para não mascarar a voz (com 0,4–0,45 a transcrição perdeu "tremolo").
+- Sincronia no final: 0 ms; as janelas fora de ±40 ms caem nos SFX (conferido sílaba por sílaba).
+- Saídas: `out/vocalriser-v6-final.mp4` e `out/vocalriser-v6-1.2x.mp4` (20,8 s, -16,1 LUFS, pico -1,4 dB).
