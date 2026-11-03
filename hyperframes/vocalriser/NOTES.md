@@ -59,3 +59,12 @@
 - Entrega em **1,1×** a pedido do usuário ("pra ver se não fica tão acelerado"): `out/vocalriser-v7-1.1x.mp4`
   (22,6 s, -16,0 LUFS, pico -1,4 dB). O padrão do CLAUDE.md segue 1,2× até ele confirmar a mudança.
 - Sincronia no final: 0 ms (janelas fora de ±40 ms só nos SFX).
+
+## Edição v8 (correção das "travadas")
+- Causa: o 1,1× era feito a partir do master de 30 fps; `setpts/1.1,fps=30` descartava 1 quadro a cada 10 (no 1,2×,
+  1 a cada 5 — afetou também as entregas anteriores, inclusive BankMaster). Medido: o render 1× estava correto
+  (cada quadro = o quadro certo do Veo, ≤ 1 quadro de diferença).
+- Correção: master renderizado a `--fps 300/11` (= 30 ÷ 1,1), corte de 30 quadros (1,1 s) e aceleração 1,1× →
+  30 fps exatos, 1 quadro do master por quadro de saída (conferido em 240 quadros: nenhum descartado).
+- Sincronia da voz: 0 ms; imagem ≤ 1 quadro do esperado. Saídas: `out/vocalriser-v8-master.mp4` (27,27 fps) e
+  `out/vocalriser-v8-1.1x.mp4` (22,7 s, -15,8 LUFS, pico -1,4 dB).

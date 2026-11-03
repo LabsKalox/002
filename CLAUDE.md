@@ -3,9 +3,14 @@
 Regras de entrega definidas pelo usuário. Valem para todo vídeo novo deste repositório.
 
 ## Entrega
-- **Todo vídeo final sai acelerado em 1,2×.** Monte e revise na velocidade normal; no fim, gere o arquivo
-  entregue com imagem e voz aceleradas juntas, preservando o tom:
-  `ffmpeg -i final.mp4 -filter_complex "[0:v]setpts=PTS/1.2,fps=30[v];[0:a]atempo=1.2[a]" -map "[v]" -map "[a]" -c:v libx264 -crf 17 -pix_fmt yuv420p -c:a aac -b:a 192k -ar 48000 -movflags +faststart final-1.2x.mp4`
+- **Todo vídeo final sai acelerado em 1,2×** (o Vocal Riser saiu em 1,1× a pedido dele, como teste). Monte e
+  revise na velocidade normal; no fim, gere o arquivo entregue com imagem e voz aceleradas juntas, preservando o tom.
+- **Sem pular quadros:** nunca acelere um master de 30 fps (o `fps=30` descarta 1 quadro a cada 5 no 1,2× e 1 a cada
+  10 no 1,1×; a imagem dá "travadas" e a boca parece atrasada). Renderize o master a **30 ÷ velocidade** fps
+  (1,2× → `--fps 25`; 1,1× → `--fps 300/11`) e acelere, que cada quadro do master vira um quadro de 30 fps:
+  `ffmpeg -i master25.mp4 -filter_complex "[0:v]setpts=PTS/1.2,fps=30[v];[0:a]atempo=1.2,loudnorm=I=-15:TP=-1.5:LRA=11,aresample=48000[a]" -map "[v]" -map "[a]" -c:v libx264 -crf 17 -pix_fmt yuv420p -c:a aac -b:a 192k -ar 48000 -movflags +faststart final-1.2x.mp4`
+  (cortes no início: use `trim=start_frame=N` em número inteiro de quadros do master). Confira o mapeamento
+  quadro a quadro (nenhum passo de 2) antes de entregar.
 - Vertical 1080×1920, 30 fps. Loudness por volta de -15/-16 LUFS, pico abaixo de -1 dB.
 - Confira a fala do arquivo acelerado (transcrição) antes de entregar.
 
