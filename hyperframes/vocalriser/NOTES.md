@@ -23,3 +23,13 @@
   fica com a interface real do plugin.
 - Sincronia medida no arquivo final: 0 ms (32 de 34 janelas dentro de ±40 ms; as 2 fora são pausa/efeito).
 - Saídas: `out/vocalriser-v2-final.mp4` (1×) e `out/vocalriser-v2-1.2x.mp4` (21,7 s, -15,8 LUFS, pico -1,4 dB).
+
+## Edição v3 (abertura com o riser real)
+- Material do usuário (`assets/rec/`): 3 gravações de tela do Ableton sem áudio (960 px, 12 fps) + 2 risers
+  exportados do plugin (`01.mp3`, `02.mp3`, 1,93 s cada = 1 compasso).
+- Abertura: janela do Vocal Riser recortada da gravação das 19h20 (`film/assets/rec/intro-plugin.mp4`),
+  ampliada sobre fundo desfocado da própria tela, com push-in que acelera junto com o riser 02.
+  O riser termina exatamente no corte para o Take 1.
+- O render começa 1,1 s depois do início do riser (cabeça silenciosa cortada no ffmpeg); a sincronia foi medida
+  com a fala do Veo deslocada para 1,4 s: 0 ms (33/34 janelas em ±40 ms; a de fora é o riser antes da fala).
+- Saídas: `out/vocalriser-v3-final.mp4` (1×, 25 s) e `out/vocalriser-v3-1.2x.mp4` (20,8 s, -16,1 LUFS, pico -1,4 dB).
