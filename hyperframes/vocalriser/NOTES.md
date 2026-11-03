@@ -17,3 +17,9 @@
 - Final "que eu te mando": o próprio Take 3 do Veo termina em "mand" (o "o" sai quase mudo); na v2 da voz a
   transcrição automática não reconhece bem esse trecho — conferir no ouvido.
 - Saídas: `out/vocalriser-v1-final.mp4` (1×, -15 LUFS, pico -1,3 dB) e `out/vocalriser-v1-1.2x.mp4` (21,7 s).
+
+## Edição v2 (final, aprovada pelo usuário)
+- Sem música de fundo (só voz + whoosh/impacto nas viradas); aviso "provisório" removido. A abertura (0–2,5 s)
+  fica com a interface real do plugin.
+- Sincronia medida no arquivo final: 0 ms (32 de 34 janelas dentro de ±40 ms; as 2 fora são pausa/efeito).
+- Saídas: `out/vocalriser-v2-final.mp4` (1×) e `out/vocalriser-v2-1.2x.mp4` (21,7 s, -15,8 LUFS, pico -1,4 dB).

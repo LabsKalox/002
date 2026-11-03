@@ -55,8 +55,6 @@
       #hl-ch { left: 400px; top: 858px; width: 160px; height: 56px; }
       #hl-tr { left: 612px; top: 858px; width: 172px; height: 56px; }
       #ui .glow { position: absolute; left: 200px; top: 150px; width: 580px; height: 170px; border-radius: 40px; background: radial-gradient(ellipse at 75% 50%, rgba(98, 245, 10, 0.35), rgba(98, 245, 10, 0) 70%); opacity: 0; }
-      #ph { position: absolute; left: 70px; right: 70px; top: 1500px; z-index: 30; text-align: center; }
-      #ph .in { display: inline-block; padding: 18px 34px; border: 5px dashed #fff; border-radius: 18px; background: rgba(0, 0, 0, 0.7); color: #fff; font-weight: 800; font-size: 38px; letter-spacing: 2px; }
       #endcard { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 45; text-align: center; }
       #endcard .dim { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: #000; }
       #endcard .lockup { position: absolute; left: 0; right: 0; top: 760px; }
@@ -68,12 +66,11 @@
   </head>
   <body>
     <div id="root" data-composition-id="main" data-start="0" data-duration="26" data-width="1080" data-height="1920">
-      <!-- Intro: PLACEHOLDER until the screen recording of the plugin making the riser arrives (0-2.5 s). -->
+      <!-- Intro: plugin window (0-2.5 s). -->
       <div id="ui" class="clip" data-start="0" data-duration="2.5" data-track-index="8">
         <img class="bg" src="assets/brand/ui-bg.png" alt="" />
         <div class="card" id="card0"><img src="assets/brand/ui-window.png" alt="Interface do Vocal Riser" /><div class="glow"></div></div>
       </div>
-      <div id="ph" class="clip" data-start="0" data-duration="2.5" data-track-index="7"><span class="in">PROVISÓRIO: GRAVAÇÃO DO PLUGIN + SOM DO RISER</span></div>
 
       <!-- Shots: Veo takes at natural speed (no retime, no cuts inside a take). -->
       <video id="t1" class="clip shot" src="assets/raw/00.mp4" data-start="2.5" data-duration="6.4" data-media-start="0" data-track-index="0" muted playsinline style="z-index: 1"></video>
@@ -82,9 +79,6 @@
 
       <!-- Voice: user's ElevenLabs Voice Changer take, same timing as the Veo dialogue (00+02+03). -->
       <audio id="voice" class="clip" src="assets/voice/vr-voz-voicechanger-v2.mp3" data-start="2.635" data-duration="20.97" data-media-start="0" data-track-index="1" data-volume="1" data-fade-out="0.25"></audio>
-
-      <audio id="beat-intro" class="clip" src="assets/audio/beat-full.wav" data-start="0" data-duration="2.5" data-media-start="0" data-track-index="2" data-volume="0.3" data-fade-out="0.1"></audio>
-      <audio id="beat-bed" class="clip" src="assets/audio/beat-full.wav" data-start="2.5" data-duration="21.0" data-media-start="2.5" data-track-index="2" data-volume="0.14" data-fade-out="1.0"></audio>
       <audio id="whoosh-1" class="clip" src="assets/sfx/whoosh.wav" data-start="2.2" data-duration="0.6" data-track-index="3" data-volume="0.35"></audio>
       <audio id="hit-1" class="clip" src="assets/sfx/hit.wav" data-start="2.52" data-duration="0.7" data-track-index="4" data-volume="0.45"></audio>
       <audio id="whoosh-2" class="clip" src="assets/sfx/whoosh.wav" data-start="8.65" data-duration="0.6" data-track-index="3" data-volume="0.25"></audio>
