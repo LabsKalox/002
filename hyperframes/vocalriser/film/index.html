@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="pt-BR" data-resolution="portrait" data-composition-variables='[{"id":"headline1","type":"string","label":"Headline linha 1","default":"Riser de vocal"},{"id":"headline2","type":"string","label":"Headline linha 2","default":"SEM AUTOMAÇÃO"}]'>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Mont"; src: url("assets/fonts/montserrat-latin-wght-normal.woff2") format("woff2"); font-weight: 100 900; font-style: normal; }
+      @font-face { font-family: "Mont"; src: url("assets/fonts/montserrat-latin-wght-italic.woff2") format("woff2"); font-weight: 100 900; font-style: italic; }
+      :root { --ink: #ffffff; --line: #000000; --accent: #ffffff; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+      #root { position: relative; width: 100%; height: 100%; font-family: "Mont", sans-serif; overflow: hidden; }
+      .shot { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; transform-origin: 50% 38%; }
+      .ink { color: var(--ink); paint-order: stroke fill; text-shadow: 0 8px 16px rgba(0, 0, 0, 0.75); }
+
+      #headline { position: absolute; top: 120px; left: 30px; right: 30px; white-space: nowrap; text-align: center; font-style: italic; font-weight: 900; z-index: 20; }
+      #headline .l1 { display: block; font-size: 50px; line-height: 1.1; -webkit-text-stroke: 14px var(--line); }
+      #headline .l2 { display: block; font-size: 72px; line-height: 1.1; -webkit-text-stroke: 18px var(--line); }
+
+      .cap { position: absolute; top: 1240px; left: 90px; right: 90px; text-align: center; z-index: 30; }
+      .cap .in { display: inline-block; font-weight: 900; font-size: 68px; line-height: 1.1; -webkit-text-stroke: 13px var(--line); }
+
+      #title { position: absolute; top: 1150px; left: 60px; right: 60px; text-align: center; z-index: 30; }
+      #title .in { display: inline-block; font-weight: 900; font-style: italic; font-size: 128px; line-height: 1; letter-spacing: -2px; -webkit-text-stroke: 22px var(--line); }
+      #title .in small { display: block; font-size: 56px; font-style: normal; letter-spacing: 0; -webkit-text-stroke: 12px var(--line); margin-bottom: 10px; }
+
+      #genres { position: absolute; top: 640px; left: 0; right: 0; height: 170px; z-index: 30; }
+      #genres .box { position: absolute; left: 50%; top: 0; width: 860px; height: 150px; margin-left: -430px; border-radius: 80px; background: rgba(0, 0, 0, 0.78); border: 6px solid var(--brand); }
+      #genres .g { position: absolute; left: 0; right: 0; top: 38px; text-align: center; font-weight: 900; font-size: 74px; white-space: nowrap; line-height: 1; color: #fff; opacity: 0; }
+
+      #wait { position: absolute; top: 640px; left: 0; right: 0; height: 220px; z-index: 30; text-align: center; }
+      #wait .ring { position: absolute; left: 50%; top: 0; width: 140px; height: 140px; margin-left: -70px; border-radius: 50%; border: 12px solid rgba(255, 255, 255, 0.25); border-top-color: var(--brand); }
+      #wait .lbl { position: absolute; left: 0; right: 0; top: 160px; font-weight: 800; font-size: 44px; letter-spacing: 3px; }
+
+      #ready { position: absolute; top: 1080px; left: 0; right: 0; text-align: center; z-index: 30; }
+      #ready .in { display: inline-block; padding: 26px 54px; border-radius: 70px; background: var(--brand); color: #000; font-weight: 900; font-size: 62px; letter-spacing: 1px; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6); }
+
+      #soon { position: absolute; top: 330px; left: 0; right: 0; text-align: center; z-index: 25; }
+      #soon .in { display: inline-block; padding: 14px 38px; border: 6px solid var(--brand); border-radius: 16px; background: rgba(0, 0, 0, 0.6); color: #fff; font-weight: 900; font-size: 50px; letter-spacing: 6px; }
+
+      :root { --brand: #62f50a; }
+      .cap.low { top: 1500px; }
+      #logo-title { position: absolute; top: 1080px; left: 0; right: 0; text-align: center; z-index: 30; }
+      #logo-title .in { display: inline-block; padding: 28px 40px 34px; background: rgba(0, 0, 0, 0.82); border: 4px solid var(--brand); border-radius: 28px; box-shadow: 0 0 40px rgba(98, 245, 10, 0.25); }
+      #logo-title .kxs { width: 300px; margin-top: 26px; }
+      #logo-title small { display: block; font-weight: 900; font-size: 56px; color: #fff; paint-order: stroke fill; -webkit-text-stroke: 12px #000; margin-bottom: 18px; }
+      #logo-title img { display: block; width: 880px; margin: 0 auto; filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.85)); }
+      #ui { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 12; overflow: hidden; }
+      #ui .bg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+      #ui .card { position: absolute; left: 0; top: 0; width: 988px; height: 981px; border-radius: 18px; box-shadow: 0 30px 90px rgba(0, 0, 0, 0.8), 0 0 60px rgba(98, 245, 10, 0.22); }
+      #ui .card img { display: block; width: 988px; height: 981px; border-radius: 18px; }
+      .ring-hl { position: absolute; border: 5px solid var(--brand); border-radius: 14px; opacity: 0; box-shadow: 0 0 24px rgba(98, 245, 10, 0.55); }
+      #hl-rev { left: 344px; top: 762px; width: 302px; height: 62px; }
+      #hl-ch { left: 400px; top: 858px; width: 160px; height: 56px; }
+      #hl-tr { left: 612px; top: 858px; width: 172px; height: 56px; }
+      #ui .glow { position: absolute; left: 200px; top: 150px; width: 580px; height: 170px; border-radius: 40px; background: radial-gradient(ellipse at 75% 50%, rgba(98, 245, 10, 0.35), rgba(98, 245, 10, 0) 70%); opacity: 0; }
+      #ph { position: absolute; left: 70px; right: 70px; top: 1500px; z-index: 30; text-align: center; }
+      #ph .in { display: inline-block; padding: 18px 34px; border: 5px dashed #fff; border-radius: 18px; background: rgba(0, 0, 0, 0.7); color: #fff; font-weight: 800; font-size: 38px; letter-spacing: 2px; }
+      #endcard { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 45; text-align: center; }
+      #endcard .dim { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: #000; }
+      #endcard .lockup { position: absolute; left: 0; right: 0; top: 760px; }
+      #endcard .bm { display: block; width: 900px; margin: 0 auto; filter: drop-shadow(0 0 30px rgba(98, 245, 10, 0.35)); }
+      #endcard .kx { display: block; width: 330px; margin: 40px auto 0; }
+      #endcard .tag { display: block; margin-top: 50px; color: var(--brand); font-weight: 900; font-size: 46px; letter-spacing: 8px; }
+      .flash { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: #fff; z-index: 40; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="26" data-width="1080" data-height="1920">
+      <!-- Intro: PLACEHOLDER until the screen recording of the plugin making the riser arrives (0-2.5 s). -->
+      <div id="ui" class="clip" data-start="0" data-duration="2.5" data-track-index="8">
+        <img class="bg" src="assets/brand/ui-bg.png" alt="" />
+        <div class="card" id="card0"><img src="assets/brand/ui-window.png" alt="Interface do Vocal Riser" /><div class="glow"></div></div>
+      </div>
+      <div id="ph" class="clip" data-start="0" data-duration="2.5" data-track-index="7"><span class="in">PROVISÓRIO: GRAVAÇÃO DO PLUGIN + SOM DO RISER</span></div>
+
+      <!-- Shots: Veo takes at natural speed (no retime, no cuts inside a take). -->
+      <video id="t1" class="clip shot" src="assets/raw/00.mp4" data-start="2.5" data-duration="6.4" data-media-start="0" data-track-index="0" muted playsinline style="z-index: 1"></video>
+      <video id="t2" class="clip shot" src="assets/raw/02.mp4" data-start="8.9" data-duration="7.45" data-media-start="0" data-track-index="0" muted playsinline style="z-index: 2"></video>
+      <video id="t3" class="clip shot" src="assets/raw/03.mp4" data-start="16.35" data-duration="7.93" data-media-start="0" data-track-index="0" muted playsinline style="z-index: 3"></video>
+
+      <!-- Voice: user's ElevenLabs Voice Changer take, same timing as the Veo dialogue (00+02+03). -->
+      <audio id="voice" class="clip" src="assets/voice/vr-voz-voicechanger-v2.mp3" data-start="2.635" data-duration="20.97" data-media-start="0" data-track-index="1" data-volume="1" data-fade-out="0.25"></audio>
+
+      <audio id="beat-intro" class="clip" src="assets/audio/beat-full.wav" data-start="0" data-duration="2.5" data-media-start="0" data-track-index="2" data-volume="0.3" data-fade-out="0.1"></audio>
+      <audio id="beat-bed" class="clip" src="assets/audio/beat-full.wav" data-start="2.5" data-duration="21.0" data-media-start="2.5" data-track-index="2" data-volume="0.14" data-fade-out="1.0"></audio>
+      <audio id="whoosh-1" class="clip" src="assets/sfx/whoosh.wav" data-start="2.2" data-duration="0.6" data-track-index="3" data-volume="0.35"></audio>
+      <audio id="hit-1" class="clip" src="assets/sfx/hit.wav" data-start="2.52" data-duration="0.7" data-track-index="4" data-volume="0.45"></audio>
+      <audio id="whoosh-2" class="clip" src="assets/sfx/whoosh.wav" data-start="8.65" data-duration="0.6" data-track-index="3" data-volume="0.25"></audio>
+      <audio id="whoosh-ui" class="clip" src="assets/sfx/whoosh.wav" data-start="11.05" data-duration="0.6" data-track-index="3" data-volume="0.3"></audio>
+      <audio id="whoosh-3" class="clip" src="assets/sfx/whoosh.wav" data-start="14.85" data-duration="0.6" data-track-index="3" data-volume="0.22"></audio>
+      <audio id="whoosh-4" class="clip" src="assets/sfx/whoosh.wav" data-start="16.1" data-duration="0.6" data-track-index="3" data-volume="0.22"></audio>
+      <audio id="hit-2" class="clip" src="assets/sfx/hit.wav" data-start="21.45" data-duration="0.7" data-track-index="4" data-volume="0.3"></audio>
+
+      <!-- Persistent headline -->
+      <div id="headline" class="clip ink" data-start="0" data-duration="23.4" data-track-index="5">
+        <div class="hin"><span class="l1" data-var-text="headline1">Riser de vocal</span><span class="l2" data-var-text="headline2">SEM AUTOMAÇÃO</span></div>
+      </div>
+
+      <!-- Captions (white with black outline), timed to the voice. During the UI close-up the highlighted
+           real labels (REVERSE | 1 BAR, CHORUS, TREMOLO) carry those words, so no duplicate caption. -->
+      <div id="c1" class="clip cap ink" data-start="2.675" data-duration="1.95" data-track-index="6"><span class="in">Esse riser que você<br />acabou de ouvir?</span></div>
+      <div id="c2" class="clip cap ink" data-start="5.745" data-duration="2.98" data-track-index="6"><span class="in">Saiu de um pedaço<br />de vocal qualquer.</span></div>
+      <div id="logo-title" class="clip" data-start="9.105" data-duration="1.96" data-track-index="6"><span class="in"><small>É o</small><img src="assets/brand/title-vocal-riser.png" alt="Vocal Riser" /></span></div>
+      <div id="c6" class="clip cap ink" data-start="15.155" data-duration="1.15" data-track-index="6"><span class="in">num botão só.</span></div>
+      <div id="c7" class="clip cap ink" data-start="16.465" data-duration="1.86" data-track-index="6"><span class="in">Feito pensando<br />em Afro House,</span></div>
+      <div id="c8" class="clip cap ink" data-start="18.545" data-duration="2.12" data-track-index="6"><span class="in">mas encaixa<br />em qualquer drop.</span></div>
+      <div id="c9" class="clip cap ink" data-start="21.465" data-duration="1.12" data-track-index="6"><span class="in">Comenta RISER</span></div>
+      <div id="c10" class="clip cap ink" data-start="22.705" data-duration="0.69" data-track-index="6"><span class="in">que eu te mando.</span></div>
+
+      <!-- Real plugin UI close-up while he names the controls -->
+      <div id="ui2" class="clip" data-start="11.2" data-duration="3.9" data-track-index="8" style="position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:12;overflow:hidden">
+        <img class="bg" src="assets/brand/ui-bg.png" alt="" style="position:absolute;left:0;top:0;width:1080px;height:1920px" />
+        <div class="card" id="card2" style="position:absolute;left:0;top:0;width:988px;height:981px;border-radius:18px;box-shadow:0 30px 90px rgba(0,0,0,0.8),0 0 60px rgba(98,245,10,0.22)"><img src="assets/brand/ui-window.png" alt="Interface do Vocal Riser" style="display:block;width:988px;height:981px;border-radius:18px" />
+          <div class="ring-hl" id="hl-rev" style="position:absolute"></div><div class="ring-hl" id="hl-ch" style="position:absolute"></div><div class="ring-hl" id="hl-tr" style="position:absolute"></div></div>
+      </div>
+
+      <div id="endcard" class="clip" data-start="23.4" data-duration="2.6" data-track-index="9">
+        <div class="dim"></div>
+        <div class="lockup"><img class="bm" src="assets/brand/title-vocal-riser.png" alt="Vocal Riser" /><img class="kx" src="assets/brand/logo-kalox.png" alt="Kalox Audio" /><span class="tag">COMENTA RISER</span></div>
+      </div>
+      <div id="flash-1" class="clip flash" data-start="2.5" data-duration="0.25" data-track-index="10"></div>
+      <div id="flash-2" class="clip flash" data-start="16.35" data-duration="0.2" data-track-index="10"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const pop = (sel, t) => {
+        tl.fromTo(sel, { scale: 0.62, opacity: 0 }, { scale: 1.08, opacity: 1, duration: 0.13, ease: "power2.out" }, t)
+          .to(sel, { scale: 1, duration: 0.1, ease: "power1.inOut" }, t + 0.13);
+      };
+
+      tl.fromTo("#headline .hin", { scale: 1.06 }, { scale: 1, duration: 0.35, ease: "power3.out" }, 0);
+
+      // Intro placeholder: full plugin window, slow push, waveform glow pulsing
+      tl.set("#card0", { transformOrigin: "0px 0px" }, 0);
+      tl.fromTo("#card0", { x: 46, y: 470, scale: 1 }, { x: 22, y: 452, scale: 1.05, duration: 2.5, ease: "none" }, 0);
+      tl.fromTo("#ui .glow", { opacity: 0 }, { opacity: 1, duration: 1.2, ease: "sine.inOut", yoyo: true, repeat: 1 }, 0.1);
+
+      // T1: impact entrance, drift, punch-in on "saiu de um pedaço"
+      tl.fromTo("#t1", { scale: 1.14 }, { scale: 1.0, duration: 0.3, ease: "power3.out" }, 2.5)
+        .to("#t1", { scale: 1.04, duration: 2.94, ease: "none" }, 2.8);
+      tl.set("#t1", { scale: 1.12 }, 5.745).to("#t1", { scale: 1.15, duration: 3.155, ease: "none" }, 5.745);
+
+      // T2: drift (the UI close-up covers 11.2-15.1)
+      tl.fromTo("#t2", { scale: 1.1 }, { scale: 1.02, duration: 0.3, ease: "power3.out" }, 8.9)
+        .to("#t2", { scale: 1.05, duration: 2.0, ease: "none" }, 9.2);
+      tl.set("#t2", { scale: 1.1 }, 15.1).to("#t2", { scale: 1.13, duration: 1.25, ease: "none" }, 15.1);
+
+      // T3: entrance, drift, punch-in on "Comenta RISER"
+      tl.fromTo("#t3", { scale: 1.14 }, { scale: 1.02, duration: 0.3, ease: "power3.out" }, 16.35)
+        .to("#t3", { scale: 1.05, duration: 4.8, ease: "none" }, 16.65);
+      tl.set("#t3", { scale: 1.12 }, 21.465).to("#t3", { scale: 1.15, duration: 2.8, ease: "none" }, 21.465);
+
+      tl.fromTo("#flash-1", { opacity: 0.75 }, { opacity: 0, duration: 0.24, ease: "power2.out" }, 2.5);
+      tl.fromTo("#flash-2", { opacity: 0.6 }, { opacity: 0, duration: 0.19, ease: "power2.out" }, 16.35);
+
+      [["#c1 .in", 2.675], ["#c2 .in", 5.745], ["#c6 .in", 15.155], ["#c7 .in", 16.465], ["#c8 .in", 18.545],
+       ["#c9 .in", 21.465], ["#c10 .in", 22.705]].forEach(([s, t]) => pop(s, t));
+
+      // Name slam
+      tl.fromTo("#logo-title .in", { scale: 1.6, opacity: 0 }, { scale: 0.97, opacity: 1, duration: 0.14, ease: "power3.out" }, 9.105)
+        .to("#logo-title .in", { scale: 1, duration: 0.12 }, 9.245)
+        .to("#logo-title .in", { scale: 1.04, duration: 1.7, ease: "none" }, 9.365);
+
+      // UI close-up: knob + REVERSE | 1 BAR, then the CHORUS / TREMOLO row
+      tl.fromTo("#ui2 .bg", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 11.2);
+      tl.set("#card2", { transformOrigin: "0px 0px" }, 11.2);
+      tl.fromTo("#card2", { x: 46, y: 900, scale: 1, opacity: 0 }, { x: 46, y: 470, opacity: 1, duration: 0.25, ease: "power3.out" }, 11.2)
+        .to("#card2", { x: -296, y: 40, scale: 1.7, duration: 0.35, ease: "power3.inOut" }, 11.45)
+        .to("#card2", { x: -312, y: 18, scale: 1.735, duration: 3.1, ease: "none" }, 11.8)
+        .to("#card2", { opacity: 0, duration: 0.2 }, 14.9);
+      tl.to("#ui2 .bg", { opacity: 0, duration: 0.2 }, 14.9);
+      tl.fromTo("#hl-rev", { opacity: 0 }, { opacity: 1, duration: 0.12 }, 11.5).to("#hl-rev", { opacity: 0, duration: 0.1 }, 13.4);
+      tl.fromTo("#hl-ch", { opacity: 0 }, { opacity: 1, duration: 0.12 }, 13.55).to("#hl-ch", { opacity: 0, duration: 0.1 }, 14.9);
+      tl.fromTo("#hl-tr", { opacity: 0 }, { opacity: 1, duration: 0.12 }, 14.2).to("#hl-tr", { opacity: 0, duration: 0.1 }, 14.9);
+
+      // End card
+      tl.fromTo("#endcard .dim", { opacity: 0 }, { opacity: 0.85, duration: 0.2 }, 23.4).to("#endcard .dim", { opacity: 1, duration: 0.4 }, 24.1);
+      tl.fromTo("#endcard .lockup", { scale: 1.15, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.25, ease: "power3.out" }, 23.45);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
