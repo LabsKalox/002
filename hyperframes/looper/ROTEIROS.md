@@ -37,3 +37,9 @@ Headline: "Build-up / EM 1 CLIQUE"
 Material que falta (vale para os três): gravação de tela do plugin real **com o som**, 10–15 s, 1080p:
 play → CAPTURE → girar o INTENSITY devagar até o fim (a cara muda) → CAPTURE de novo no drop.
 Se a tela não der, ao menos o áudio desse trecho exportado em WAV.
+
+---
+
+## Escolhido pelo usuário: A ("A cara do plugin")
+- Plugin pago: 19,99 (fora das falas; entra na legenda).
+- Prompts do Veo: `VEO-PROMPTS.md` (fundo com LED roxo).
