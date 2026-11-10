@@ -28,6 +28,7 @@
 
       .ui { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; }
       .ui .bg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+      .vcard { position: absolute; left: 0; top: 0; width: 1080px; height: 760px; object-fit: cover; border-radius: 26px; overflow: hidden; box-shadow: 0 30px 90px rgba(0, 0, 0, 0.85), 0 0 0 3px rgba(139, 92, 246, 0.55), 0 0 70px rgba(139, 92, 246, 0.35); }
       .card { position: absolute; left: 0; top: 0; width: 1033px; height: 628px; border-radius: 22px; overflow: hidden; box-shadow: 0 30px 90px rgba(0, 0, 0, 0.85), 0 0 0 3px rgba(139, 92, 246, 0.55), 0 0 70px rgba(139, 92, 246, 0.35); }
       .card img.st { position: absolute; left: 0; top: 0; width: 1033px; height: 628px; display: block; }
       .card .hl { position: absolute; border: 5px solid #a78bfa; border-radius: 16px; opacity: 0; box-shadow: 0 0 24px rgba(167, 139, 250, 0.8); }
@@ -50,14 +51,9 @@
     <div id="root" data-composition-id="main" data-start="0" data-duration="22.6" data-width="1080" data-height="1920">
       <!-- Intro: real plugin UI (three real states) over the real build-up audio; the drop lands on the cut to Take 1. -->
       <div id="ui0" class="clip ui" data-start="0" data-duration="2.8" data-track-index="8" style="z-index: 12">
-        <img class="bg" src="assets/brand/ui-bg.png" alt="" />
-        <div class="card" id="card0" style="left: 23px; top: 660px">
-          <img class="st s0" src="assets/brand/ui-0.png" alt="Looper Build-Up: intensity 0%" />
-          <img class="st s50" src="assets/brand/ui-50.png" alt="" style="opacity: 0" />
-          <img class="st s100" src="assets/brand/ui-100.png" alt="" style="opacity: 0" />
-          <div class="faceglow"></div>
-        </div>
+        <img class="bg" src="assets/brand/rec-bg.png" alt="" />
       </div>
+      <video id="vcard0" class="clip vcard" src="assets/rec/intro-plugin.mp4" data-start="0" data-duration="2.8" data-media-start="0" data-track-index="9" muted playsinline style="z-index: 13; left: 20px; top: 590px; width: 1040px; height: 732px"></video>
       <audio id="build" class="clip" src="assets/audio/vst-build.mp3" data-start="0" data-duration="3.5" data-media-start="16.58" data-track-index="2" data-volume="0.8" data-fade-out="0.5"></audio>
 
       <!-- Takes at natural speed, no cuts inside a take -->
@@ -96,17 +92,7 @@
       <div id="c8" class="clip cap ink" data-start="18.87" data-duration="1.33" data-track-index="7"><span class="in">Comenta DROP</span></div>
 
       <!-- Real UI next to the presenter while he explains it -->
-      <div id="ui2" class="clip ui" data-start="10.15" data-duration="5.35" data-track-index="8" style="z-index: 12; pointer-events: none">
-        <div class="card" id="card2">
-          <img class="st s0" src="assets/brand/ui-0.png" alt="Looper Build-Up" />
-          <img class="st s50" src="assets/brand/ui-50.png" alt="" style="opacity: 0" />
-          <img class="st s100" src="assets/brand/ui-100.png" alt="" style="opacity: 0" />
-          <div class="capglow"></div>
-          <div class="faceglow"></div>
-          <div class="hl cap-btn"></div>
-          <div class="hl knob"></div>
-        </div>
-      </div>
+      <video id="vcard2" class="clip vcard" src="assets/rec/mid-plugin.mp4" data-start="10.15" data-duration="5.35" data-media-start="0" data-track-index="8" muted playsinline style="z-index: 12"></video>
 
       <div id="endcard" class="clip" data-start="20.2" data-duration="2.4" data-track-index="9">
         <div class="dim"></div>
@@ -125,16 +111,10 @@
         tl.fromTo(sel, { scale: 0.62, opacity: 0 }, { scale: 1.08, opacity: 1, duration: 0.13, ease: "power2.out" }, t)
           .to(sel, { scale: 1, duration: 0.1, ease: "power1.inOut" }, t + 0.13);
       };
-      const toState = (card, st, t, d) => {
-        ["s0", "s50", "s100"].forEach((s) => tl.to(`${card} .${s}`, { opacity: s === st ? 1 : 0, duration: d, ease: "none" }, t));
-      };
 
       tl.fromTo("#headline .hin", { scale: 1.06 }, { scale: 1, duration: 0.35, ease: "power3.out" }, 0);
 
-      // Intro: 0% (READY) → 50% (BUILD 1/16) when the build starts → 100% (FULL ROLL 1/64) on the final acceleration
-      toState("#card0", "s50", 0.72, 0.12);
-      toState("#card0", "s100", 1.95, 0.1);
-      tl.fromTo("#card0 .faceglow", { opacity: 0 }, { opacity: 1, duration: 0.117, repeat: 6, yoyo: true, ease: "sine.inOut", immediateRender: false }, 2.0);
+      // Intro: real screen recording of the plugin (face goes neutral → smirk → X), fitted to the build audio
 
       // Takes: entrance + drift, punch-ins on key words
       tl.fromTo("#t1", { scale: 1.14 }, { scale: 1.0, duration: 0.3, ease: "power3.out" }, 2.8)
@@ -157,18 +137,11 @@
         .to("#logo-title .in", { scale: 1, duration: 0.12 }, 8.1)
         .to("#logo-title .in", { scale: 1.04, duration: 1.8, ease: "none" }, 8.22);
 
-      // UI with the presenter: whole plugin, smaller, below the face; CAPTURE → knob → full roll, synced to the words
-      tl.set("#card2", { transformOrigin: "50% 50%", x: 23.5, y: 1086 }, 10.15);
-      tl.fromTo("#card2", { scale: 0.6, opacity: 0 }, { scale: 0.84, opacity: 1, duration: 0.18, ease: "back.out(1.6)" }, 10.15)
-        .to("#card2", { scale: 0.82, duration: 0.12, ease: "power1.out" }, 10.33)
-        .to("#card2", { opacity: 0, scale: 0.76, duration: 0.2, ease: "power2.in" }, 15.3);
-      tl.fromTo("#card2 .hl.cap-btn", { opacity: 0 }, { opacity: 1, duration: 0.12 }, 10.8).to("#card2 .hl.cap-btn", { opacity: 0, duration: 0.1 }, 11.75);
-      tl.fromTo("#card2 .capglow", { opacity: 0 }, { opacity: 1, duration: 0.1, immediateRender: false }, 10.85);
-      toState("#card2", "s50", 12.0, 0.25);
-      tl.to("#card2 .capglow", { opacity: 0, duration: 0.25 }, 12.0);
-      tl.fromTo("#card2 .hl.knob", { opacity: 0 }, { opacity: 1, duration: 0.12 }, 11.85).to("#card2 .hl.knob", { opacity: 0, duration: 0.1 }, 13.3);
-      toState("#card2", "s100", 14.2, 0.15);
-      tl.fromTo("#card2 .faceglow", { opacity: 0 }, { opacity: 1, duration: 0.117, repeat: 7, yoyo: true, ease: "sine.inOut", immediateRender: false }, 14.25);
+      // UI with the presenter: real recording (CAPTURE click → knob → full roll), below the face, synced to the words
+      tl.set("#vcard2", { transformOrigin: "50% 50%", y: 1010 }, 10.15);
+      tl.fromTo("#vcard2", { scale: 0.55, opacity: 0 }, { scale: 0.8, opacity: 1, duration: 0.18, ease: "back.out(1.6)" }, 10.15)
+        .to("#vcard2", { scale: 0.78, duration: 0.12, ease: "power1.out" }, 10.33)
+        .to("#vcard2", { opacity: 0, scale: 0.72, duration: 0.2, ease: "power2.in" }, 15.3);
 
       // End card
       tl.fromTo("#endcard .dim", { opacity: 0 }, { opacity: 0.9, duration: 0.2 }, 20.2).to("#endcard .dim", { opacity: 1, duration: 0.4 }, 20.8);

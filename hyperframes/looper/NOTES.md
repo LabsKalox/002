@@ -24,3 +24,12 @@
 - Entrega em 1,1× (master `--fps 300/11`): `out/looper-v1-1.1x.mp4` (20,6 s, -15,5 LUFS, pico -1,3 dB). Mapeamento
   1 quadro do master por quadro de saída. Sincronia medida no master com janelas alinhadas ao início da fala:
   0 ms, 26/26 janelas em ±40 ms. (Janelas desalinhadas, começando no 0 do filme, caem em pausas e dão desvios falsos.)
+
+## Edição v2 — plugin animado de verdade
+- O usuário achou a troca entre as 3 telas paradas "bugada" e mandou o tutorial do macOS (`assets/rec/plugin-tela.mov`).
+- Uso só a janela do plugin (recorte 1080×760 a partir de y=560, sem os textos do tutorial):
+  - abertura: 16,2–20,4 s do tutorial ajustado a 2,8 s (carinha → olhos em X junto com o build);
+  - Take 2: 13,7–15,93 + 16,18–20,4 s ajustados a 5,35 s (clique no CAPTURE em ~10,8 s, botão girando em ~12,0 s,
+    olhos em X em ~14,3 s do filme). Pula os efeitos de transição do tutorial (faixa roxa em ~16,0 e ~20,5 s).
+- Sincronia no master: 0 ms (26/26 janelas). Mapeamento 1,1×: 468/470 quadros diretos. Saídas:
+  `out/looper-v2-master.mp4` e `out/looper-v2-1.1x.mp4` (20,6 s, -15,5 LUFS, pico -1,3 dB).
