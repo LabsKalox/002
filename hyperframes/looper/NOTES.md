@@ -42,3 +42,14 @@
 - Cauda do drop encurtada (some em 0,35 s depois do corte) para não cobrir o "Viu".
 - Conferido: 629/629 quadros no lugar certo; voz × fala original 0 ms (25/26, a de fora cai no "ding"); transcrição ok;
   -15,9 LUFS, pico -1,6 dB. Saída: `film/out/looper-v3-1.1x.mp4` (21,0 s).
+
+## Edição v4 (pedido: música de fundo, legenda em tudo, início sincronizado com a música, animações)
+- Drop real do áudio: kick em 19,415 s (não 19,38). Abertura (2,8 s) = áudio 16,615→19,415; a gravação foi montada
+  nas batidas do build: mouse → clique no CAPTURE na 1ª batida (0,99 s), botão girando/sorriso, olhos em X completos
+  ~2,7 s, corte no drop. O plugin dá um pulinho em cada batida (0,99/1,10/1,22/1,35/1,59/1,83/2,08/2,20/2,43/2,63).
+- Música de fundo = a própria faixa do plugin em 1× do começo ao fim: 0,8 até o drop, abaixa para 0,1 sob a voz,
+  sobe para 0,5 na cartela (loop de 6 compassos pós-drop). Renderizada à parte (no grafo grande o loop sumia).
+- Áudio: amix com a música como 1ª entrada (`duration=first`) — antes o áudio começava em 2,757 s. Ganho fixo para
+  -15 LUFS + limiter (o loudnorm dinâmico achatava o drop).
+- Legendas também no trecho do plugin (entre o queixo e o plugin); entradas/saídas animadas em legendas, nome, plugin
+  e cartela. Saída: `film/out/looper-v4-1.1x.mp4` (20,97 s, -15,3 LUFS, pico -1,3 dB); voz 0 ms (25/26).
