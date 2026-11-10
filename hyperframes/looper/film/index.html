@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="pt-BR" data-resolution="portrait" data-composition-variables='[{"id":"headline1","type":"string","label":"Headline linha 1","default":"Build-up que"},{"id":"headline2","type":"string","label":"Headline linha 2","default":"FICA LOUCO"}]'>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Mont"; src: url("assets/fonts/montserrat-latin-wght-normal.woff2") format("woff2"); font-weight: 100 900; font-style: normal; }
+      @font-face { font-family: "Mont"; src: url("assets/fonts/montserrat-latin-wght-italic.woff2") format("woff2"); font-weight: 100 900; font-style: italic; }
+      :root { --ink: #ffffff; --line: #000000; --brand: #8b5cf6; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+      #root { position: relative; width: 100%; height: 100%; font-family: "Mont", sans-serif; overflow: hidden; }
+      .shot { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; transform-origin: 50% 38%; }
+      .ink { color: var(--ink); paint-order: stroke fill; text-shadow: 0 8px 16px rgba(0, 0, 0, 0.75); }
+
+      #headline { position: absolute; top: 120px; left: 30px; right: 30px; white-space: nowrap; text-align: center; font-style: italic; font-weight: 900; z-index: 20; }
+      #headline .l1 { display: block; font-size: 50px; line-height: 1.1; -webkit-text-stroke: 14px var(--line); }
+      #headline .l2 { display: block; font-size: 72px; line-height: 1.1; -webkit-text-stroke: 18px var(--line); }
+
+      .cap { position: absolute; top: 1240px; left: 90px; right: 90px; text-align: center; z-index: 30; }
+      .cap .in { display: inline-block; font-weight: 900; font-size: 68px; line-height: 1.1; -webkit-text-stroke: 13px var(--line); }
+
+      #logo-title { position: absolute; top: 1230px; left: 0; right: 0; text-align: center; z-index: 30; }
+      #logo-title .in { display: inline-block; padding: 26px 40px 34px; background: rgba(0, 0, 0, 0.82); border: 4px solid var(--brand); border-radius: 28px; box-shadow: 0 0 40px rgba(139, 92, 246, 0.35); }
+      #logo-title small { display: block; font-weight: 900; font-size: 56px; color: #fff; paint-order: stroke fill; -webkit-text-stroke: 12px #000; margin-bottom: 18px; }
+      #logo-title img { display: block; width: 860px; }
+
+      .ui { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; }
+      .ui .bg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+      .card { position: absolute; left: 0; top: 0; width: 1033px; height: 628px; border-radius: 22px; overflow: hidden; box-shadow: 0 30px 90px rgba(0, 0, 0, 0.85), 0 0 0 3px rgba(139, 92, 246, 0.55), 0 0 70px rgba(139, 92, 246, 0.35); }
+      .card img.st { position: absolute; left: 0; top: 0; width: 1033px; height: 628px; display: block; }
+      .card .hl { position: absolute; border: 5px solid #a78bfa; border-radius: 16px; opacity: 0; box-shadow: 0 0 24px rgba(167, 139, 250, 0.8); }
+      .card .hl.cap-btn { left: 72px; top: 362px; width: 184px; height: 82px; }
+      .card .hl.knob { left: 282px; top: 100px; width: 476px; height: 476px; border-radius: 50%; }
+      .card .capglow { position: absolute; left: 60px; top: 350px; width: 208px; height: 106px; border-radius: 24px; background: radial-gradient(ellipse at center, rgba(167, 139, 250, 0.7), rgba(167, 139, 250, 0) 70%); mix-blend-mode: screen; opacity: 0; }
+      .card .faceglow { position: absolute; left: 300px; top: 120px; width: 440px; height: 440px; border-radius: 50%; background: radial-gradient(circle at center, rgba(167, 139, 250, 0.55), rgba(167, 139, 250, 0) 65%); mix-blend-mode: screen; opacity: 0; }
+
+      #endcard { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 45; text-align: center; }
+      #endcard .dim { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: #000; }
+      #endcard .lockup { position: absolute; left: 0; right: 0; top: 560px; }
+      #endcard .face { display: block; width: 930px; height: 565px; margin: 0 auto; border-radius: 22px; overflow: hidden; position: relative; box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.55), 0 0 80px rgba(139, 92, 246, 0.45); }
+      #endcard .face img { position: absolute; left: 0; top: 0; width: 930px; height: 565px; }
+      #endcard .ttl { display: block; width: 900px; margin: 56px auto 0; }
+      #endcard .tag { display: block; margin-top: 46px; color: #a78bfa; font-weight: 900; font-size: 54px; letter-spacing: 8px; }
+      .flash { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: #fff; z-index: 40; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="22.6" data-width="1080" data-height="1920">
+      <!-- Intro: real plugin UI (three real states) over the real build-up audio; the drop lands on the cut to Take 1. -->
+      <div id="ui0" class="clip ui" data-start="0" data-duration="2.8" data-track-index="8" style="z-index: 12">
+        <img class="bg" src="assets/brand/ui-bg.png" alt="" />
+        <div class="card" id="card0" style="left: 23px; top: 660px">
+          <img class="st s0" src="assets/brand/ui-0.png" alt="Looper Build-Up: intensity 0%" />
+          <img class="st s50" src="assets/brand/ui-50.png" alt="" style="opacity: 0" />
+          <img class="st s100" src="assets/brand/ui-100.png" alt="" style="opacity: 0" />
+          <div class="faceglow"></div>
+        </div>
+      </div>
+      <audio id="build" class="clip" src="assets/audio/vst-build.mp3" data-start="0" data-duration="3.5" data-media-start="16.58" data-track-index="2" data-volume="0.8" data-fade-out="0.5"></audio>
+
+      <!-- Takes at natural speed, no cuts inside a take -->
+      <video id="t1" class="clip shot" src="assets/raw/c-studio.mp4" data-start="2.8" data-duration="4.95" data-media-start="0" data-track-index="0" muted playsinline style="z-index: 1"></video>
+      <video id="t2" class="clip shot" src="assets/raw/b-studio.mp4" data-start="7.75" data-duration="7.85" data-media-start="0" data-track-index="0" muted playsinline style="z-index: 2"></video>
+      <video id="t3" class="clip shot" src="assets/raw/a-selfie.mp4" data-start="15.6" data-duration="4.6" data-media-start="0.85" data-track-index="0" muted playsinline style="z-index: 3"></video>
+
+      <!-- Voice: user's Voice Changer take (guide timing), 30 ms leading silence trimmed -->
+      <audio id="voice" class="clip" src="assets/voice/looper-voz-voicechanger-v2.wav" data-start="2.8" data-duration="17.4" data-media-start="0.03" data-track-index="1" data-volume="1" data-fade-out="0.2"></audio>
+
+      <!-- End card: the drop again, real plugin audio -->
+      <audio id="drop-end" class="clip" src="assets/audio/vst-build.mp3" data-start="20.2" data-duration="2.4" data-media-start="19.38" data-track-index="2" data-volume="0.45" data-fade-out="0.8"></audio>
+
+      <audio id="whoosh-1" class="clip" src="assets/sfx/whoosh.wav" data-start="7.5" data-duration="0.6" data-track-index="3" data-volume="0.22"></audio>
+      <audio id="hit-name" class="clip" src="assets/sfx/hit.wav" data-start="7.96" data-duration="0.7" data-track-index="4" data-volume="0.22"></audio>
+      <audio id="pop-ui" class="clip" src="assets/sfx/pop.wav" data-start="10.15" data-duration="0.2" data-track-index="3" data-volume="0.22"></audio>
+      <audio id="click-cap" class="clip" src="assets/sfx/click.wav" data-start="10.85" data-duration="0.07" data-track-index="5" data-volume="0.22"></audio>
+      <audio id="tick-1" class="clip" src="assets/sfx/tick.wav" data-start="11.95" data-duration="0.03" data-track-index="5" data-volume="0.16"></audio>
+      <audio id="tick-2" class="clip" src="assets/sfx/tick.wav" data-start="12.1" data-duration="0.03" data-track-index="5" data-volume="0.16"></audio>
+      <audio id="tick-3" class="clip" src="assets/sfx/tick.wav" data-start="12.25" data-duration="0.03" data-track-index="5" data-volume="0.16"></audio>
+      <audio id="whoosh-2" class="clip" src="assets/sfx/whoosh.wav" data-start="15.35" data-duration="0.6" data-track-index="3" data-volume="0.22"></audio>
+      <audio id="ding-cta" class="clip" src="assets/sfx/ding.wav" data-start="18.87" data-duration="1.3" data-track-index="4" data-volume="0.2"></audio>
+      <audio id="whoosh-end" class="clip" src="assets/sfx/whoosh.wav" data-start="19.95" data-duration="0.6" data-track-index="3" data-volume="0.22"></audio>
+
+      <!-- Persistent headline -->
+      <div id="headline" class="clip ink" data-start="0" data-duration="20.2" data-track-index="6">
+        <div class="hin"><span class="l1" data-var-text="headline1">Build-up que</span><span class="l2" data-var-text="headline2">FICA LOUCO</span></div>
+      </div>
+
+      <!-- Captions (white, black outline). During the UI overlay the real UI carries the words (no duplicates). -->
+      <div id="c1" class="clip cap ink" data-start="3.16" data-duration="1.6" data-track-index="7"><span class="in">Viu a cara dele<br />ficando louca?</span></div>
+      <div id="c2" class="clip cap ink" data-start="5.85" data-duration="1.9" data-track-index="7"><span class="in">É o teu build-up<br />subindo junto.</span></div>
+      <div id="logo-title" class="clip" data-start="7.96" data-duration="2.05" data-track-index="7"><span class="in"><small>É o</small><img src="assets/brand/title-looper.png" alt="Looper / Build-Up by Kalox" /></span></div>
+      <div id="c6" class="clip cap ink" data-start="15.96" data-duration="0.87" data-track-index="7"><span class="in">No drop,</span></div>
+      <div id="c7" class="clip cap ink" data-start="16.83" data-duration="1.9" data-track-index="7"><span class="in">um clique e volta<br />ao normal.</span></div>
+      <div id="c8" class="clip cap ink" data-start="18.87" data-duration="1.33" data-track-index="7"><span class="in">Comenta DROP</span></div>
+
+      <!-- Real UI next to the presenter while he explains it -->
+      <div id="ui2" class="clip ui" data-start="10.15" data-duration="5.35" data-track-index="8" style="z-index: 12; pointer-events: none">
+        <div class="card" id="card2">
+          <img class="st s0" src="assets/brand/ui-0.png" alt="Looper Build-Up" />
+          <img class="st s50" src="assets/brand/ui-50.png" alt="" style="opacity: 0" />
+          <img class="st s100" src="assets/brand/ui-100.png" alt="" style="opacity: 0" />
+          <div class="capglow"></div>
+          <div class="faceglow"></div>
+          <div class="hl cap-btn"></div>
+          <div class="hl knob"></div>
+        </div>
+      </div>
+
+      <div id="endcard" class="clip" data-start="20.2" data-duration="2.4" data-track-index="9">
+        <div class="dim"></div>
+        <div class="lockup">
+          <span class="face"><img src="assets/brand/ui-100.png" alt="" /></span>
+          <img class="ttl" src="assets/brand/title-looper.png" alt="Looper / Build-Up by Kalox" />
+          <span class="tag">COMENTA DROP</span>
+        </div>
+      </div>
+      <div id="flash-1" class="clip flash" data-start="2.8" data-duration="0.25" data-track-index="10"></div>
+      <div id="flash-2" class="clip flash" data-start="15.6" data-duration="0.2" data-track-index="10"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const pop = (sel, t) => {
+        tl.fromTo(sel, { scale: 0.62, opacity: 0 }, { scale: 1.08, opacity: 1, duration: 0.13, ease: "power2.out" }, t)
+          .to(sel, { scale: 1, duration: 0.1, ease: "power1.inOut" }, t + 0.13);
+      };
+      const toState = (card, st, t, d) => {
+        ["s0", "s50", "s100"].forEach((s) => tl.to(`${card} .${s}`, { opacity: s === st ? 1 : 0, duration: d, ease: "none" }, t));
+      };
+
+      tl.fromTo("#headline .hin", { scale: 1.06 }, { scale: 1, duration: 0.35, ease: "power3.out" }, 0);
+
+      // Intro: 0% (READY) → 50% (BUILD 1/16) when the build starts → 100% (FULL ROLL 1/64) on the final acceleration
+      toState("#card0", "s50", 0.72, 0.12);
+      toState("#card0", "s100", 1.95, 0.1);
+      tl.fromTo("#card0 .faceglow", { opacity: 0 }, { opacity: 1, duration: 0.117, repeat: 6, yoyo: true, ease: "sine.inOut", immediateRender: false }, 2.0);
+
+      // Takes: entrance + drift, punch-ins on key words
+      tl.fromTo("#t1", { scale: 1.14 }, { scale: 1.0, duration: 0.3, ease: "power3.out" }, 2.8)
+        .to("#t1", { scale: 1.03, duration: 2.75, ease: "none" }, 3.1);
+      tl.set("#t1", { scale: 1.12 }, 5.85).to("#t1", { scale: 1.15, duration: 1.9, ease: "none" }, 5.85);
+      tl.fromTo("#t2", { scale: 1.1 }, { scale: 1.02, duration: 0.3, ease: "power3.out" }, 7.75)
+        .to("#t2", { scale: 1.05, duration: 7.55, ease: "none" }, 8.05);
+      tl.fromTo("#t3", { scale: 1.14 }, { scale: 1.02, duration: 0.3, ease: "power3.out" }, 15.6)
+        .to("#t3", { scale: 1.05, duration: 2.97, ease: "none" }, 15.9);
+      tl.set("#t3", { scale: 1.12 }, 18.87).to("#t3", { scale: 1.15, duration: 1.33, ease: "none" }, 18.87);
+
+      tl.fromTo("#flash-1", { opacity: 0.8 }, { opacity: 0, duration: 0.24, ease: "power2.out" }, 2.8);
+      tl.fromTo("#flash-2", { opacity: 0.6 }, { opacity: 0, duration: 0.19, ease: "power2.out" }, 15.6);
+
+      [["#c1 .in", 3.16], ["#c2 .in", 5.85], ["#c6 .in", 15.96], ["#c7 .in", 16.83], ["#c8 .in", 18.87]].forEach(([s, t]) => pop(s, t));
+      tl.to("#c8 .in", { scale: 1.12, duration: 0.12, repeat: 3, yoyo: true, ease: "sine.inOut" }, 19.1);
+
+      // Name card
+      tl.fromTo("#logo-title .in", { scale: 1.6, opacity: 0 }, { scale: 0.97, opacity: 1, duration: 0.14, ease: "power3.out" }, 7.96)
+        .to("#logo-title .in", { scale: 1, duration: 0.12 }, 8.1)
+        .to("#logo-title .in", { scale: 1.04, duration: 1.8, ease: "none" }, 8.22);
+
+      // UI with the presenter: whole plugin, smaller, below the face; CAPTURE → knob → full roll, synced to the words
+      tl.set("#card2", { transformOrigin: "50% 50%", x: 23.5, y: 1086 }, 10.15);
+      tl.fromTo("#card2", { scale: 0.6, opacity: 0 }, { scale: 0.84, opacity: 1, duration: 0.18, ease: "back.out(1.6)" }, 10.15)
+        .to("#card2", { scale: 0.82, duration: 0.12, ease: "power1.out" }, 10.33)
+        .to("#card2", { opacity: 0, scale: 0.76, duration: 0.2, ease: "power2.in" }, 15.3);
+      tl.fromTo("#card2 .hl.cap-btn", { opacity: 0 }, { opacity: 1, duration: 0.12 }, 10.8).to("#card2 .hl.cap-btn", { opacity: 0, duration: 0.1 }, 11.75);
+      tl.fromTo("#card2 .capglow", { opacity: 0 }, { opacity: 1, duration: 0.1, immediateRender: false }, 10.85);
+      toState("#card2", "s50", 12.0, 0.25);
+      tl.to("#card2 .capglow", { opacity: 0, duration: 0.25 }, 12.0);
+      tl.fromTo("#card2 .hl.knob", { opacity: 0 }, { opacity: 1, duration: 0.12 }, 11.85).to("#card2 .hl.knob", { opacity: 0, duration: 0.1 }, 13.3);
+      toState("#card2", "s100", 14.2, 0.15);
+      tl.fromTo("#card2 .faceglow", { opacity: 0 }, { opacity: 1, duration: 0.117, repeat: 7, yoyo: true, ease: "sine.inOut", immediateRender: false }, 14.25);
+
+      // End card
+      tl.fromTo("#endcard .dim", { opacity: 0 }, { opacity: 0.9, duration: 0.2 }, 20.2).to("#endcard .dim", { opacity: 1, duration: 0.4 }, 20.8);
+      tl.fromTo("#endcard .lockup", { scale: 1.15, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.25, ease: "power3.out" }, 20.25);
+      tl.to("#endcard .tag", { scale: 1.08, duration: 0.234, repeat: 5, yoyo: true, ease: "sine.inOut" }, 20.7);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

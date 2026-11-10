@@ -12,3 +12,15 @@
 
 ## Fala para o Voice Changer
 `assets/voice/looper-fala-para-voice-changer.wav` (17,4 s) = c[0–4,95] + b[0–7,85] + a[0,85–5,45], tempo final da edição.
+
+## Edição v1 (HyperFrames, `film/`)
+- Voz: `looper-voz-voicechanger-v2.wav` (2ª versão do usuário, "mais certa"); atraso constante de 30 ms → media-start 0,03.
+- Abertura (0–2,8 s): as 3 telas reais (0% READY → 50% BUILD 1/16 em 0,72 s → 100% FULL ROLL 1/64 em 1,95 s) sobre o
+  som real do plugin (`vst-build.mp3` a partir de 16,58 s); o drop (~19,38 s do áudio) cai no corte para o Take 1.
+- Take 2: o plugin inteiro a 82% abaixo do rosto (10,15–15,5 s): destaque no CAPTURE ("clica em Capture"), no botão
+  ("gira o Intensity"), muda para 100% em "aceleram". Sem legenda nesse trecho (a interface mostra as palavras).
+- Take 3 cortado em "Comenta drop." (o Veo cortou o "que eu te mando"). Cartela: interface em 100% + título + COMENTA DROP,
+  com o drop do plugin por baixo.
+- Entrega em 1,1× (master `--fps 300/11`): `out/looper-v1-1.1x.mp4` (20,6 s, -15,5 LUFS, pico -1,3 dB). Mapeamento
+  1 quadro do master por quadro de saída. Sincronia medida no master com janelas alinhadas ao início da fala:
+  0 ms, 26/26 janelas em ±40 ms. (Janelas desalinhadas, começando no 0 do filme, caem em pausas e dão desvios falsos.)
