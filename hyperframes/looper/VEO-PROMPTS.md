@@ -6,9 +6,12 @@ LED branco-gelo, ring light atrás da cabeça, monitores com a DAW, cadeira game
 Rosto: base = fotos reais dele (nunca um quadro de vídeo gerado); a imagem `references/estilo-ref-quadro.png` entra só como
 referência de cenário/roupa/enquadramento. Veo no modo Quality, 1080p, Frames to Video, 9:16, com áudio.
 
-- Take 1: "Viu a cara dele ficando louca? É o teu build-up subindo junto."
-- Take 2: "É o Looper Build-Up da Kalox: clica em Capture, gira o Intensity e as repetições aceleram."
-- Take 3: "No drop, clica de novo e volta ao normal. Comenta BUILD que eu te mando."
+- Take 1: "Viu essa carinha ficando louca? É o teu drop chegando."
+- Take 2: "Esse é o meu plugin novo. Um clique e as repetições vão acelerando."
+- Take 3: "No drop, um clique e volta ao normal. Comenta DROP que eu te mando."
+
+v2 das falas (o Veo errava a fala): prompts curtos com a fala no começo, só português simples (sem "Looper Build-Up",
+"Capture", "Intensity" faladas; o nome entra na tela), frases de 10–13 palavras. Palavra do CTA: DROP.
 
 ---
 
@@ -26,48 +29,34 @@ Gere 3 ou 4 versões, escolha a que mais parece você e use essa mesma imagem no
 ## Take 1
 
 ```
-Vídeo vertical estilo selfie, câmera frontal do celular segurada com o braço esticado, um pouco acima da altura dos olhos, estável, com um leve movimento natural, enquadramento do peito para cima com o rosto centralizado. O celular que filma nunca aparece na imagem. O mesmo homem da imagem inicial, um produtor musical brasileiro jovem de 27 anos. O rosto dele é exatamente o da imagem inicial em todos os quadros, do começo ao fim: mesmo formato do rosto e do queixo, mesmos olhos (do mesmo tamanho, com olhar relaxado e pálpebras naturais, nunca arregalados), sobrancelhas, nariz, boca, orelhas, cabelo, barba e tom de pele. Não muda a identidade, não envelhece, não embeleza e não troca o rosto em nenhum momento. Pele lisa, saudável e uniforme, sem rugas, sem manchas e sem verrugas. Luz suave e frontal no rosto, sem sombras duras. A cabeça fica sempre de frente para a câmera, sem virar de lado, e as mãos nunca passam na frente do rosto. Vídeo nítido, alta qualidade.
-Ele veste um moletom preto liso de gola redonda, sem capuz, sem cordões, sem zíper e sem estampa, o mesmo moletom do primeiro ao último quadro, sem trocar de roupa. A mão livre fica sempre vazia, sem segurar nenhum objeto. Estúdio de música escuro à noite, igual ao da imagem: paredes de painéis pretos ripados com linhas de LED branco-gelo descendo pelo teto e pelas paredes, um ring light redondo bem atrás da cabeça dele formando um contorno de luz no cabelo, dois monitores atrás dele mostrando um software de música com ondas sonoras (desfocados), uma caixa de som de estúdio à direita, cadeira gamer preta com detalhes verde-água e uma faixa de LED verde-água na borda da mesa.
-Ele fala direto com a câmera, sorrindo de canto, descontraído e confiante, como quem conta uma coisa engraçada para um amigo.
-0-3s: aponta para a câmera com o dedo indicador, sorrindo, como quem diz "viu isso?".
-3-5s: abre as duas mãos na altura do peito, de repente, como uma pequena explosão.
-5-8s: sobe a mão aberta devagar, de baixo para cima, mostrando alguma coisa crescendo, sorrindo confiante.
-Ele fala em português do Brasil, com sotaque brasileiro natural, voz masculina descontraída e cheia de energia, ritmo de conversa, expressões naturais e relaxadas, sem caretas. "Build-up" é falado em inglês, do jeito que os produtores brasileiros falam ("bíld-âp"). Ele diz a frase uma única vez, sem repetir nenhuma palavra:
-"Viu a cara dele ficando louca? É o teu bíld-âp subindo junto."
-Áudio: só a voz dele em português e o som ambiente do estúdio. Sem música. Sem legendas, sem texto na tela.
+Selfie vertical 9:16, câmera frontal do celular com o braço esticado, estável. O mesmo homem da imagem inicial, com o rosto idêntico ao da imagem em todos os quadros (mesmos olhos, relaxados e nunca arregalados, nariz, boca, cabelo e barba; pele lisa, sem rugas e sem manchas). Moletom preto liso de gola redonda, sem capuz. Mãos vazias, nunca na frente do rosto. Estúdio escuro igual ao da imagem: LED branco-gelo no teto, ring light atrás da cabeça, monitores com software de música.
+Ele olha para a câmera e fala em português do Brasil, com sotaque brasileiro, voz animada e natural, devagar e bem articulado, exatamente esta frase, uma vez só, sem trocar nenhuma palavra:
+"Viu essa carinha ficando louca? É o teu drop chegando."
+Gestos: aponta para a câmera sorrindo; depois sobe a mão aberta devagar, de baixo para cima.
+Áudio: só a voz dele, sem música. Sem legendas e sem texto na tela.
 ```
 
 ## Take 2
 
 ```
-Vídeo vertical estilo selfie, câmera frontal do celular segurada com o braço esticado, um pouco acima da altura dos olhos, estável, com um leve movimento natural, enquadramento do peito para cima com o rosto centralizado. O celular que filma nunca aparece na imagem. O mesmo homem da imagem inicial, um produtor musical brasileiro jovem de 27 anos. O rosto dele é exatamente o da imagem inicial em todos os quadros, do começo ao fim: mesmo formato do rosto e do queixo, mesmos olhos (do mesmo tamanho, com olhar relaxado e pálpebras naturais, nunca arregalados), sobrancelhas, nariz, boca, orelhas, cabelo, barba e tom de pele. Não muda a identidade, não envelhece, não embeleza e não troca o rosto em nenhum momento. Pele lisa, saudável e uniforme, sem rugas, sem manchas e sem verrugas. Luz suave e frontal no rosto, sem sombras duras. A cabeça fica sempre de frente para a câmera, sem virar de lado, e as mãos nunca passam na frente do rosto. Vídeo nítido, alta qualidade.
-Ele veste um moletom preto liso de gola redonda, sem capuz, sem cordões, sem zíper e sem estampa, o mesmo moletom do primeiro ao último quadro, sem trocar de roupa. A mão livre fica sempre vazia, sem segurar nenhum objeto. Estúdio de música escuro à noite, igual ao da imagem: paredes de painéis pretos ripados com linhas de LED branco-gelo descendo pelo teto e pelas paredes, um ring light redondo bem atrás da cabeça dele formando um contorno de luz no cabelo, dois monitores atrás dele mostrando um software de música com ondas sonoras (desfocados), uma caixa de som de estúdio à direita, cadeira gamer preta com detalhes verde-água e uma faixa de LED verde-água na borda da mesa.
-Ele fala com orgulho e empolgação, como quem apresenta uma coisa que ele mesmo criou, num ritmo natural e contínuo.
-0-2s: coloca a mão aberta no peito, sobre o moletom, orgulhoso.
-2-4s: faz o gesto de apertar um botão no ar com o dedo indicador.
-4-6s: faz o gesto de girar um botão grande no ar com a mão.
-6-8s: gira a mão em círculos cada vez mais rápidos, mostrando algo acelerando, sorrindo.
-Ele fala em português do Brasil, com sotaque brasileiro natural, voz masculina descontraída e cheia de energia, ritmo de conversa, expressões naturais e relaxadas, sem caretas. As palavras em inglês são faladas do jeito que os produtores brasileiros falam ("Lúper Bíld-âp", "Képtchur", "Inténsiti"). Ele diz a frase uma única vez, sem repetir nenhuma palavra:
-"É o Lúper Bíld-âp da Kálox: clica em Képtchur, gira o Inténsiti e as repetições aceleram."
-Áudio: só a voz dele em português e o som ambiente do estúdio. Sem música. Sem legendas, sem texto na tela.
+Selfie vertical 9:16, câmera frontal do celular com o braço esticado, estável. O mesmo homem da imagem inicial, com o rosto idêntico ao da imagem em todos os quadros (mesmos olhos, relaxados e nunca arregalados, nariz, boca, cabelo e barba; pele lisa, sem rugas e sem manchas). Moletom preto liso de gola redonda, sem capuz. Mãos vazias, nunca na frente do rosto. Estúdio escuro igual ao da imagem: LED branco-gelo no teto, ring light atrás da cabeça, monitores com software de música.
+Ele olha para a câmera e fala em português do Brasil, com sotaque brasileiro, voz animada e natural, devagar e bem articulado, exatamente esta frase, uma vez só, sem trocar nenhuma palavra:
+"Esse é o meu plugin novo. Um clique e as repetições vão acelerando."
+Gestos: mão no peito, orgulhoso; depois aperta um botão no ar e gira a mão em círculos cada vez mais rápidos.
+Áudio: só a voz dele, sem música. Sem legendas e sem texto na tela.
 ```
 
 ## Take 3
 
 ```
-Vídeo vertical estilo selfie, câmera frontal do celular segurada com o braço esticado, um pouco acima da altura dos olhos, estável, com um leve movimento natural, enquadramento do peito para cima com o rosto centralizado. O celular que filma nunca aparece na imagem. O mesmo homem da imagem inicial, um produtor musical brasileiro jovem de 27 anos. O rosto dele é exatamente o da imagem inicial em todos os quadros, do começo ao fim: mesmo formato do rosto e do queixo, mesmos olhos (do mesmo tamanho, com olhar relaxado e pálpebras naturais, nunca arregalados), sobrancelhas, nariz, boca, orelhas, cabelo, barba e tom de pele. Não muda a identidade, não envelhece, não embeleza e não troca o rosto em nenhum momento. Pele lisa, saudável e uniforme, sem rugas, sem manchas e sem verrugas. Luz suave e frontal no rosto, sem sombras duras. A cabeça fica sempre de frente para a câmera, sem virar de lado, e as mãos nunca passam na frente do rosto. Vídeo nítido, alta qualidade.
-Ele veste um moletom preto liso de gola redonda, sem capuz, sem cordões, sem zíper e sem estampa, o mesmo moletom do primeiro ao último quadro, sem trocar de roupa. A mão livre fica sempre vazia, sem segurar nenhum objeto. Estúdio de música escuro à noite, igual ao da imagem: paredes de painéis pretos ripados com linhas de LED branco-gelo descendo pelo teto e pelas paredes, um ring light redondo bem atrás da cabeça dele formando um contorno de luz no cabelo, dois monitores atrás dele mostrando um software de música com ondas sonoras (desfocados), uma caixa de som de estúdio à direita, cadeira gamer preta com detalhes verde-água e uma faixa de LED verde-água na borda da mesa.
-Ele fala direto com quem está assistindo, num ritmo natural e contínuo, com energia brincalhona, como quem dá uma dica boa para um amigo.
-0-3s: faz um gesto com a mão descendo forte, como um drop entrando, e depois o gesto de apertar um botão no ar.
-3-5s: abre as mãos na altura do peito e sorri, como quem diz "simples assim".
-5-8s: aponta para a câmera com as duas mãos, sorri e dá uma piscadinha.
-Ele fala em português do Brasil, com sotaque brasileiro natural, voz masculina descontraída e cheia de energia, ritmo de conversa, expressões naturais e relaxadas, sem caretas. "Drop" e "build" são falados em inglês, do jeito que os produtores brasileiros falam ("dróp", "bíld"). Ele diz a frase uma única vez, sem repetir nenhuma palavra:
-"No dróp, clica de novo e volta ao normal. Comenta BÍLD que eu te mando."
-Áudio: só a voz dele em português e o som ambiente do estúdio. Sem música. Sem legendas, sem texto na tela. Nenhum celular, telefone ou objeto aparece na mão dele.
+Selfie vertical 9:16, câmera frontal do celular com o braço esticado, estável. O mesmo homem da imagem inicial, com o rosto idêntico ao da imagem em todos os quadros (mesmos olhos, relaxados e nunca arregalados, nariz, boca, cabelo e barba; pele lisa, sem rugas e sem manchas). Moletom preto liso de gola redonda, sem capuz. Mãos vazias, nunca na frente do rosto. Estúdio escuro igual ao da imagem: LED branco-gelo no teto, ring light atrás da cabeça, monitores com software de música.
+Ele olha para a câmera e fala em português do Brasil, com sotaque brasileiro, voz animada e natural, devagar e bem articulado, exatamente esta frase, uma vez só, sem trocar nenhuma palavra:
+"No drop, um clique e volta ao normal. Comenta DROP que eu te mando."
+Gestos: desce a mão com força, como um drop; no fim aponta para a câmera e dá uma piscadinha.
+Áudio: só a voz dele, sem música. Sem legendas e sem texto na tela.
 ```
-
 ---
 
 ## Plugin funcionando
 Som real do plugin (WAV, 6–10 s): CAPTURE → girar o INTENSITY até o fim → CAPTURE de novo no drop.
-A animação da interface (carinha, anel, 1/16 → 1/64) é feita na edição com as telas reais.
+A animação da interface (carinha, anel, 1/16 → 1/64) e o nome "Looper / Build-Up by Kalox" entram na edição.

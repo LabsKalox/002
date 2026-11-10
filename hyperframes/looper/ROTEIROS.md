@@ -43,3 +43,7 @@ Se a tela não der, ao menos o áudio desse trecho exportado em WAV.
 ## Escolhido pelo usuário: A ("A cara do plugin")
 - Plugin pago: 19,99 (fora das falas; entra na legenda).
 - Prompts do Veo: `VEO-PROMPTS.md` (fundo com LED roxo).
+
+- Falas v2 (o Veo não acertava as originais): T1 "Viu essa carinha ficando louca? É o teu drop chegando." /
+  T2 "Esse é o meu plugin novo. Um clique e as repetições vão acelerando." / T3 "No drop, um clique e volta ao normal.
+  Comenta DROP que eu te mando." O nome do plugin aparece na tela, não é falado.
