@@ -33,3 +33,12 @@
     olhos em X em ~14,3 s do filme). Pula os efeitos de transição do tutorial (faixa roxa em ~16,0 e ~20,5 s).
 - Sincronia no master: 0 ms (26/26 janelas). Mapeamento 1,1×: 468/470 quadros diretos. Saídas:
   `out/looper-v2-master.mp4` e `out/looper-v2-1.1x.mp4` (20,6 s, -15,5 LUFS, pico -1,3 dB).
+
+## Edição v3 — só a fala acelera
+- O usuário: "não acelera a música e nem o plugin, acelera só o vídeo meu falando". Agora abertura (0–2,8 s: plugin +
+  build/drop) e cartela (drop) ficam em 1×; só os takes (2,8–20,2 s do filme) saem em 1,1×.
+- `film/assemble.py SPEED master30 masterFast out`: imagem da abertura/cartela do master de 30 fps e da fala do master a
+  `--fps 300/11`; áudio refeito (voz com atempo 1,1, efeitos nos tempos novos, som do plugin em 1×).
+- Cauda do drop encurtada (some em 0,35 s depois do corte) para não cobrir o "Viu".
+- Conferido: 629/629 quadros no lugar certo; voz × fala original 0 ms (25/26, a de fora cai no "ding"); transcrição ok;
+  -15,9 LUFS, pico -1,6 dB. Saída: `film/out/looper-v3-1.1x.mp4` (21,0 s).

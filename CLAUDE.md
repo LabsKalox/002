@@ -11,6 +11,10 @@ Regras de entrega definidas pelo usuário. Valem para todo vídeo novo deste rep
   `ffmpeg -i master25.mp4 -filter_complex "[0:v]setpts=PTS/1.2,fps=30[v];[0:a]atempo=1.2,loudnorm=I=-15:TP=-1.5:LRA=11,aresample=48000[a]" -map "[v]" -map "[a]" -c:v libx264 -crf 17 -pix_fmt yuv420p -c:a aac -b:a 192k -ar 48000 -movflags +faststart final-1.2x.mp4`
   (cortes no início: use `trim=start_frame=N` em número inteiro de quadros do master). Confira o mapeamento
   quadro a quadro (nenhum passo de 2) antes de entregar.
+- **Acelera só o apresentador falando.** Música, som do plugin e demonstração do plugin (abertura com o build/drop,
+  cartela com o drop) ficam em 1×. Monte o final com imagem dos dois masters (30 fps para as partes em 1×, 30÷velocidade
+  para a fala) e áudio refeito das fontes: voz e efeitos da fala no tempo acelerado (atempo), som do plugin sem acelerar.
+  Modelo: `hyperframes/looper/film/assemble.py`. Cuidado com a cauda do drop em 1× por cima da primeira palavra.
 - Vertical 1080×1920, 30 fps. Loudness por volta de -15/-16 LUFS, pico abaixo de -1 dB.
 - Confira a fala do arquivo acelerado (transcrição) antes de entregar.
 
