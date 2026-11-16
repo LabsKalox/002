@@ -15,7 +15,7 @@
       .shot { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; transform-origin: 50% 38%; }
       .scene { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; }
       .scene .bg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
-      .scene .tint { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: radial-gradient(ellipse at 50% 40%, rgba(20, 40, 10, 0.55), rgba(0, 0, 0, 0.92) 75%); }
+      .scene .tint { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: radial-gradient(ellipse at 50% 40%, rgba(10, 20, 6, 0.35), rgba(0, 0, 0, 0.8) 80%); }
 
       .big { position: absolute; left: 50px; right: 50px; text-align: center; z-index: 30; }
       .big .in { display: inline-block; color: #fff; font-weight: 900; line-height: 1.05; paint-order: stroke fill; -webkit-text-stroke: 16px #000; text-shadow: 0 10px 20px rgba(0, 0, 0, 0.7); }
@@ -33,7 +33,7 @@
       .card .hl.ch { left: 400px; top: 858px; width: 160px; height: 56px; }
       .card .hl.tr { left: 612px; top: 858px; width: 172px; height: 56px; }
 
-      #selo { position: absolute; left: 0; right: 0; top: 190px; text-align: center; z-index: 30; }
+      #selo { position: absolute; left: 0; right: 0; top: 240px; text-align: center; z-index: 30; }
       #selo .in { display: inline-block; padding: 26px 40px; background: rgba(0, 0, 0, 0.85); border: 4px solid var(--brand); border-radius: 26px; box-shadow: 0 0 40px rgba(98, 245, 10, 0.35); }
       #selo img { display: block; width: 820px; }
 
@@ -63,18 +63,19 @@
   <body>
     <div id="root" data-composition-id="main" data-start="0" data-duration="26.3" data-width="1080" data-height="1920">
       <!-- Timeline is the delivered one: talking takes are pre-sped 1.2x (video + voice), plugin audio/music stay 1x. -->
-      <video id="tA" class="clip shot" src="assets/raw/u1-1.2x.mp4" data-start="0" data-duration="2.45" data-media-start="0" data-track-index="0" muted playsinline style="z-index: 1"></video>
-      <video id="tC" class="clip shot" src="assets/raw/u4-1.2x.mp4" data-start="9.083" data-duration="3.117" data-media-start="0" data-track-index="0" muted playsinline style="z-index: 1"></video>
+      <video id="tA" class="clip shot" src="assets/raw/u1-1.2x.mp4" data-start="0" data-duration="4.417" data-media-start="0" data-track-index="0" muted playsinline style="z-index: 1"></video>
+      <video id="tB" class="clip shot" src="assets/raw/u2-1.2x.mp4" data-start="4.417" data-duration="4.666" data-media-start="0" data-track-index="0" muted playsinline style="z-index: 1"></video>
+      <video id="tC" class="clip shot" src="assets/raw/u4-1.2x.mp4" data-start="9.083" data-duration="4.707" data-media-start="0" data-track-index="0" muted playsinline style="z-index: 1"></video>
 
-      <!-- Voice (temporary: Veo dialogue sped 1.2x; swap for the Voice Changer take, same timing) -->
-      <audio id="voice" class="clip" src="assets/voice/voz-temp-veo-1.2x.wav" data-start="0" data-duration="24.6" data-media-start="0" data-track-index="1" data-volume="1"></audio>
+      <!-- Voice: Lucas (ElevenLabs Voice Changer of the Veo dialogue), 25 ms lead trimmed, sped 1.2x like the picture -->
+      <audio id="voice" class="clip" src="assets/voice/voz-lucas-1.2x.wav" data-start="0" data-duration="24.6" data-media-start="0" data-track-index="1" data-volume="1"></audio>
 
       <!-- Real plugin audio: riser under the hook, then the riser into the drop; beat after the drop -->
       <audio id="riser-hook" class="clip" src="assets/audio/riser.mp3" data-start="0" data-duration="1.93" data-media-start="0" data-track-index="2" data-volume="0.3"></audio>
-      <audio id="riser-drop" class="clip" src="assets/audio/riser.mp3" data-start="11.857" data-duration="1.933" data-media-start="0" data-track-index="2" data-volume="0.65"></audio>
+      <audio id="riser-drop" class="clip" src="assets/audio/riser.mp3" data-start="11.857" data-duration="1.933" data-media-start="0" data-track-index="2" data-volume="0.4"></audio>
       <audio id="drop-hit" class="clip" src="assets/sfx/hit.wav" data-start="13.79" data-duration="0.7" data-track-index="3" data-volume="0.5"></audio>
       <audio id="drop-beat" class="clip" src="assets/audio/beat.wav" data-start="13.79" data-duration="0.6" data-media-start="0.265" data-track-index="4" data-volume="0.55" data-fade-out="0.15"></audio>
-      <audio id="bed" class="clip" src="assets/audio/beat.wav" data-start="14.39" data-duration="11.91" data-media-start="0.865" data-track-index="4" data-volume="0.12" data-fade-out="1.0"></audio>
+      <audio id="bed" class="clip" src="assets/audio/beat.wav" data-start="14.39" data-duration="11.91" data-media-start="0.865" data-track-index="4" data-volume="0.09" data-fade-out="1.0"></audio>
       <audio id="sfx-click" class="clip" src="assets/sfx/click.wav" data-start="4.9" data-duration="0.07" data-track-index="5" data-volume="0.25"></audio>
       <audio id="sfx-t1" class="clip" src="assets/sfx/tick.wav" data-start="5.05" data-duration="0.03" data-track-index="5" data-volume="0.16"></audio>
       <audio id="sfx-t2" class="clip" src="assets/sfx/tick.wav" data-start="5.25" data-duration="0.03" data-track-index="5" data-volume="0.16"></audio>
@@ -88,9 +89,8 @@
       <audio id="sfx-pop5" class="clip" src="assets/sfx/pop.wav" data-start="22.17" data-duration="0.2" data-track-index="6" data-volume="0.18"></audio>
       <audio id="sfx-ding" class="clip" src="assets/sfx/ding.wav" data-start="24.62" data-duration="1.3" data-track-index="6" data-volume="0.18"></audio>
 
-      <!-- Plugin scene 1 (VO: "Joga o vocal no Vocal Riser e ele faz o reverse… chorus, tremolo e phone") -->
-      <div id="ui1" class="clip scene" data-start="2.45" data-duration="6.633" data-track-index="8" style="z-index: 10">
-        <img class="bg" src="assets/brand/ui-bg.png" alt="" /><div class="tint"></div>
+      <!-- Plugin card over the presenter (below the face) while he talks about it -->
+      <div id="ui1" class="clip" data-start="3.0" data-duration="6.083" data-track-index="8" style="position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 10; pointer-events: none">
         <div class="card" id="card1">
           <img class="base" src="assets/brand/ui-window-noind.png" alt="Interface do Vocal Riser" />
           <div class="wglow"></div><div class="kind"></div>
@@ -100,9 +100,8 @@
       </div>
       <div id="selo" class="clip" data-start="2.65" data-duration="1.75" data-track-index="9"><span class="in"><img src="assets/brand/title-vocal-riser.png" alt="Vocal Riser" /></span></div>
 
-      <!-- Plugin scene 2 (VO: "Riser pronto pro drop" — the real riser rises, drop lands at 13.79 s) -->
-      <div id="ui2" class="clip scene" data-start="12.2" data-duration="1.59" data-track-index="8" style="z-index: 10">
-        <img class="bg" src="assets/brand/ui-bg.png" alt="" /><div class="tint"></div>
+      <!-- Plugin card again on "riser pronto pro drop": the real riser rises, drop at 13.79 s -->
+      <div id="ui2" class="clip" data-start="12.2" data-duration="1.59" data-track-index="8" style="position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 10; pointer-events: none">
         <div class="card" id="card2">
           <img class="base" src="assets/brand/ui-window-noind.png" alt="Interface do Vocal Riser" />
           <div class="wglow"></div><div class="kind"></div>
@@ -111,18 +110,18 @@
 
       <!-- Price / OS / buy-on-phone scenes (VO; face not shown) -->
       <div id="price" class="clip scene" data-start="13.79" data-duration="3.9" data-track-index="8" style="z-index: 10">
-        <img class="bg" src="assets/brand/ui-bg.png" alt="" /><div class="tint"></div>
+        <img class="bg" src="assets/brand/room-bg.png" alt="" /><div class="tint"></div>
         <div class="amount"><span>R$ 9,99</span></div>
         <div class="once"><span>PAGAMENTO ÚNICO</span></div>
         <div class="pay">PIX OU CARTÃO</div>
       </div>
       <div id="os" class="clip scene" data-start="17.69" data-duration="1.56" data-track-index="8" style="z-index: 11">
-        <img class="bg" src="assets/brand/ui-bg.png" alt="" /><div class="tint"></div>
+        <img class="bg" src="assets/brand/room-bg.png" alt="" /><div class="tint"></div>
         <div class="row"><div class="chip"><b>MAC</b><i>VST3 · AU</i></div><div class="chip"><b>WINDOWS</b><i>VST3</i></div></div>
         <div class="daws">Ableton · FL Studio · Logic<br />Studio One · Reaper</div>
       </div>
       <div id="buy" class="clip scene" data-start="19.25" data-duration="7.05" data-track-index="8" style="z-index: 10">
-        <img class="bg" src="assets/brand/ui-bg.png" alt="" /><div class="tint"></div>
+        <img class="bg" src="assets/brand/room-bg.png" alt="" /><div class="tint"></div>
         <div class="step s1" style="top: 200px"><span class="ic">📱</span><span class="lb">COMPRA PELO CELULAR</span></div>
         <div class="arrow a1" style="top: 470px">▼</div>
         <div class="step s2" style="top: 560px"><span class="ic">✉️</span><span class="lb">LINK NO E-MAIL</span></div>
@@ -133,11 +132,11 @@
 
       <!-- Big burned-in text, synced to the words -->
       <div id="k1" class="clip big" data-start="0" data-duration="2.45" data-track-index="7" style="top: 1180px"><span class="in" style="font-size: 104px">PARA DE DESENHAR<br />AUTOMAÇÃO</span></div>
-      <div id="k2" class="clip big" data-start="4.65" data-duration="2.5" data-track-index="7" style="top: 1430px"><span class="in" style="font-size: 82px">REVERSE DE<br />1 A 4 COMPASSOS</span></div>
-      <div id="k3" class="clip big" data-start="7.23" data-duration="1.85" data-track-index="7" style="top: 1460px"><span class="in" style="font-size: 60px; white-space: nowrap">CHORUS · TREMOLO · PHONE</span></div>
+      <div id="k2" class="clip big" data-start="4.65" data-duration="2.5" data-track-index="7" style="top: 250px"><span class="in" style="font-size: 82px">REVERSE DE<br />1 A 4 COMPASSOS</span></div>
+      <div id="k3" class="clip big" data-start="7.23" data-duration="1.85" data-track-index="7" style="top: 290px"><span class="in" style="font-size: 60px; white-space: nowrap">CHORUS · TREMOLO · PHONE</span></div>
       <div id="k4" class="clip big" data-start="9.39" data-duration="1.6" data-track-index="7" style="top: 1220px"><span class="in" style="font-size: 92px">AJUSTA TUDO<br />DEPOIS</span></div>
       <div id="k5" class="clip big" data-start="11.03" data-duration="1.17" data-track-index="7" style="top: 1240px"><span class="in" style="font-size: 112px">UM BOTÃO SÓ</span></div>
-      <div id="k6" class="clip big" data-start="12.25" data-duration="1.54" data-track-index="7" style="top: 1430px"><span class="in" style="font-size: 88px">RISER PRONTO<br />PRO DROP</span></div>
+      <div id="k6" class="clip big" data-start="12.25" data-duration="1.54" data-track-index="7" style="top: 250px"><span class="in" style="font-size: 88px">RISER PRONTO<br />PRO DROP</span></div>
 
       <div id="flash-drop" class="clip flash" data-start="13.79" data-duration="0.2" data-track-index="10"></div>
     </div>
@@ -151,32 +150,35 @@
 
       // Hook: text on screen from the first frame (no intro, no flash), slight punch while he talks
       tl.fromTo("#k1 .in", { scale: 0.92 }, { scale: 1, duration: 0.25, ease: "back.out(2)" }, 0);
-      tl.fromTo("#tA", { scale: 1.0 }, { scale: 1.06, duration: 2.45, ease: "none" }, 0);
+      tl.fromTo("#tA", { scale: 1.0 }, { scale: 1.06, duration: 4.417, ease: "none" }, 0);
+      tl.fromTo("#tB", { scale: 1.08 }, { scale: 1.0, duration: 0.3, ease: "power3.out" }, 4.417).to("#tB", { scale: 1.04, duration: 4.3, ease: "none" }, 4.717);
 
       // Plugin scene 1: card slides up, the selo drops in, the knob turns on the click, FX switch on with the words
-      tl.set("#card1", { transformOrigin: "0 0", x: 95, y: 1950, scale: 0.9 }, 2.45);
-      tl.to("#card1", { y: 380, duration: 0.3, ease: "back.out(1.3)" }, 2.45);
-      tl.fromTo("#selo .in", { y: -200, opacity: 0 }, { y: 0, opacity: 1, duration: 0.28, ease: "back.out(1.6)" }, 2.65);
-      tl.to("#selo .in", { y: -200, opacity: 0, duration: 0.18, ease: "power2.in" }, 4.22);
-      tl.set("#card1 .kind", { transformOrigin: "2.5px 163px" }, 2.45);
+      tl.set("#card1", { transformOrigin: "0 0", x: 271, y: 1950, scale: 0.54 }, 3.0);
+      tl.to("#card1", { y: 1250, duration: 0.32, ease: "back.out(1.4)" }, 3.0);
+      tl.fromTo("#selo .in", { scale: 0.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.25, ease: "back.out(1.8)" }, 2.65);
+      tl.to("#selo .in", { y: -120, scale: 0.6, opacity: 0, duration: 0.18, ease: "power2.in" }, 4.22);
+      tl.set("#card1 .kind", { transformOrigin: "2.5px 163px" }, 3.0);
       tl.fromTo("#card1 .kind", { rotation: 0 }, { rotation: 58, duration: 0.6, ease: "steps(4)" }, 5.0);
       tl.fromTo("#card1 .hl.knob", { opacity: 0 }, { opacity: 1, duration: 0.1 }, 4.9).to("#card1 .hl.knob", { opacity: 0, duration: 0.1 }, 7.1);
       tl.fromTo("#card1 .wglow", { opacity: 0.15 }, { opacity: 0.9, duration: 0.25, repeat: 15, yoyo: true, ease: "sine.inOut" }, 4.9);
-      tl.set("#card1 .fxoff", { opacity: 1 }, 2.45);
+      tl.set("#card1 .fxoff", { opacity: 1 }, 3.0);
       tl.to("#card1 .fxoff.ch", { opacity: 0, duration: 0.05 }, 7.23);
       tl.fromTo("#card1 .hl.ch", { opacity: 0 }, { opacity: 1, duration: 0.08 }, 7.23);
       tl.to("#card1 .fxoff.tr", { opacity: 0, duration: 0.05 }, 8.03);
       tl.fromTo("#card1 .hl.tr", { opacity: 0 }, { opacity: 1, duration: 0.08 }, 8.03);
       tl.fromTo("#card1 .hl.ph", { opacity: 0 }, { opacity: 1, duration: 0.08 }, 8.5);
-      tl.to("#card1", { y: 360, duration: 3, repeat: 1, yoyo: true, ease: "sine.inOut" }, 2.75);
+      tl.to("#card1", { y: 1238, duration: 1.2, repeat: 3, yoyo: true, ease: "sine.inOut" }, 3.35);
+      tl.to("#card1", { y: 1950, duration: 0.22, ease: "power2.in" }, 8.86);
 
       // Take C: entrance punch
-      tl.fromTo("#tC", { scale: 1.1 }, { scale: 1.02, duration: 0.3, ease: "power3.out" }, 9.083).to("#tC", { scale: 1.06, duration: 2.8, ease: "none" }, 9.383);
+      tl.fromTo("#tC", { scale: 1.1 }, { scale: 1.02, duration: 0.3, ease: "power3.out" }, 9.083).to("#tC", { scale: 1.06, duration: 4.4, ease: "none" }, 9.383);
 
       // Plugin scene 2: riser rising — glow builds and the card pushes in, drop at 13.79
-      tl.set("#card2", { transformOrigin: "50% 50%", x: 46, y: 300, scale: 0.88 }, 12.2);
+      tl.set("#card2", { transformOrigin: "50% 50%", x: 46, y: 990, scale: 0.5 }, 12.2);
       tl.set("#card2 .kind", { transformOrigin: "2.5px 163px", rotation: 58 }, 12.2);
-      tl.fromTo("#card2", { scale: 0.85 }, { scale: 1.0, duration: 1.59, ease: "power2.in" }, 12.2);
+      tl.fromTo("#card2", { y: 1950 }, { y: 990, duration: 0.25, ease: "back.out(1.4)" }, 12.2);
+      tl.to("#card2", { scale: 0.62, duration: 1.3, ease: "power2.in" }, 12.45);
       tl.fromTo("#card2 .wglow", { opacity: 0.2 }, { opacity: 1, duration: 0.125, repeat: 11, yoyo: true, ease: "sine.inOut" }, 12.2);
       tl.fromTo("#flash-drop", { opacity: 0.45 }, { opacity: 0, duration: 0.19, ease: "power2.out" }, 13.79);
 

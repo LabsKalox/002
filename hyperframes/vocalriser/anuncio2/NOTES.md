@@ -28,3 +28,13 @@ anuncio/2[0,95–7,50] + anuncio/3[1,05–7,45]. A 1,2× a fala dá ~24,6 s (o r
   9,08–12,2 Take C (AJUSTA TUDO DEPOIS, UM BOTÃO SÓ); 12,2–13,79 riser → drop; 13,79 R$ 9,99/PAGAMENTO ÚNICO/PIX OU
   CARTÃO; 17,69 MAC/WINDOWS + DAWs; 19,25 celular → e-mail → PC; 23,5 TOCA EM SAIBA MAIS até 26,3.
 - Conferido: voz × fala original 0 ms; transcrição completa; -15,5 LUFS, pico -1,6 dB. Saída `film/out/vocalriser-anuncio2-v1.mp4`.
+
+## Edição v2 — com a voz do Lucas e ele na tela enquanto fala
+- O Lucas achou a v1 ruim (voz do Veo, muito tempo de tela sem ele). Na v2:
+  - voz: `assets/voice/anuncio2-voz-voicechanger.wav` (Voice Changer), atraso constante de 25 ms cortado, `atempo 1.2`
+    → `film/assets/voice/voz-lucas-1.2x.wav`;
+  - ele fica na tela em toda a fala (Take A 0–4,42, Take B 4,42–9,08, Take C 9,08–13,79), com o plugin como cartão
+    abaixo do rosto e os textos no topo; preço/Mac-Windows/celular sobre a sala desfocada (`room-bg.png`);
+  - riser sob "riser pronto pro drop" em 0,4 e batida pós-drop em 0,09 (antes cobriam a fala).
+- Conferido no arquivo final: voz × fala original 0 ms (39/39 janelas em ±40 ms); imagem dentro de 1 quadro nos 3
+  takes; transcrição completa; -15,3 LUFS, pico -1,8 dB. Saída: `film/out/vocalriser-anuncio2-v2.mp4` (26,3 s).
