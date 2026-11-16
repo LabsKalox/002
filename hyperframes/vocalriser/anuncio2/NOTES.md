@@ -38,3 +38,10 @@ anuncio/2[0,95–7,50] + anuncio/3[1,05–7,45]. A 1,2× a fala dá ~24,6 s (o r
   - riser sob "riser pronto pro drop" em 0,4 e batida pós-drop em 0,09 (antes cobriam a fala).
 - Conferido no arquivo final: voz × fala original 0 ms (39/39 janelas em ±40 ms); imagem dentro de 1 quadro nos 3
   takes; transcrição completa; -15,3 LUFS, pico -1,8 dB. Saída: `film/out/vocalriser-anuncio2-v2.mp4` (26,3 s).
+
+## Edição v3 — correção do "trava e destrava"
+- Causa: os takes acelerados (v1/v2) foram gerados com `setpts/1.2` e tempos de quadro arredondados → no render saíam
+  pares repete/pula (Take A: 23 repetições e 17 pulos em 4,4 s).
+- Correção: `setpts=(PTS-STARTPTS)/1.2,fps=30` (30 fps constante, tempos exatos). Medido no final (só a área do rosto):
+  só 1 repetição a cada ~25 quadros (mínimo para 24 fps → 30 fps acelerado), nenhum pulo; boca a ±25 ms.
+- Regra: ao acelerar um take, sempre gerar CFR 30 com `fps=30` no mesmo filtro e conferir o mapeamento quadro a quadro.

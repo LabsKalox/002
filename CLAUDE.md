@@ -15,6 +15,8 @@ Regras de entrega definidas pelo usuário. Valem para todo vídeo novo deste rep
   cartela com o drop) ficam em 1×. Monte o final com imagem dos dois masters (30 fps para as partes em 1×, 30÷velocidade
   para a fala) e áudio refeito das fontes: voz e efeitos da fala no tempo acelerado (atempo), som do plugin sem acelerar.
   Modelo: `hyperframes/looper/film/assemble.py`. Cuidado com a cauda do drop em 1× por cima da primeira palavra.
+- Se acelerar os takes antes (vídeo pré-acelerado), gere com `setpts=(PTS-STARTPTS)/1.2,fps=30` no mesmo filtro: sem o
+  `fps=30` os tempos arredondam e o render repete/pula quadros ("trava e destrava" com a boca sincronizada).
 - Vertical 1080×1920, 30 fps. Loudness por volta de -15/-16 LUFS, pico abaixo de -1 dB.
 - Confira a fala do arquivo acelerado (transcrição) antes de entregar.
 
