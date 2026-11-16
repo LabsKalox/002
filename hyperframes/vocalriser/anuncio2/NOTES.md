@@ -45,3 +45,9 @@ anuncio/2[0,95–7,50] + anuncio/3[1,05–7,45]. A 1,2× a fala dá ~24,6 s (o r
 - Correção: `setpts=(PTS-STARTPTS)/1.2,fps=30` (30 fps constante, tempos exatos). Medido no final (só a área do rosto):
   só 1 repetição a cada ~25 quadros (mínimo para 24 fps → 30 fps acelerado), nenhum pulo; boca a ±25 ms.
 - Regra: ao acelerar um take, sempre gerar CFR 30 com `fps=30` no mesmo filtro e conferir o mapeamento quadro a quadro.
+
+## Edição v4 — música de fundo do começo ao fim
+- Pedido do Lucas ("ficou muito silêncio"). Antes do drop: `beat-muffled.wav` (a mesma batida 122 BPM com filtro,
+  sensação de build) a 0,17, começando em 2,215 s para ficar no grid (8 compassos) da batida aberta que entra no drop.
+  Depois do drop: `beat.wav` a 0,14 (era 0,09). Riser e efeitos iguais.
+- Conferido: transcrição completa, voz 0 ms (39/39), -15,3 LUFS, pico -1,8 dB. Saída: `film/out/vocalriser-anuncio2-v4.mp4`.
