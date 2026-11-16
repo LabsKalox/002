@@ -15,3 +15,16 @@ verde com moletom e não combinam com a sala.
 ## Fala para o Voice Changer
 `assets/voice/anuncio2-fala-para-voice-changer.wav` (29,5 s) = u1[1,10–6,40] + u2[1,10–6,70] + u4[0,95–6,60] +
 anuncio/2[0,95–7,50] + anuncio/3[1,05–7,45]. A 1,2× a fala dá ~24,6 s (o roteiro pedia 18–20 s).
+
+## Edição v1 (prévia) — `film/`
+- Linha do tempo já é a entregue: takes acelerados 1,2× antes (vídeo `setpts/1.2`, todos os quadros, 28,8 fps) e voz
+  com `atempo 1.2`; riser/batida/efeitos em 1×. Render único a 30 fps (sem pular quadros: a fonte tem menos quadros
+  que a saída).
+- **Voz provisória** = fala original do Veo (`film/assets/voice/voz-temp-veo-1.2x.wav`). Trocar pela do Voice Changer:
+  medir o atraso inicial contra o guia (`tools/vrsync.py`), cortar, aplicar `atempo=1.2`, mesmo nome de clipe.
+- **Sem gravação de tela ainda**: a demo usa a interface real animada (botão gira, CHORUS/TREMOLO acendem, PHONE
+  destacado) e o riser real exportado do plugin (`02.mp3`). O drop é a batida da casa (`beat.wav`) + impacto.
+- Cenas: 0–2,45 Take A + PARA DE DESENHAR AUTOMAÇÃO; 2,45–9,08 plugin (selo, REVERSE, CHORUS·TREMOLO·PHONE);
+  9,08–12,2 Take C (AJUSTA TUDO DEPOIS, UM BOTÃO SÓ); 12,2–13,79 riser → drop; 13,79 R$ 9,99/PAGAMENTO ÚNICO/PIX OU
+  CARTÃO; 17,69 MAC/WINDOWS + DAWs; 19,25 celular → e-mail → PC; 23,5 TOCA EM SAIBA MAIS até 26,3.
+- Conferido: voz × fala original 0 ms; transcrição completa; -15,5 LUFS, pico -1,6 dB. Saída `film/out/vocalriser-anuncio2-v1.mp4`.
