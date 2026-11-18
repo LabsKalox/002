@@ -1,0 +1,106 @@
+{
+ "speed": 1.25,
+ "speech_end": 16.6667,
+ "total": 17.1667,
+ "segs": [
+  {
+   "id": "A1",
+   "take": "t1",
+   "start": 0.0,
+   "end": 1.6,
+   "text": "Escuta esse riser de vocal.",
+   "face": true,
+   "src_start": 0.9583333333333334
+  },
+  {
+   "id": "A2",
+   "take": "t1",
+   "start": 1.6,
+   "end": 2.4,
+   "text": "Isso aqui foi um clique.",
+   "face": true,
+   "src_start": 4.916666666666667
+  },
+  {
+   "id": "B1",
+   "take": "t2",
+   "start": 2.4,
+   "end": 4.9667,
+   "text": "Ele faz o reverse de um a quatro compassos,",
+   "face": true,
+   "src_start": 0.9583333333333334
+  },
+  {
+   "id": "B2",
+   "take": "t2",
+   "start": 4.9667,
+   "end": 6.8333,
+   "text": "com chorus, tremolo e phone.",
+   "face": true,
+   "src_start": 4.416666666666667
+  },
+  {
+   "id": "C2",
+   "take": "t3",
+   "start": 6.8333,
+   "end": 8.6667,
+   "text": "Sem desenhar automação nenhuma.",
+   "face": true,
+   "src_start": 2.0416666666666665
+  },
+  {
+   "id": "D1",
+   "take": "t4",
+   "start": 8.6667,
+   "end": 11.0333,
+   "text": "Nove e noventa e nove, pagamento único.",
+   "face": false,
+   "src_start": 1.0
+  },
+  {
+   "id": "D2",
+   "take": "t4",
+   "start": 11.0333,
+   "end": 12.3667,
+   "text": "Mac e Windows.",
+   "face": false,
+   "src_start": 4.5
+  },
+  {
+   "id": "E1",
+   "take": "t5",
+   "start": 12.3667,
+   "end": 13.2667,
+   "text": "Compra pelo celular,",
+   "face": false,
+   "src_start": 0.125
+  },
+  {
+   "id": "E2",
+   "take": "t5",
+   "start": 13.2667,
+   "end": 14.4333,
+   "text": "o link vai pro seu e-mail,",
+   "face": false,
+   "src_start": 1.7083333333333333
+  },
+  {
+   "id": "E3",
+   "take": "t5",
+   "start": 14.4333,
+   "end": 15.4,
+   "text": "e você baixa no PC.",
+   "face": false,
+   "src_start": 3.8333333333333335
+  },
+  {
+   "id": "E4",
+   "take": "t5",
+   "start": 15.4,
+   "end": 16.6667,
+   "text": "Toca em Saiba mais.",
+   "face": false,
+   "src_start": 5.375
+  }
+ ]
+}
