@@ -25,3 +25,13 @@
   Final medido: voz -37 ms vs v1; arquivo da voz = final (+1 ms).
 - Entrega: -15,3 LUFS, pico -1,6 dBFS, 17,2 s; transcrição completa.
 - Se ainda parecer atrasada/adiantada: mudar só o `atrim=start=` de `film/assets/voice/voz-lucas-1.25x.wav` (cada 0,01 = 8 ms no final).
+
+## v3 (início "robótico")
+- Causa 1 (imagem): no take o Veo abre a boca no quadro 15 (0,62 s) e a segura aberta, sem som, até a 1ª palavra no quadro 24. O corte da v1/v2
+  começava no quadro 23, no fim dessa pose parada: o filme abria com a boca escancarada, sem gesto de abertura.
+- Causa 2 (voz): na v2 o adiantamento de 40 ms foi feito cortando 50 ms do começo da voz (`atrim=start=0.07`), comendo o ataque suave do "E".
+- Correção: 9 quadros de preparação (quadros 14–22 do T1: boca fechada → abrindo) antes da 1ª palavra (`LEAD_FRAMES` em `build_assets.py`,
+  só imagem; guia de voz idêntico, nada a refazer no ElevenLabs). Voz inteira (`atrim=start=0.02`) entrando em 0,26 s no filme
+  (= 0,30 s da 1ª palavra −40 ms de adiantamento de sincronia, agora feito pela posição, não por corte). Riser de abertura e "ESCUTA ISSO"
+  tocam já em 0 s. Todo o resto desloca +0,3 s (timeline GSAP filha `body` em `LEAD`; `data-start` +0,3).
+- Final: 17,5 s, −15,3 LUFS, pico −1,7 dBFS; voz = v2 + 297 ms (sincronia preservada); quadros do rosto sem repetir/pular; transcrição completa.

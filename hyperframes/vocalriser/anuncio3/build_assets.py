@@ -15,6 +15,7 @@ SPEED = 1.25
 SRC_FPS = 24
 PAD_B, PAD_A = 0.07, 0.10
 HOLD_END = 0.5
+LEAD_FRAMES = 9  # preparação de imagem antes da 1ª palavra (boca fechada -> abrindo); só vídeo, o áudio não muda
 
 # (id, take, início da fala, fim da fala, texto, tem rosto na tela)
 SEGS = [
@@ -62,7 +63,8 @@ vin, vparts, vlab = [], [], []
 face_frames = [f for f in frames if f[5]]
 for n, (sid, take, f0, k, text, face) in enumerate(face_frames):
     vin += ["-i", f"assets/raw/{take}.mp4"]
-    vparts.append(f"[{n}:v]trim=start_frame={f0}:end_frame={f0+k},setpts=(PTS-STARTPTS)*{SRC_FPS}/30,fps=30,format=yuv420p[v{n}]")
+    lead = LEAD_FRAMES if n == 0 else 0
+    vparts.append(f"[{n}:v]trim=start_frame={f0-lead}:end_frame={f0+k},setpts=(PTS-STARTPTS)*{SRC_FPS}/30,fps=30,format=yuv420p[v{n}]")
     vlab.append(f"[v{n}]")
 vfc = ";".join(vparts) + ";" + "".join(vlab) + f"concat=n={len(vlab)}:v=1:a=0[v]"
 run(["ffmpeg", "-v", "error", "-y", *vin, "-filter_complex", vfc, "-map", "[v]", "-an", "-c:v", "libx264", "-crf", "14",
