@@ -4,7 +4,7 @@ Regras do Lucas: áudio é a estrela (tela da DAW com som limpo e alto); fala e 
 flash, sem pausa); máx. 18 s; texto grande queimado junto com a fala; só o que o plugin faz (reverse 1 a 4 compassos,
 chorus, tremolo, phone, ajuste depois, 1 clique); mesma legenda e mesmo botão SAIBA MAIS.
 
-Mesmo cenário e roupa do anúncio 2 (sala de casa top, blusa preta manga longa larga) para reaproveitar o take B.
+Cenário: estúdio escuro de antes (painéis pretos, monitores com DAW, cadeira gamer) SEM LED/neon/ring light, só luz baixa de abajur; blusa preta manga longa larga sem capuz.
 Fala acelerada 1,2× (só a fala; som do plugin e da DAW em 1×). ~60 palavras → ~18 s.
 
 | Tempo (final) | Fala | Tela | Texto |
@@ -18,18 +18,15 @@ Fala acelerada 1,2× (só a fala; som do plugin e da DAW em 1×). ~60 palavras �
 
 Se passar de 18 s: tirar "E dá pra ajustar depois" da fala (fica só como texto na tela).
 
-## Takes do Veo (4 novos + 1 reaproveitado)
-- T1 (novo): "Escuta esse riser de vocal. Isso aqui foi um clique."
-- T2 (reaproveitado): `anuncio2/assets/raw/u2.mp4` — "Ele faz o reverse de um a quatro compassos, com chorus, tremolo e phone."
-- T3 (novo): "E dá pra ajustar depois. Sem desenhar automação nenhuma."
-- T4 (novo): "Nove e noventa e nove, pagamento único. Mac e Windows."
-- T5 (novo): "Compra pelo celular, o link vai pro seu e-mail, e você baixa no PC. Toca em Saiba mais."
+## Takes do Veo (5 novos)
+- T1: "Escuta esse riser de vocal. Isso aqui foi um clique."
+- T2: "Ele faz o reverse de um a quatro compassos, com chorus, tremolo e phone."
+- T3: "E dá pra ajustar depois. Sem desenhar automação nenhuma."
+- T4: "Nove e noventa e nove, pagamento único. Mac e Windows."
+- T5: "Compra pelo celular, o link vai pro seu e-mail, e você baixa no PC. Toca em Saiba mais."
 
-Base comum dos prompts (Veo: Quality, 1080p, Frames to Video, 9:16, com áudio; mesma imagem inicial do anúncio 2):
-```
-Selfie vertical 9:16, câmera frontal do celular com o braço esticado, estável. O mesmo homem da imagem inicial, com o rosto idêntico ao da imagem em todos os quadros (mesmos olhos, relaxados e nunca arregalados, nariz, boca, cabelo e barba; pele lisa, sem rugas e sem manchas). Blusa de manga longa preta, larga, gola redonda lisa, sem capuz e sem cordão, igual em todos os quadros, sem trocar de roupa. Mãos vazias, nunca na frente do rosto. Sala de estar de uma casa de alto padrão, à noite, igual à da imagem inicial: painéis ripados de madeira escura, fita de LED branco-quente no teto e numa estante preta ao fundo, móveis pretos foscos, nada de estúdio de música visível.
-```
-(prompts completos em `VEO-PROMPTS-ANUNCIO-3.md`)
+(Veo: Quality, 1080p, Frames to Video, 9:16, com áudio; mesma imagem inicial do Gemini nos 5 takes.)
+Prompts completos e Passo 0 do Gemini em `VEO-PROMPTS-ANUNCIO-3.md`.
 
 ## Gravação de tela (obrigatória — é a prova)
 Grave a tela da DAW com o som interno (limpo e alto), 1080p, em 3 trechos (ou um contínuo de ~15 s):
