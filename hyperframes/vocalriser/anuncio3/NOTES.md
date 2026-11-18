@@ -16,3 +16,12 @@
 - voz × fala original: 27/27 janelas em ±40 ms; imagem 100% dos quadros no lugar (A1, A2, B1, B2, C2); transcrição completa;
   -15,3 LUFS, pico -1,7 dB; 17,2 s, 1080×1920, 30 fps.
 - A fonte NotoColorEmoji.ttf (10 MB) não está no git (copiar de /usr/share/fonts/truetype/noto/ antes de renderizar).
+
+## v2 (ajustes pedidos após a v1)
+- Selos MAC/WINDOWS: emoji trocado por logos reais em SVG (maçã = simple-icons; Windows = 4 janelas, geometria do logo atual, brancas).
+- Sincronia da voz: voz adiantada 40 ms no filme final (`atrim=start=0.07` no 1x antes do `atempo`, com fade-in de 4 ms; antes 0.02).
+  Medido: o pipeline (HyperFrames + AAC) não adiciona atraso (+1 ms); `atempo` desloca ~-8 ms. O atraso vinha da fonte:
+  Veo (boca × áudio, abertura dos lábios por mediapipe, ~0 a +40 ms tarde) + resíduo do Voice Changer (~+10 ms).
+  Final medido: voz -37 ms vs v1; arquivo da voz = final (+1 ms).
+- Entrega: -15,3 LUFS, pico -1,6 dBFS, 17,2 s; transcrição completa.
+- Se ainda parecer atrasada/adiantada: mudar só o `atrim=start=` de `film/assets/voice/voz-lucas-1.25x.wav` (cada 0,01 = 8 ms no final).
