@@ -4,7 +4,7 @@ Regras do Lucas: áudio é a estrela (tela da DAW com som limpo e alto); fala e 
 flash, sem pausa); máx. 18 s; texto grande queimado junto com a fala; só o que o plugin faz (reverse 1 a 4 compassos,
 chorus, tremolo, phone, ajuste depois, 1 clique); mesma legenda e mesmo botão SAIBA MAIS.
 
-Cenário: estúdio escuro idêntico ao da foto de referência (LEDs brancos, ring light, cadeira gamer com detalhe verde); blusa PRETA manga longa larga sem capuz.
+Cenário: estúdio escuro da foto de referência SEM nenhuma luz de LED e sem ring light (só luz baixa e difusa); cadeira gamer com detalhe verde; blusa PRETA manga longa larga sem capuz.
 Fala acelerada 1,2× (só a fala; som do plugin e da DAW em 1×). ~60 palavras → ~18 s.
 
 | Tempo (final) | Fala | Tela | Texto |
