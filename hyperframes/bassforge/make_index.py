@@ -70,7 +70,7 @@ def bass_clips():
         return "      <!-- BAIXO DO BASSFORGE: entra quando existirem film/assets/audio/bass-afro|deep|tech.wav (2 compassos, 120 bpm, do tempo 1) -->"
     beat = 0.5
     nb = lambda t: LEAD + beat * round((t - LEAD) / beat)       # tempo mais próximo
-    plan = [("afro", LEAD, t_click, 0.0, 0.28),                  # abertura: só voz + baixo
+    plan = [("afro", LEAD, A1["speech_end"] + 0.02, 0.0, 0.32),                  # abertura: só voz + baixo
             ("afro", T_DROP, nb(B1["start"] + 0.5), 0.0, 0.3),  # depois do GENERATE, com a bateria
             ("afro", nb(B1["start"] + 0.5), nb(B2["start"] + 0.1), None, 0.26),
             ("deep", nb(B2["start"] + 0.1), nb(B3["start"] + 0.1), None, 0.26),
@@ -195,8 +195,7 @@ html = f'''<!doctype html>
       // ---------- plugin: entra cedo e fica; câmera passeia pela interface real
       tl.fromTo("#card", {{ y: 80, opacity: 0, scale: 0.94 }}, {{ y: 0, opacity: 1, scale: 1, duration: 0.4, ease: "power3.out" }}, 0.6);
       {camset(0, 740, 547, 0.72)}
-      {cam(LEAD, 1068, 547, 0.72, A3['start'] - LEAD, "none")}
-      {sweep(LEAD, A3['start'])}
+      {sweep(LEAD, A1['speech_end'] + 0.02)}
       // "gerou ela com um clique": vai até o GENERATE e aperta
       {cam(A3['start'], 1066, 1170, 0.62, 0.55)}
       tl.to("#gen", {{ scale: 0.92, duration: 0.08, ease: "power2.in" }}, {f(t_click)}).to("#gen", {{ scale: 1, duration: 0.25, ease: "back.out(3)" }}, {f(t_click + 0.08)});

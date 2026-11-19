@@ -56,7 +56,7 @@
       <audio id="voice" class="clip" src="assets/voice/voz-lucas-1.25x.wav" data-start="0.06" data-duration="15.95" data-media-start="0" data-track-index="1" data-volume="1"></audio>
       <!-- Bateria 120 bpm (sintetizada, sem baixo) -->
       <audio id="drums" class="clip" src="assets/audio/drums-120.wav" data-start="4.100" data-duration="12.433" data-media-start="0" data-track-index="2" data-volume="0.16" data-fade-out="0.6"></audio>
-      <audio id="bass0" class="clip" src="assets/audio/bass-afro.wav" data-start="0.100" data-duration="3.350" data-media-start="0.000" data-track-index="3" data-volume="0.28"></audio>
+      <audio id="bass0" class="clip" src="assets/audio/bass-afro.wav" data-start="0.100" data-duration="1.253" data-media-start="0.000" data-track-index="3" data-volume="0.32"></audio>
       <audio id="bass1" class="clip" src="assets/audio/bass-afro.wav" data-start="4.100" data-duration="1.000" data-media-start="0.000" data-track-index="4" data-volume="0.3"></audio>
       <audio id="bass2" class="clip" src="assets/audio/bass-afro.wav" data-start="5.100" data-duration="1.000" data-media-start="1.000" data-track-index="3" data-volume="0.26"></audio>
       <audio id="bass3" class="clip" src="assets/audio/bass-deep.wav" data-start="6.100" data-duration="1.000" data-media-start="2.000" data-track-index="4" data-volume="0.26"></audio>
@@ -145,13 +145,9 @@
       // ---------- plugin: entra cedo e fica; câmera passeia pela interface real
       tl.fromTo("#card", { y: 80, opacity: 0, scale: 0.94 }, { y: 0, opacity: 1, scale: 1, duration: 0.4, ease: "power3.out" }, 0.6);
       tl.set("#stage", { x: -57.8, y: -201.3, scale: 0.72 }, 0.000);
-      tl.to("#stage", { x: -294.0, y: -201.3, scale: 0.72, duration: 2.0667, ease: "none" }, 0.100);
-      tl.set("#playhead", { x: 0, opacity: 1 }, 0.100).to("#playhead", { x: 986.8, duration: 2.067, ease: "none" }, 0.100).set("#playhead", { opacity: 0 }, 2.167);
+      tl.set("#playhead", { x: 0, opacity: 1 }, 0.100).to("#playhead", { x: 598.5, duration: 1.253, ease: "none" }, 0.100).set("#playhead", { opacity: 0 }, 1.353);
       tl.fromTo("#n0", { filter: "brightness(1.9) saturate(1.3)" }, { filter: "brightness(1) saturate(1)", duration: 0.35, ease: "power2.out", immediateRender: false }, 0.228);
       tl.fromTo("#n1", { filter: "brightness(1.9) saturate(1.3)" }, { filter: "brightness(1) saturate(1)", duration: 0.35, ease: "power2.out", immediateRender: false }, 0.852);
-      tl.fromTo("#n2", { filter: "brightness(1.9) saturate(1.3)" }, { filter: "brightness(1) saturate(1)", duration: 0.35, ease: "power2.out", immediateRender: false }, 1.476);
-      tl.fromTo("#n3", { filter: "brightness(1.9) saturate(1.3)" }, { filter: "brightness(1) saturate(1)", duration: 0.35, ease: "power2.out", immediateRender: false }, 1.851);
-      tl.fromTo("#n4", { filter: "brightness(1.9) saturate(1.3)" }, { filter: "brightness(1) saturate(1)", duration: 0.35, ease: "power2.out", immediateRender: false }, 1.976);
       // "gerou ela com um clique": vai até o GENERATE e aperta
       tl.to("#stage", { x: -185.9, y: -532.9, scale: 0.62, duration: 0.55, ease: "power2.inOut" }, 2.167);
       tl.to("#gen", { scale: 0.92, duration: 0.08, ease: "power2.in" }, 3.450).to("#gen", { scale: 1, duration: 0.25, ease: "back.out(3)" }, 3.530);
