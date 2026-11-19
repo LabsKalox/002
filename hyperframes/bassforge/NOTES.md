@@ -17,3 +17,7 @@
 - Baixo: só na abertura ("Escuta essa linha de baixo", 0,1–1,35 s), notas reais do print "Obsidian Wave" tocadas num baixo sintetizado (`tools-bass.py`); depois volta o áudio normal sem baixo (pedido do Lucas). Trocar por WAV do sintetizador dele se ele mandar.
 - v1 (sem baixo): 16,53 s, -15,5 LUFS, pico -1,8 dBFS; voz +61 ms (esperado +60); sem quadros repetidos; sem flash.
   Transcrição: ok, mas conferir no ouvido "Tech House" (Whisper: "Deck House"), "DAW" e "BassForge" ("Basford").
+- v6 (pedido: corte seco no fim + faixa segura): painéis preço → macOS → SAIBA MAIS e as trocas interface↔menu↔logo agora são corte seco
+  (sem dissolução). Conferido quadro a quadro (30 fps, filme inteiro): nenhum quadro com dois painéis/conteúdos/legendas ao mesmo tempo.
+  Quadro do plugin: x 68–1012, y 850–1235 (com o anel de 3 px: 65–1015, 847–1238); legenda em y 782–846. Item 3 (interface inteira +1,5 s)
+  pulado: o vídeo iria a 18,03 s. 16,53 s, -15,6 LUFS, pico -1,7 dBFS (áudio igual ao v5).

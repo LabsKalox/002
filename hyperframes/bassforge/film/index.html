@@ -12,9 +12,9 @@
       #root { position: relative; width: 100%; height: 100%; font-family: "Mont", sans-serif; overflow: hidden; background: #000; }
       .shot { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; transform-origin: 50% 38%; }
       #fadebot { position: absolute; left: 0; top: 1380px; width: 1080px; height: 540px; background: linear-gradient(180deg, rgba(0,0,0,0) 0, #000 200px, #000 100%); z-index: 2; }
-      .cap { position: absolute; left: 65px; right: 65px; top: 795px; text-align: center; z-index: 30; }
+      .cap { position: absolute; left: 65px; right: 65px; top: 782px; text-align: center; z-index: 30; }
       .cap .in { display: inline-block; color: #fff; font-weight: 900; line-height: 1.1; white-space: nowrap; paint-order: stroke fill; -webkit-text-stroke: 14px #000; text-shadow: 0 8px 18px rgba(0,0,0,.7); }
-      #card { position: absolute; left: 65px; top: 865px; width: 950px; height: 385px; border-radius: 24px; overflow: hidden; z-index: 20;
+      #card { position: absolute; left: 68px; top: 850px; width: 944px; height: 385px; border-radius: 24px; overflow: hidden; z-index: 20;
               background: #14121c; box-shadow: 0 0 0 3px rgba(139,92,246,.75), 0 0 44px rgba(139,92,246,.45), 0 24px 70px rgba(0,0,0,.8); }
       #stage { position: absolute; left: 0; top: 0; width: 2000px; height: 1591px; transform-origin: 0 0; }
       #stage > img.base { position: absolute; left: 0; top: 0; width: 2000px; height: 1591px; display: block; }
@@ -28,14 +28,14 @@
       #ghost { opacity: 0; transform-origin: 50% 50%; }
       #ghost img { width: 100%; height: 100%; display: block; border-radius: 6px; box-shadow: 0 0 30px rgba(139,92,246,.9); opacity: .92; }
       #ghost svg { position: absolute; left: 55%; top: 55%; width: 70px; height: 70px; filter: drop-shadow(0 3px 6px rgba(0,0,0,.7)); }
-      #menu { position: absolute; left: 134px; top: 0; width: 802px; height: 680px; transform-origin: 0 0; opacity: 0; }
+      #menu { position: absolute; left: 131px; top: 0; width: 802px; height: 680px; transform-origin: 0 0; opacity: 0; }
       #menu img { position: absolute; left: 0; top: 0; width: 802px; height: 680px; display: block; }
       #menu .hl { position: absolute; left: 50px; top: 175px; width: 545px; height: 42px; border-radius: 8px; background: rgba(139,92,246,.35); box-shadow: 0 0 22px rgba(139,92,246,.55); }
       #menu .check { position: absolute; left: 62px; top: 176px; color: #fff; font: 700 30px/40px "Mont", sans-serif; }
       #menu .lblbg { position: absolute; left: 178px; top: 53px; width: 168px; height: 28px; background: rgb(53,51,72); }
       #menu .lbl { position: absolute; left: 61px; top: 50px; width: 400px; text-align: center; color: #fff; font: 700 17px/34px "Mont", sans-serif; letter-spacing: 1.5px; transform-origin: 50% 50%; }
-      #panel { position: absolute; left: 0; top: 0; width: 950px; height: 385px; opacity: 0; background: radial-gradient(ellipse at 50% 40%, #2a2140, #14121c 75%); }
-      #panel .wm { position: absolute; left: 230px; top: 132px; width: 490px; height: 120px; transform-origin: 50% 50%; }
+      #panel { position: absolute; left: 0; top: 0; width: 944px; height: 385px; opacity: 0; background: radial-gradient(ellipse at 50% 40%, #2a2140, #14121c 75%); }
+      #panel .wm { position: absolute; left: 227px; top: 132px; width: 490px; height: 120px; transform-origin: 50% 50%; }
       #panel .row { position: absolute; left: 0; right: 0; text-align: center; color: #fff; font-weight: 900; white-space: nowrap; opacity: 0; }
       #panel .price { top: 108px; font-size: 128px; line-height: 1; letter-spacing: -3px; text-shadow: 0 0 40px rgba(139,92,246,.7); }
       #panel .once { top: 262px; }
@@ -136,22 +136,21 @@
 
       // ---------- plugin: entra cedo e fica; câmera passeia pela interface real
       tl.fromTo("#card", { y: 80, opacity: 0, scale: 0.94 }, { y: 0, opacity: 1, scale: 1, duration: 0.4, ease: "power3.out" }, 0.6);
-      tl.set("#stage", { x: -57.8, y: -201.3, scale: 0.72 }, 0.000);
+      tl.set("#stage", { x: -60.8, y: -201.3, scale: 0.72 }, 0.000);
       tl.set("#playhead", { x: 0, opacity: 1 }, 0.100).to("#playhead", { x: 598.5, duration: 1.253, ease: "none" }, 0.100).set("#playhead", { opacity: 0 }, 1.353);
       tl.fromTo("#n0", { filter: "brightness(1.9) saturate(1.3)" }, { filter: "brightness(1) saturate(1)", duration: 0.35, ease: "power2.out", immediateRender: false }, 0.228);
       tl.fromTo("#n1", { filter: "brightness(1.9) saturate(1.3)" }, { filter: "brightness(1) saturate(1)", duration: 0.35, ease: "power2.out", immediateRender: false }, 0.852);
       // "gerou ela com um clique": vai até o GENERATE e aperta
-      tl.to("#stage", { x: -185.9, y: -532.9, scale: 0.62, duration: 0.55, ease: "power2.inOut" }, 2.167);
+      tl.to("#stage", { x: -188.9, y: -532.9, scale: 0.62, duration: 0.55, ease: "power2.inOut" }, 2.167);
       tl.to("#gen", { scale: 0.92, duration: 0.08, ease: "power2.in" }, 3.450).to("#gen", { scale: 1, duration: 0.25, ease: "back.out(3)" }, 3.530);
       tl.fromTo("#genring", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1.12, duration: 0.25, ease: "power2.out", immediateRender: false }, 3.450).to("#genring", { opacity: 0, duration: 0.35 }, 3.750);
       tl.to(".note", { opacity: 0, scale: 0.6, duration: 0.1 }, 3.450);
       // volta ao piano roll: as notas nascem uma a uma e tocam
-      tl.to("#stage", { x: -57.8, y: -201.3, scale: 0.72, duration: 0.45, ease: "power2.inOut" }, 3.630);
+      tl.to("#stage", { x: -60.8, y: -201.3, scale: 0.72, duration: 0.45, ease: "power2.inOut" }, 3.630);
       tl.fromTo(".note", { opacity: 0, scale: 0.2 }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(2.5)", stagger: 0.04, immediateRender: false }, 3.980);
 
       // ---------- estilos: menu real, a seleção desce Afro → Deep → Tech
-      tl.to("#stage", { opacity: 0, duration: 0.2 }, 4.600);
-      tl.fromTo("#menu", { opacity: 0, scale: 0.7, y: -80 }, { opacity: 1, scale: 0.85, y: -100, duration: 0.3, ease: "back.out(1.6)", immediateRender: false }, 4.650);
+      tl.set("#stage", { opacity: 0 }, 4.700).set("#menu", { opacity: 1, scale: 0.85, y: -100 }, 4.700);   // corte seco
       tl.to("#menu .hl", { y: 0, duration: 0.16, ease: "power2.out" }, 4.760).to("#menu .check", { y: 0, duration: 0.16, ease: "power2.out" }, 4.760);
       tl.fromTo("#menu .hl", { opacity: 1 }, { opacity: 0.55, duration: 0.5, ease: "power1.out", immediateRender: false }, 4.920);
       tl.to("#menu .hl", { y: 88, duration: 0.16, ease: "power2.out" }, 5.893).to("#menu .check", { y: 88, duration: 0.16, ease: "power2.out" }, 5.893);
@@ -160,28 +159,25 @@
       tl.fromTo("#menu .hl", { opacity: 1 }, { opacity: 0.55, duration: 0.5, ease: "power1.out", immediateRender: false }, 7.187);
 
       // ---------- arrasta pra DAW: o clip sai do botão e cai na pista
-      tl.to("#menu", { opacity: 0, duration: 0.2 }, 8.217);
-      tl.set("#stage", { x: -248.0, y: -569.5, scale: 0.6 }, 8.217);
-      tl.to("#stage", { opacity: 1, duration: 0.2 }, 8.217);
+      tl.set("#stage", { x: -251.0, y: -569.5, scale: 0.6 }, 8.267);
+      tl.set("#menu", { opacity: 0 }, 8.267).set("#stage", { opacity: 1 }, 8.267);   // corte seco
       tl.to("#drag", { scale: 0.9, duration: 0.1 }, 8.717).to("#drag", { scale: 1, duration: 0.2, ease: "back.out(3)" }, 8.817);
       tl.fromTo("#ghost", { opacity: 0, x: 153, y: 1372, scale: 0.5 }, { opacity: 1, scale: 0.8, duration: 0.15, immediateRender: false }, 8.717);
       tl.to("#ghost", { x: 0, y: 0, scale: 1, duration: 0.867, ease: "power2.inOut" }, 8.867);
-      tl.to("#stage", { x: -103.6, y: 11.0, scale: 0.55, duration: 0.9165999999999993, ease: "power2.inOut" }, 8.867);
+      tl.to("#stage", { x: -106.6, y: 11.0, scale: 0.55, duration: 0.9165999999999993, ease: "power2.inOut" }, 8.867);
       tl.set("#clipReal", { opacity: 1 }, 9.783).to("#ghost", { opacity: 0, duration: 0.15 }, 9.783);
       tl.fromTo("#clipReal", { scale: 1.15, filter: "brightness(1.6)" }, { scale: 1, filter: "brightness(1)", duration: 0.35, ease: "back.out(2)", immediateRender: false }, 9.783);
 
       // ---------- preço / Mac / Saiba mais (logo real)
-      tl.to("#stage", { opacity: 0, duration: 0.2 }, 10.533);
-      tl.fromTo("#panel", { opacity: 0 }, { opacity: 1, duration: 0.2, immediateRender: false }, 10.533);
-      tl.fromTo("#panel .wm", { scale: 1.1, opacity: 0 }, { scale: 1.6, opacity: 1, duration: 0.35, ease: "back.out(1.8)", immediateRender: false }, 10.583);
+      tl.set("#stage", { opacity: 0 }, 10.633).set("#panel", { opacity: 1 }, 10.633);   // corte seco
+      tl.fromTo("#panel .wm", { scale: 1.45 }, { scale: 1.6, duration: 0.3, ease: "back.out(1.8)", immediateRender: false }, 10.633);
       tl.to("#panel .wm", { scale: 0.72, y: -118, duration: 0.3, ease: "power2.inOut" }, 11.433);
-      tl.fromTo("#panel .price", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)", immediateRender: false }, 11.483);
-      tl.fromTo("#panel .once", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.25, ease: "back.out(1.8)", immediateRender: false }, 12.333);
-      tl.to("#panel .price, #panel .once", { opacity: 0, y: -20, duration: 0.15 }, 13.883);
-      tl.fromTo("#panel .os", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.25, ease: "back.out(1.8)", immediateRender: false }, 13.953);
-      tl.fromTo("#panel .fmt", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.25, ease: "back.out(1.8)", immediateRender: false }, 14.133);
-      tl.to("#panel .os, #panel .fmt", { opacity: 0, y: -20, duration: 0.15 }, 14.683);
-      tl.fromTo("#panel .cta", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2.2)", immediateRender: false }, 14.753);
+      tl.set("#panel .price", { opacity: 1 }, 11.483).fromTo("#panel .price", { scale: 0.85 }, { scale: 1, duration: 0.25, ease: "back.out(2)", immediateRender: false }, 11.483);
+      tl.set("#panel .once", { opacity: 1 }, 12.333).fromTo("#panel .once", { scale: 0.85 }, { scale: 1, duration: 0.2, ease: "back.out(2)", immediateRender: false }, 12.333);
+      tl.set("#panel .price, #panel .once", { opacity: 0 }, 13.933).set("#panel .os, #panel .fmt", { opacity: 1 }, 13.933);   // corte seco a → b
+      tl.fromTo("#panel .os, #panel .fmt", { scale: 0.9 }, { scale: 1, duration: 0.2, ease: "back.out(2)", immediateRender: false }, 13.933);
+      tl.set("#panel .os, #panel .fmt", { opacity: 0 }, 14.733).set("#panel .cta", { opacity: 1 }, 14.733);           // corte seco b → c
+      tl.fromTo("#panel .cta", { scale: 0.85 }, { scale: 1, duration: 0.25, ease: "back.out(2.2)", immediateRender: false }, 14.733);
       tl.to("#panel .cta span", { scale: 1.07, duration: 0.3, repeat: 3, yoyo: true, ease: "sine.inOut" }, 15.133);
 
       window.__timelines = window.__timelines || {};

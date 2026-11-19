@@ -5,7 +5,7 @@ LEAD = TL["lead"]; S = {s["id"]: {k: (v + LEAD if isinstance(v, float) else v) f
 TOTAL = round(TL["total"] + LEAD, 3); FACE_END = round(TL["end"] + LEAD, 3)
 VOICE_START = round(LEAD - 0.04, 3)          # voz 40 ms adiantada (o áudio do Veo sai atrás da boca)
 DY = -340                                    # rosto sobe: olhos ~y390, queixo <= ~776; legenda 795; plugin 865–1250
-CARD = dict(x=65, y=865, w=950, h=385)
+CARD = dict(x=68, y=850, w=944, h=385)
 BPM_BAR = 2.0                                # 120 bpm: 1 compasso = 2 s; piano roll = 2 compassos
 ROLL_X0, ROLL_X1 = 80, 1990
 f = lambda x: f"{x:.3f}"
@@ -97,7 +97,7 @@ html = f'''<!doctype html>
       #root {{ position: relative; width: 100%; height: 100%; font-family: "Mont", sans-serif; overflow: hidden; background: #000; }}
       .shot {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; transform-origin: 50% 38%; }}
       #fadebot {{ position: absolute; left: 0; top: 1380px; width: 1080px; height: 540px; background: linear-gradient(180deg, rgba(0,0,0,0) 0, #000 200px, #000 100%); z-index: 2; }}
-      .cap {{ position: absolute; left: 65px; right: 65px; top: 795px; text-align: center; z-index: 30; }}
+      .cap {{ position: absolute; left: 65px; right: 65px; top: 782px; text-align: center; z-index: 30; }}
       .cap .in {{ display: inline-block; color: #fff; font-weight: 900; line-height: 1.1; white-space: nowrap; paint-order: stroke fill; -webkit-text-stroke: 14px #000; text-shadow: 0 8px 18px rgba(0,0,0,.7); }}
       #card {{ position: absolute; left: {CARD["x"]}px; top: {CARD["y"]}px; width: {CARD["w"]}px; height: {CARD["h"]}px; border-radius: 24px; overflow: hidden; z-index: 20;
               background: #14121c; box-shadow: 0 0 0 3px rgba(139,92,246,.75), 0 0 44px rgba(139,92,246,.45), 0 24px 70px rgba(0,0,0,.8); }}
@@ -202,14 +202,12 @@ html = f'''<!doctype html>
       tl.fromTo(".note", {{ opacity: 0, scale: 0.2 }}, {{ opacity: 1, scale: 1, duration: 0.22, ease: "back.out(2.5)", stagger: 0.04, immediateRender: false }}, {f(t_notes)});
 
       // ---------- estilos: menu real, a seleção desce Afro → Deep → Tech
-      tl.to("#stage", {{ opacity: 0, duration: 0.2 }}, {f(B1['start'] - 0.1)});
-      tl.fromTo("#menu", {{ opacity: 0, scale: 0.7, y: -80 }}, {{ opacity: 1, scale: 0.85, y: -100, duration: 0.3, ease: "back.out(1.6)", immediateRender: false }}, {f(B1['start'] - 0.05)});
+      tl.set("#stage", {{ opacity: 0 }}, {f(B1['start'])}).set("#menu", {{ opacity: 1, scale: 0.85, y: -100 }}, {f(B1['start'])});   // corte seco
       {chr(10).join("      " + l for l in menu_js).strip()}
 
       // ---------- arrasta pra DAW: o clip sai do botão e cai na pista
-      tl.to("#menu", {{ opacity: 0, duration: 0.2 }}, {f(C1['start'] - 0.05)});
-      {camset(C1['start'] - 0.05, 1205, 1270, 0.6)}
-      tl.to("#stage", {{ opacity: 1, duration: 0.2 }}, {f(C1['start'] - 0.05)});
+      {camset(C1['start'], 1205, 1270, 0.6)}
+      tl.set("#menu", {{ opacity: 0 }}, {f(C1['start'])}).set("#stage", {{ opacity: 1 }}, {f(C1['start'])});   // corte seco
       tl.to("#drag", {{ scale: 0.9, duration: 0.1 }}, {f(t_drag)}).to("#drag", {{ scale: 1, duration: 0.2, ease: "back.out(3)" }}, {f(t_drag + 0.1)});
       tl.fromTo("#ghost", {{ opacity: 0, x: {GHOST_FROM[0]:.0f}, y: {GHOST_FROM[1]:.0f}, scale: 0.5 }}, {{ opacity: 1, scale: 0.8, duration: 0.15, immediateRender: false }}, {f(t_drag)});
       tl.to("#ghost", {{ x: 0, y: 0, scale: 1, duration: {f(t_land - t_drag - 0.2)}, ease: "power2.inOut" }}, {f(t_drag + 0.15)});
@@ -218,17 +216,15 @@ html = f'''<!doctype html>
       tl.fromTo("#clipReal", {{ scale: 1.15, filter: "brightness(1.6)" }}, {{ scale: 1, filter: "brightness(1)", duration: 0.35, ease: "back.out(2)", immediateRender: false }}, {f(t_land)});
 
       // ---------- preço / Mac / Saiba mais (logo real)
-      tl.to("#stage", {{ opacity: 0, duration: 0.2 }}, {f(D1['start'] - 0.1)});
-      tl.fromTo("#panel", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.2, immediateRender: false }}, {f(D1['start'] - 0.1)});
-      tl.fromTo("#panel .wm", {{ scale: 1.1, opacity: 0 }}, {{ scale: 1.6, opacity: 1, duration: 0.35, ease: "back.out(1.8)", immediateRender: false }}, {f(D1['start'] - 0.05)});
+      tl.set("#stage", {{ opacity: 0 }}, {f(D1['start'])}).set("#panel", {{ opacity: 1 }}, {f(D1['start'])});   // corte seco
+      tl.fromTo("#panel .wm", {{ scale: 1.45 }}, {{ scale: 1.6, duration: 0.3, ease: "back.out(1.8)", immediateRender: false }}, {f(D1['start'])});
       tl.to("#panel .wm", {{ scale: 0.72, y: -118, duration: 0.3, ease: "power2.inOut" }}, {f(D2['start'])});
-      tl.fromTo("#panel .price", {{ opacity: 0, scale: 0.4 }}, {{ opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)", immediateRender: false }}, {f(D2['start'] + 0.05)});
-      tl.fromTo("#panel .once", {{ opacity: 0, y: 40 }}, {{ opacity: 1, y: 0, duration: 0.25, ease: "back.out(1.8)", immediateRender: false }}, {f(D2['start'] + 0.9)});
-      tl.to("#panel .price, #panel .once", {{ opacity: 0, y: -20, duration: 0.15 }}, {f(D3['start'] - 0.05)});
-      tl.fromTo("#panel .os", {{ opacity: 0, y: 30 }}, {{ opacity: 1, y: 0, duration: 0.25, ease: "back.out(1.8)", immediateRender: false }}, {f(D3['start'] + 0.02)});
-      tl.fromTo("#panel .fmt", {{ opacity: 0, y: 30 }}, {{ opacity: 1, y: 0, duration: 0.25, ease: "back.out(1.8)", immediateRender: false }}, {f(D3['start'] + 0.2)});
-      tl.to("#panel .os, #panel .fmt", {{ opacity: 0, y: -20, duration: 0.15 }}, {f(D4['start'] - 0.05)});
-      tl.fromTo("#panel .cta", {{ opacity: 0, scale: 0.4 }}, {{ opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2.2)", immediateRender: false }}, {f(D4['start'] + 0.02)});
+      tl.set("#panel .price", {{ opacity: 1 }}, {f(D2['start'] + 0.05)}).fromTo("#panel .price", {{ scale: 0.85 }}, {{ scale: 1, duration: 0.25, ease: "back.out(2)", immediateRender: false }}, {f(D2['start'] + 0.05)});
+      tl.set("#panel .once", {{ opacity: 1 }}, {f(D2['start'] + 0.9)}).fromTo("#panel .once", {{ scale: 0.85 }}, {{ scale: 1, duration: 0.2, ease: "back.out(2)", immediateRender: false }}, {f(D2['start'] + 0.9)});
+      tl.set("#panel .price, #panel .once", {{ opacity: 0 }}, {f(D3['start'])}).set("#panel .os, #panel .fmt", {{ opacity: 1 }}, {f(D3['start'])});   // corte seco a → b
+      tl.fromTo("#panel .os, #panel .fmt", {{ scale: 0.9 }}, {{ scale: 1, duration: 0.2, ease: "back.out(2)", immediateRender: false }}, {f(D3['start'])});
+      tl.set("#panel .os, #panel .fmt", {{ opacity: 0 }}, {f(D4['start'])}).set("#panel .cta", {{ opacity: 1 }}, {f(D4['start'])});           // corte seco b → c
+      tl.fromTo("#panel .cta", {{ scale: 0.85 }}, {{ scale: 1, duration: 0.25, ease: "back.out(2.2)", immediateRender: false }}, {f(D4['start'])});
       tl.to("#panel .cta span", {{ scale: 1.07, duration: 0.3, repeat: 3, yoyo: true, ease: "sine.inOut" }}, {f(D4['start'] + 0.4)});
 
       window.__timelines = window.__timelines || {{}};
