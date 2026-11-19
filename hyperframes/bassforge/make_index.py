@@ -18,6 +18,11 @@ t_notes = t_back + 0.35
 t_sweep2 = t_notes + 0.1
 t_drag = C1["start"] + 0.45                  # "Arrasta"
 t_land = C1["speech_end"] - 0.05
+BAR = lambda k: LEAD + 2.0 * k            # início do compasso k (0 = primeiro), 120 bpm
+T_DROP = BAR(2)                            # bateria e efeitos entram aqui (4,1 s)
+import os
+BASS = {k: f"assets/audio/bass-{k}.wav" for k in ("afro", "deep", "tech")}
+HAS_BASS = all(os.path.exists("film/" + v) for v in BASS.values())
 
 notes_html = "\n".join(f'          <img class="note" id="n{n["i"]}" src="assets/ui/note{n["i"]}.png" alt="" style="left:{n["x"]}px;top:{n["y"]}px;width:{n["w"]}px;height:{n["h"]}px" />' for n in UI["notes"])
 c = UI["clip"]
@@ -53,12 +58,34 @@ for (name, y), seg in zip(MENU_ROWS.items(), (B1, B2, B3)):
 
 GHOST_FROM = (1205 - c["w"] / 2 - c["x"], 1460 - c["h"] / 2 - c["y"])
 
-sfx = [("s-whoosh1", "whoosh", 0.66, 0.2), ("s-click", "click", t_click, 0.32), ("s-tick-notes", "tick", t_notes, 0.16),
-       ("s-pop1", "pop", A2["start"], 0.14), ("s-t1", "tick", B1["start"] + 0.06, 0.2), ("s-t2", "tick", B2["start"] + 0.06, 0.2),
+sfx = [("s-click", "click", t_click, 0.32), ("s-tick-notes", "tick", t_notes, 0.16),
+       ("s-t1", "tick", B1["start"] + 0.06, 0.2), ("s-t2", "tick", B2["start"] + 0.06, 0.2),
        ("s-t3", "tick", B3["start"] + 0.06, 0.2), ("s-whoosh2", "whoosh", t_drag + 0.15, 0.18), ("s-pop2", "pop", t_land, 0.2),
        ("s-whoosh3", "whoosh", D1["start"] - 0.08, 0.18), ("s-pop3", "pop", D2["start"] + 0.05, 0.16), ("s-pop4", "pop", D3["start"] + 0.05, 0.16),
        ("s-pop5", "pop", D4["start"] + 0.05, 0.18), ("s-ding", "ding", D4["speech_end"] + 0.05, 0.18)]
 sfx_html = "\n".join(f'      <audio id="{i}" class="clip" src="assets/sfx/{n}.wav" data-start="{f(t)}" data-duration="{f(min(0.6, TOTAL - t))}" data-track-index="{5 + k % 2}" data-volume="{v}"></audio>' for k, (i, n, t, v) in enumerate(sfx))
+
+def bass_clips():
+    if not HAS_BASS:
+        return "      <!-- BAIXO DO BASSFORGE: entra quando existirem film/assets/audio/bass-afro|deep|tech.wav (2 compassos, 120 bpm, do tempo 1) -->"
+    beat = 0.5
+    nb = lambda t: LEAD + beat * round((t - LEAD) / beat)       # tempo mais próximo
+    plan = [("afro", LEAD, t_click, 0.0, 0.55),                  # abertura: só voz + baixo
+            ("afro", T_DROP, nb(B1["start"] + 0.5), 0.0, 0.75),  # depois do GENERATE, com a bateria
+            ("afro", nb(B1["start"] + 0.5), nb(B2["start"] + 0.1), None, 0.75),
+            ("deep", nb(B2["start"] + 0.1), nb(B3["start"] + 0.1), None, 0.75),
+            ("tech", nb(B3["start"] + 0.1), nb(C1["start"] + 0.2), None, 0.75),
+            ("afro", nb(t_land), D1["start"] + 0.3, None, 0.75),
+            ("afro", D1["start"] + 0.3, TOTAL, None, 0.35)]
+    out, n = [], 0
+    for k, a, b, ms, v in plan:
+        if ms is None: ms = ((a - LEAD) % 4.0)                   # mantém a fase do compasso
+        while b - a > 0.02:                                      # o arquivo tem 4 s: repete em loop no fim dele
+            d = min(b - a, 4.0 - ms)
+            out.append(f'      <audio id="bass{n}" class="clip" src="{BASS[k]}" data-start="{f(a)}" data-duration="{f(d)}" data-media-start="{f(ms)}" data-track-index="{3 + n % 2}" data-volume="{v}"></audio>')
+            a, ms, n = a + d, 0.0, n + 1
+    return "\n".join(out)
+bass_html = bass_clips()
 
 html = f'''<!doctype html>
 <html lang="pt-BR" data-resolution="portrait">
@@ -117,8 +144,8 @@ html = f'''<!doctype html>
       <!-- Voz do Lucas (Voice Changer do diálogo do Veo), 30 ms do ElevenLabs cortados, acelerada 1,25x, 40 ms adiantada -->
       <audio id="voice" class="clip" src="assets/voice/voz-lucas-1.25x.wav" data-start="{VOICE_START}" data-duration="15.95" data-media-start="0" data-track-index="1" data-volume="1"></audio>
       <!-- Bateria 120 bpm (sintetizada, sem baixo) -->
-      <audio id="drums" class="clip" src="assets/audio/drums-120.wav" data-start="{f(LEAD)}" data-duration="{f(TOTAL - LEAD)}" data-media-start="0" data-track-index="2" data-volume="0.16" data-fade-out="0.6"></audio>
-      <!-- BAIXO DO BASSFORGE: entra aqui quando chegarem os WAVs (afro/deep/tech), alinhado ao compasso de 2 s a partir de {f(LEAD)} -->
+      <audio id="drums" class="clip" src="assets/audio/drums-120.wav" data-start="{f(T_DROP)}" data-duration="{f(TOTAL - T_DROP)}" data-media-start="0" data-track-index="2" data-volume="0.16" data-fade-out="0.6"></audio>
+{bass_html}
 {sfx_html}
 
       <!-- Plugin (interface real animada) -->
