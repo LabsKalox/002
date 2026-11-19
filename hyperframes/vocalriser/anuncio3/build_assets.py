@@ -16,11 +16,13 @@ SRC_FPS = 24
 PAD_B, PAD_A = 0.07, 0.10
 HOLD_END = 0.5
 LEAD_FRAMES = 9  # preparação de imagem antes da 1ª palavra (boca fechada -> abrindo); só vídeo, o áudio não muda
+LEAD_RANGE = (16, 25)  # t1b: quadros 16-24 (boca fechada, abre no 21-22); o quadro 25-30 é a boca aberta parada, pulado (invisível)
 
 # (id, take, início da fala, fim da fala, texto, tem rosto na tela)
 SEGS = [
-    ("A1", "t1", 1.01, 2.85, "Escuta esse riser de vocal.", True),
-    ("A2", "t1", 4.97, 5.83, "Isso aqui foi um clique.", True),
+    ("A1", "t1b", 1.36, 3.28, "Esse plugin cria um riser", True),
+    ("A2", "t1b", 3.78, 4.42, "de vocal", True),
+    ("A3", "t1b", 5.10, 5.78, "com um clique.", True),
     ("B1", "t2", 1.01, 4.07, "Ele faz o reverse de um a quatro compassos,", True),
     ("B2", "t2", 4.47, 6.66, "com chorus, tremolo e phone.", True),
     ("C2", "t3", 2.12, 4.25, "Sem desenhar automação nenhuma.", True),
@@ -54,17 +56,24 @@ for n, (sid, take, f0, k, text, face) in enumerate(frames):
     labels.append(f"[a{n}]")
 fc = ";".join(parts) + ";" + "".join(labels) + f"concat=n={len(labels)}:v=0:a=1[g]"
 run(["ffmpeg", "-v", "error", "-y", *inputs, "-filter_complex", fc, "-map", "[g]", "-ac", "1", "-c:a", "pcm_s16le",
-     "assets/voice/anuncio3-fala-para-voice-changer.wav"])
-run(["ffmpeg", "-v", "error", "-y", "-i", "assets/voice/anuncio3-fala-para-voice-changer.wav", "-af", f"atempo={SPEED}",
-     "assets/voice/voz-temp-veo-1.25x.wav"])
+     "assets/voice/anuncio3b-fala-para-voice-changer.wav"])
+run(["ffmpeg", "-v", "error", "-y", "-i", "assets/voice/anuncio3b-fala-para-voice-changer.wav", "-af", f"atempo={SPEED}",
+     "assets/voice/voz-temp-veo-b-1.25x.wav"])
 
 # ---- imagem dos trechos com rosto (um quadro de saída por quadro da fonte)
 vin, vparts, vlab = [], [], []
 face_frames = [f for f in frames if f[5]]
 for n, (sid, take, f0, k, text, face) in enumerate(face_frames):
     vin += ["-i", f"assets/raw/{take}.mp4"]
-    lead = LEAD_FRAMES if n == 0 else 0
-    vparts.append(f"[{n}:v]trim=start_frame={f0-lead}:end_frame={f0+k},setpts=(PTS-STARTPTS)*{SRC_FPS}/30,fps=30,format=yuv420p[v{n}]")
+    if n == 0:  # preparação (quadros LEAD_RANGE) + fala; a boca aberta parada entre os dois é pulada
+        a, b = LEAD_RANGE
+        assert b - a == LEAD_FRAMES
+        vparts.append(f"[{n}:v]split=2[s{n}a][s{n}b]")
+        vparts.append(f"[s{n}a]trim=start_frame={a}:end_frame={b},setpts=(PTS-STARTPTS)*{SRC_FPS}/30,fps=30,format=yuv420p[l{n}]")
+        vparts.append(f"[s{n}b]trim=start_frame={f0}:end_frame={f0+k},setpts=(PTS-STARTPTS)*{SRC_FPS}/30,fps=30,format=yuv420p[m{n}]")
+        vparts.append(f"[l{n}][m{n}]concat=n=2:v=1:a=0[v{n}]")
+    else:
+        vparts.append(f"[{n}:v]trim=start_frame={f0}:end_frame={f0+k},setpts=(PTS-STARTPTS)*{SRC_FPS}/30,fps=30,format=yuv420p[v{n}]")
     vlab.append(f"[v{n}]")
 vfc = ";".join(vparts) + ";" + "".join(vlab) + f"concat=n={len(vlab)}:v=1:a=0[v]"
 run(["ffmpeg", "-v", "error", "-y", *vin, "-filter_complex", vfc, "-map", "[v]", "-an", "-c:v", "libx264", "-crf", "14",
