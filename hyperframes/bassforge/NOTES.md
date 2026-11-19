@@ -13,6 +13,7 @@
   Câmera passeia pela interface: piano roll com playhead (120 bpm, 2 compassos = 4 s) → GENERATE apertado → notas nascem →
   menu de estilos (Afro → Deep → Tech) → DRAG TO DAW (clip voa até a pista) → logo, R$ 18,90, macOS, SAIBA MAIS.
 - `make_index.py` gera `film/index.html` a partir de `assets/timeline.json`.
-- Bateria 120 bpm sintetizada SEM baixo (`tools-drums.py`). O baixo do vídeo tem que ser o do BassForge (pendente: WAVs do Lucas).
+- Bateria 120 bpm sintetizada SEM baixo (`tools-drums.py`), entra em 1,35 s (logo depois do trecho de baixo).
+- Baixo: só na abertura ("Escuta essa linha de baixo", 0,1–1,35 s), notas reais do print "Obsidian Wave" tocadas num baixo sintetizado (`tools-bass.py`); depois volta o áudio normal sem baixo (pedido do Lucas). Trocar por WAV do sintetizador dele se ele mandar.
 - v1 (sem baixo): 16,53 s, -15,5 LUFS, pico -1,8 dBFS; voz +61 ms (esperado +60); sem quadros repetidos; sem flash.
   Transcrição: ok, mas conferir no ouvido "Tech House" (Whisper: "Deck House"), "DAW" e "BassForge" ("Basford").
