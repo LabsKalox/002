@@ -47,3 +47,10 @@
 - Entrega: `film/out/vocalriser-anuncio3-v4.mp4` (17,5 s, -15,3 LUFS, pico -1,8 dBFS) e `...-v4-sem-texto.mp4` (CSS que esconde os textos; mesmo áudio/plugin).
 - Conferido no final: sem flash (nenhum pico curto de luminância), quadros do rosto sem repetir/pular, transcrição completa.
 - PENDENTE: fala nova "Esse plugin cria um riser de vocal com um clique." (precisa do take do Veo + voz dele).
+
+## v5 (fala nova T1-B: "Esse plugin cria um riser de vocal com um clique.")
+- Take novo `assets/raw/t1b.mp4` (Veo, 24 fps). Fala com pausas longas: cortes nas pausas de 0,5 e 0,68 s (A1 1,36–3,28 "Esse plugin cria um riser" | A2 3,78–4,42 "de vocal" | A3 5,10–5,78 "com um clique"), pausa de 0,28 s mantida.
+- Guia novo inteiro (21,5 s) → Voice Changer → `assets/voice/anuncio3b-voz-voicechanger.wav` (mesmo atraso: +20..+30 ms; cortados 20 ms; `atempo=1.25`; entra em 0,26 s no filme = 1ª palavra em 0,30 s menos 40 ms de adiantamento).
+- Preparação de imagem: quadros 16–24 do T1-B (boca fechada → abrindo), pula os quadros 25–30 (boca aberta parada, sem som) e segue na fala. Riser e "PLUGIN DE ÁUDIO · VST3 · AU" já em 0 s.
+- Abertura ficou 0,567 s maior que a antiga: tudo do B1 em diante desloca +0,567 s (timeline filha `bodyB` em `LEAD + D`). Respiro final 0,42 s. Total 17,97 s.
+- Conferido no final: voz começa +261 ms após o arquivo da voz (esperado +260); transcrição completa; quadros do rosto sem repetir/pular (saltos só nos cortes de zoom e no pulo da boca parada em 0,27 s); sem flash; -15,3 LUFS, pico -1,8 dBFS.
