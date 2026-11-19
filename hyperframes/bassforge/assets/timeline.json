@@ -1,0 +1,85 @@
+{
+ "speed": 1.25,
+ "lead": 0.1,
+ "end": 15.9333,
+ "total": 16.4333,
+ "segs": [
+  {
+   "id": "A1",
+   "start": 0.0,
+   "speech_end": 1.2333,
+   "end": 1.2333,
+   "text": "Escuta essa linha de baixo."
+  },
+  {
+   "id": "A2",
+   "start": 1.2333,
+   "speech_end": 2.0667,
+   "end": 2.0667,
+   "text": "Esse plugin"
+  },
+  {
+   "id": "A3",
+   "start": 2.0667,
+   "speech_end": 3.6,
+   "end": 4.6,
+   "text": "gerou ela com um clique."
+  },
+  {
+   "id": "B1",
+   "start": 4.6,
+   "speech_end": 5.4,
+   "end": 5.7333,
+   "text": "Afro House."
+  },
+  {
+   "id": "B2",
+   "start": 5.7333,
+   "speech_end": 6.5333,
+   "end": 6.8667,
+   "text": "Deep House."
+  },
+  {
+   "id": "B3",
+   "start": 6.8667,
+   "speech_end": 7.5667,
+   "end": 8.1667,
+   "text": "Tech House."
+  },
+  {
+   "id": "C1",
+   "start": 8.1667,
+   "speech_end": 9.7333,
+   "end": 10.5333,
+   "text": "Gostou? Arrasta pra sua DAW."
+  },
+  {
+   "id": "D1",
+   "start": 10.5333,
+   "speech_end": 11.3333,
+   "end": 11.3333,
+   "text": "BassForge."
+  },
+  {
+   "id": "D2",
+   "start": 11.3333,
+   "speech_end": 13.8333,
+   "end": 13.8333,
+   "text": "Dezoito e noventa, pagamento único."
+  },
+  {
+   "id": "D3",
+   "start": 13.8333,
+   "speech_end": 14.6333,
+   "end": 14.6333,
+   "text": "Só pra Mac."
+  },
+  {
+   "id": "D4",
+   "start": 14.6333,
+   "speech_end": 15.9333,
+   "end": 15.9333,
+   "text": "Toca em Saiba mais."
+  }
+ ]
+}
