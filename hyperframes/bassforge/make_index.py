@@ -70,7 +70,7 @@ def bass_clips():
         return "      <!-- BAIXO DO BASSFORGE: entra quando existirem film/assets/audio/bass-afro|deep|tech.wav (2 compassos, 120 bpm, do tempo 1) -->"
     beat = 0.5
     nb = lambda t: LEAD + beat * round((t - LEAD) / beat)       # tempo mais próximo
-    plan = [("afro", LEAD, t_click, 0.0, 0.2),                  # abertura: só voz + baixo
+    plan = [("afro", LEAD, t_click, 0.0, 0.28),                  # abertura: só voz + baixo
             ("afro", T_DROP, nb(B1["start"] + 0.5), 0.0, 0.3),  # depois do GENERATE, com a bateria
             ("afro", nb(B1["start"] + 0.5), nb(B2["start"] + 0.1), None, 0.26),
             ("deep", nb(B2["start"] + 0.1), nb(B3["start"] + 0.1), None, 0.26),
