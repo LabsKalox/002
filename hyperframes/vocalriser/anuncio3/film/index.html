@@ -7,17 +7,19 @@
     <style>
       @font-face { font-family: "Mont"; src: url("assets/fonts/montserrat-latin-wght-normal.woff2") format("woff2"); font-weight: 100 900; font-style: normal; }
       @font-face { font-family: "Mont"; src: url("assets/fonts/montserrat-latin-wght-italic.woff2") format("woff2"); font-weight: 100 900; font-style: italic; }
-      @font-face { font-family: "Noto Color Emoji"; src: url("assets/fonts/NotoColorEmoji.ttf") format("truetype"); }
-      :root { --brand: #62f50a; }
+            :root { --brand: #62f50a; }
       * { margin: 0; padding: 0; box-sizing: border-box; }
       html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; }
-      #root { position: relative; width: 100%; height: 100%; font-family: "Mont", "Noto Color Emoji", sans-serif; overflow: hidden; }
-      .shot { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; transform-origin: 50% 38%; }
+      #root { position: relative; width: 100%; height: 100%; font-family: "Mont", sans-serif; overflow: hidden; }
+      .shot { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; transform-origin: 50% 38%;
+        /* rosto menor, dentro da faixa segura; bordas esfumadas sobre o fundo desfocado do mesmo estúdio */
+        -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 13%, #000 87%, transparent 100%), linear-gradient(180deg, #000 0, #000 80%, transparent 100%);
+        -webkit-mask-composite: source-in; mask-composite: intersect; }
       .scene { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; }
       .scene .bg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
       .scene .tint { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: radial-gradient(ellipse at 50% 40%, rgba(10, 24, 6, 0.4), rgba(0, 0, 0, 0.84) 80%); }
 
-      .big { position: absolute; left: 40px; right: 40px; text-align: center; z-index: 30; }
+      .big { position: absolute; left: 65px; right: 65px; text-align: center; z-index: 30; }
       .big .in { display: inline-block; color: #fff; font-weight: 900; line-height: 1.05; white-space: nowrap; paint-order: stroke fill; -webkit-text-stroke: 16px #000; text-shadow: 0 10px 20px rgba(0, 0, 0, 0.7); }
       .pill { position: absolute; left: 0; right: 0; text-align: center; z-index: 30; }
       .pill .in { display: inline-block; padding: 14px 36px; border-radius: 60px; background: var(--brand); color: #000; font-weight: 900; font-size: 46px; letter-spacing: 1px; white-space: nowrap; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6), 0 0 40px rgba(98, 245, 10, 0.5); }
@@ -36,35 +38,36 @@
       .card .hl.ch { left: 400px; top: 858px; width: 160px; height: 56px; }
       .card .hl.tr { left: 612px; top: 858px; width: 172px; height: 56px; }
 
-      #price .amount { position: absolute; left: 0; right: 0; top: 500px; text-align: center; }
+      #price .name { position: absolute; left: 65px; right: 65px; top: 360px; text-align: center; color: #fff; font-weight: 900; font-size: 54px; letter-spacing: 2px; white-space: nowrap; paint-order: stroke fill; -webkit-text-stroke: 12px #000; }
+      #price .amount { position: absolute; left: 0; right: 0; top: 470px; text-align: center; }
       #price .amount span { display: inline-block; color: #fff; font-weight: 900; font-size: 190px; letter-spacing: -5px; white-space: nowrap; paint-order: stroke fill; -webkit-text-stroke: 22px #000; text-shadow: 0 0 70px rgba(98, 245, 10, 0.6); }
-      #price .once { position: absolute; left: 0; right: 0; top: 840px; text-align: center; }
+      #price .once { position: absolute; left: 0; right: 0; top: 760px; text-align: center; }
       #price .once span { display: inline-block; padding: 20px 50px; border-radius: 60px; background: var(--brand); color: #000; font-weight: 900; font-size: 62px; letter-spacing: 2px; white-space: nowrap; box-shadow: 0 0 50px rgba(98, 245, 10, 0.55); }
-      #price .pay { position: absolute; left: 0; right: 0; top: 1010px; text-align: center; color: #d9ffd0; font-weight: 800; font-size: 50px; letter-spacing: 3px; }
-      #price .bag { position: absolute; left: 0; right: 0; top: 260px; text-align: center; font-size: 190px; line-height: 1; }
+      #price .pay { position: absolute; left: 0; right: 0; top: 910px; text-align: center; color: #d9ffd0; font-weight: 800; font-size: 50px; letter-spacing: 3px; }
 
-      #os .row { position: absolute; left: 0; right: 0; top: 560px; display: flex; justify-content: center; gap: 36px; }
-      #os .chip { width: 470px; padding: 40px 0; border-radius: 34px; background: rgba(0, 0, 0, 0.78); border: 5px solid var(--brand); text-align: center; box-shadow: 0 0 40px rgba(98, 245, 10, 0.3); }
+      #os .row { position: absolute; left: 0; right: 0; top: 470px; display: flex; justify-content: center; gap: 36px; }
+      #os .chip { width: 440px; padding: 40px 0; border-radius: 34px; background: rgba(0, 0, 0, 0.78); border: 5px solid var(--brand); text-align: center; box-shadow: 0 0 40px rgba(98, 245, 10, 0.3); }
       #os .chip em { display: block; height: 96px; }
       #os .chip em svg { height: 96px; width: 96px; display: block; margin: 0 auto; }
       #os .chip b { display: block; margin-top: 12px; color: #fff; font-weight: 900; font-size: 66px; }
       #os .chip i { display: block; margin-top: 8px; color: #b9f59a; font-style: normal; font-weight: 800; font-size: 38px; letter-spacing: 2px; }
-      #os .daws { position: absolute; left: 50px; right: 50px; top: 960px; text-align: center; color: #fff; font-weight: 800; font-size: 42px; line-height: 1.5; }
+      #os .daws { position: absolute; left: 65px; right: 65px; top: 850px; text-align: center; color: #fff; font-weight: 800; font-size: 42px; line-height: 1.5; }
 
       #buy .step { position: absolute; left: 0; right: 0; text-align: center; }
-      #buy .step .ic { display: block; font-size: 150px; line-height: 1; }
-      #buy .step .lb { display: inline-block; margin-top: 14px; color: #fff; font-weight: 900; font-size: 56px; white-space: nowrap; paint-order: stroke fill; -webkit-text-stroke: 12px #000; }
-      #buy .arrow { position: absolute; left: 0; right: 0; text-align: center; color: var(--brand); font-weight: 900; font-size: 70px; }
-      #cta { position: absolute; left: 0; right: 0; top: 1330px; text-align: center; z-index: 35; }
-      #cta .btn { display: inline-block; white-space: nowrap; padding: 30px 56px; border-radius: 80px; background: var(--brand); color: #000; font-weight: 900; font-size: 62px; letter-spacing: 1px; box-shadow: 0 0 60px rgba(98, 245, 10, 0.6); }
-      #cta .hand { display: block; margin-top: 20px; font-size: 140px; line-height: 1; }
-      #cta .site { display: block; margin-top: 16px; color: #fff; font-weight: 800; font-size: 44px; letter-spacing: 2px; }
-      .flash { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: #fff; z-index: 40; }
+      #buy .step .ic { display: block; height: 96px; }
+      #buy .step .ic svg { height: 96px; width: 96px; display: block; margin: 0 auto; }
+      #buy .step .lb { display: inline-block; margin-top: 14px; color: #fff; font-weight: 900; font-size: 50px; white-space: nowrap; paint-order: stroke fill; -webkit-text-stroke: 12px #000; }
+      #buy .arrow { position: absolute; left: 0; right: 0; text-align: center; color: var(--brand); font-weight: 900; font-size: 46px; line-height: 1; }
+      #cta { position: absolute; left: 0; right: 0; top: 985px; text-align: center; z-index: 35; }
+      #cta .btn { display: inline-block; white-space: nowrap; padding: 26px 52px; border-radius: 80px; background: var(--brand); color: #000; font-weight: 900; font-size: 56px; letter-spacing: 1px; box-shadow: 0 0 60px rgba(98, 245, 10, 0.6); }
+      #cta .site { display: block; margin-top: 18px; color: #fff; font-weight: 800; font-size: 40px; letter-spacing: 2px; }
     </style>
   </head>
   <body>
     <div id="root" data-composition-id="main" data-start="0" data-duration="17.47" data-width="1080" data-height="1920">
       <!-- Faces: A (0-2.4), B (2.4-6.83), C (6.83-8.67). 1.25x: each 24 fps source frame = one 30 fps frame. Cuts sit on pauses. -->
+      <!-- fundo: o mesmo estúdio desfocado (aparece nas laterais do rosto reduzido) -->
+      <div id="bgbase" class="clip" data-start="0" data-duration="8.967" data-track-index="11" style="position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 0"><img src="assets/brand/room-bg.png" alt="" style="width: 1080px; height: 1920px; display: block" /></div>
       <video id="face" class="clip shot" src="assets/raw/face-1.25x.mp4" data-start="0" data-duration="8.967" data-media-start="0" data-track-index="0" muted playsinline style="z-index: 1"></video>
 
       <!-- Voice: Lucas (ElevenLabs Voice Changer of the Veo dialogue), 20 ms lead trimmed, sped 1.25x like the picture -->
@@ -79,7 +82,7 @@
       <audio id="bed" class="clip" src="assets/audio/beat.wav" data-start="9.567" data-duration="7.9" data-media-start="0.865" data-track-index="3" data-volume="0.12" data-fade-out="0.7"></audio>
 
       <!-- Sound effects (low, off the words) -->
-      <audio id="s-whoosh1" class="clip" src="assets/sfx/whoosh.wav" data-start="1.750" data-duration="0.6" data-track-index="5" data-volume="0.22"></audio>
+      <audio id="s-whoosh1" class="clip" src="assets/sfx/whoosh.wav" data-start="0.880" data-duration="0.6" data-track-index="5" data-volume="0.22"></audio>
       <audio id="s-pop1" class="clip" src="assets/sfx/pop.wav" data-start="1.920" data-duration="0.2" data-track-index="5" data-volume="0.2"></audio>
       <audio id="s-click1" class="clip" src="assets/sfx/click.wav" data-start="2.300" data-duration="0.07" data-track-index="5" data-volume="0.3"></audio>
       <audio id="s-pop2" class="clip" src="assets/sfx/pop.wav" data-start="3.250" data-duration="0.2" data-track-index="5" data-volume="0.18"></audio>
@@ -105,7 +108,7 @@
       <audio id="s-ding2" class="clip" src="assets/sfx/ding.wav" data-start="17.020" data-duration="0.45" data-track-index="5" data-volume="0.2" data-fade-out="0.2"></audio>
 
       <!-- Plugin card over the presenter, below his face (real UI, animated) -->
-      <div id="ui" class="clip" data-start="1.800" data-duration="7.167" data-track-index="8" style="position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 10; pointer-events: none">
+      <div id="ui" class="clip" data-start="0.900" data-duration="8.067" data-track-index="8" style="position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 10; pointer-events: none">
         <div class="card" id="card">
           <img class="base" src="assets/brand/ui-window-noind.png" alt="Interface do Vocal Riser" />
           <div class="wglow"></div><div class="kind"></div>
@@ -115,20 +118,19 @@
       </div>
 
       <!-- Big burned-in texts (white, black outline), synced to the words -->
-      <div id="k1" class="clip big" data-start="0" data-duration="1.9" data-track-index="7" style="top: 250px"><span class="in" style="font-size: 96px">ESCUTA ISSO 🎧</span></div>
-      <div id="k2" class="clip big" data-start="1.900" data-duration="1.3" data-track-index="7" style="top: 250px"><span class="in" style="font-size: 130px">1 CLIQUE 👆</span></div>
-      <div id="k3" class="clip big" data-start="3.250" data-duration="2.0" data-track-index="7" style="top: 250px"><span class="in" style="font-size: 78px; line-height: 1.12">REVERSE DE 1 A<br />4 COMPASSOS 🔁</span></div>
-      <div id="k4" class="clip big" data-start="5.270" data-duration="1.86" data-track-index="7" style="top: 250px"><span class="in" style="font-size: 70px; line-height: 1.12">CHORUS · TREMOLO<br />· PHONE ✨</span></div>
-      <div id="p1" class="clip pill" data-start="5.850" data-duration="1.4" data-track-index="9" style="top: 1090px"><span class="in">AJUSTA TUDO DEPOIS 🎛️</span></div>
-      <div id="k5" class="clip big" data-start="7.130" data-duration="1.84" data-track-index="7" style="top: 250px"><span class="in" style="font-size: 76px">SEM AUTOMAÇÃO 🚫</span></div>
+      <div id="k1" class="clip big" data-start="0" data-duration="1.9" data-track-index="7" style="top: 668px"><span class="in" style="font-size: 52px; letter-spacing: 1px">PLUGIN DE ÁUDIO · VST3 · AU</span></div>
+      <div id="k2" class="clip big" data-start="1.900" data-duration="1.3" data-track-index="7" style="top: 668px"><span class="in" style="font-size: 78px">1 CLIQUE</span></div>
+      <div id="k3" class="clip big" data-start="3.250" data-duration="2.0" data-track-index="7" style="top: 668px"><span class="in" style="font-size: 52px">REVERSE DE 1 A 4 COMPASSOS</span></div>
+      <div id="k4" class="clip big" data-start="5.270" data-duration="1.86" data-track-index="7" style="top: 668px"><span class="in" style="font-size: 54px">CHORUS · TREMOLO · PHONE</span></div>
+      <div id="k5" class="clip big" data-start="7.130" data-duration="1.84" data-track-index="7" style="top: 668px"><span class="in" style="font-size: 56px">AJUSTA TUDO DEPOIS</span></div>
 
       <!-- Price (D1), Mac/Windows (D2), buy on the phone (E1–E3), CTA (E4) — over the blurred room, voice-over -->
       <div id="price" class="clip scene" data-start="8.967" data-duration="2.366" data-track-index="8" style="z-index: 10">
         <img class="bg" src="assets/brand/room-bg.png" alt="" /><div class="tint"></div>
-        <div class="bag">💰</div>
+        <div class="name">VOCAL RISER BY KALOX</div>
         <div class="amount"><span>R$ 9,99</span></div>
         <div class="once"><span>PAGAMENTO ÚNICO</span></div>
-        <div class="pay">PIX OU CARTÃO 💳</div>
+        <div class="pay">PIX OU CARTÃO</div>
       </div>
       <div id="os" class="clip scene" data-start="11.333" data-duration="1.334" data-track-index="8" style="z-index: 11">
         <img class="bg" src="assets/brand/room-bg.png" alt="" /><div class="tint"></div>
@@ -137,15 +139,14 @@
       </div>
       <div id="buy" class="clip scene" data-start="12.667" data-duration="4.8" data-track-index="8" style="z-index: 10">
         <img class="bg" src="assets/brand/room-bg.png" alt="" /><div class="tint"></div>
-        <div class="step s1" style="top: 200px"><span class="ic">📱</span><span class="lb">COMPRA PELO CELULAR</span></div>
+        <div class="step s1" style="top: 285px"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg></span><span class="lb">COMPRA PELO CELULAR</span></div>
         <div class="arrow a1" style="top: 470px">▼</div>
-        <div class="step s2" style="top: 560px"><span class="ic">✉️</span><span class="lb">LINK NO E-MAIL</span></div>
-        <div class="arrow a2" style="top: 830px">▼</div>
-        <div class="step s3" style="top: 920px"><span class="ic">💻</span><span class="lb">BAIXA NO PC</span></div>
+        <div class="step s2" style="top: 535px"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.2"/><path d="M3.5 7l8.5 6.5L20.5 7"/></svg></span><span class="lb">LINK NO E-MAIL</span></div>
+        <div class="arrow a2" style="top: 722px">▼</div>
+        <div class="step s3" style="top: 775px"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="10" rx="1.4"/><path d="M2.5 19h19"/></svg></span><span class="lb">BAIXA NO PC</span></div>
       </div>
-      <div id="cta" class="clip" data-start="15.700" data-duration="1.767" data-track-index="9"><span class="btn">SAIBA MAIS 👉</span><span class="hand">👇</span><span class="site">kaloxproduction.com · link na bio</span></div>
+      <div id="cta" class="clip" data-start="15.700" data-duration="1.767" data-track-index="9"><span class="btn">SAIBA MAIS</span><span class="site">kaloxproduction.com</span></div>
 
-      <div id="flash-drop" class="clip flash" data-start="8.967" data-duration="0.2" data-track-index="10"></div>
     </div>
     <script>
       const tl = gsap.timeline({ paused: true });
@@ -158,27 +159,26 @@
       const out = (sel, t) => body.to(sel, { scale: 0.7, opacity: 0, y: -24, duration: 0.1, ease: "power2.in" }, t - 0.1);
 
       // ---------- Face: zoom-cut on every segment (hides the cuts that sit on pauses)
-      tl.fromTo("#face", { scale: 1.0 }, { scale: 1.05, duration: 1.6 + LEAD, ease: "none" }, 0);          // A1
-      body.set("#face", { scale: 1.13 }, 1.6).to("#face", { scale: 1.16, duration: 0.8, ease: "none" }, 1.6);   // A2 (punch-in)
-      body.set("#face", { scale: 1.0 }, 2.4).to("#face", { scale: 1.05, duration: 2.567, ease: "none" }, 2.4);   // B1
-      body.set("#face", { scale: 1.12 }, 4.967).to("#face", { scale: 1.15, duration: 1.866, ease: "none" }, 4.967); // B2
-      body.set("#face", { scale: 1.02 }, 6.833).to("#face", { scale: 1.1, duration: 1.834, ease: "power2.in" }, 6.833); // C2 (push on the riser)
+      gsap.set("#face", { y: -272 });   // rosto reduzido e subido: cabeça em y≈275–650, legenda 668–760, plugin 775–1250
+      tl.fromTo("#face", { scale: 0.72 }, { scale: 0.75, duration: 1.6 + LEAD, ease: "none" }, 0);          // A1
+      body.set("#face", { scale: 0.76 }, 1.6).to("#face", { scale: 0.78, duration: 0.8, ease: "none" }, 1.6);   // A2 (punch-in)
+      body.set("#face", { scale: 0.72 }, 2.4).to("#face", { scale: 0.75, duration: 2.567, ease: "none" }, 2.4);   // B1
+      body.set("#face", { scale: 0.755 }, 4.967).to("#face", { scale: 0.775, duration: 1.866, ease: "none" }, 4.967); // B2
+      body.set("#face", { scale: 0.73 }, 6.833).to("#face", { scale: 0.77, duration: 1.834, ease: "power2.in" }, 6.833); // C2 (push on the riser)
 
       // ---------- Texts
       tl.fromTo("#k1 .in", { scale: 0.5, opacity: 0, y: 60, rotation: -4 }, { scale: 1, opacity: 1, y: 0, rotation: 0, duration: 0.3, ease: "back.out(2)" }, 0.05);
       tl.to("#k1 .in", { scale: 1.06, duration: 0.2, repeat: 5, yoyo: true, ease: "sine.inOut" }, 0.35);
       tl.to("#k1 .in", { scale: 0.7, opacity: 0, y: -24, duration: 0.1, ease: "power2.in" }, 1.6 + LEAD - 0.1);
       [["#k2", 1.6, 2.9], ["#k3", 2.95, 4.95], ["#k4", 4.97, 6.83], ["#k5", 6.83, 8.667]].forEach(([s, a, b]) => { pop(`${s} .in`, a); out(`${s} .in`, b); });
-      body.fromTo("#p1 .in", { scale: 0.4, opacity: 0, y: 40 }, { scale: 1, opacity: 1, y: 0, duration: 0.25, ease: "back.out(2)" }, 5.55);
-      body.to("#p1 .in", { scale: 0.7, opacity: 0, duration: 0.12 }, 6.83);
 
       // ---------- Plugin card: slides up under his face, LISTEN click, knob sweep (1→4), FX switch on with the words, riser charge
-      body.set("#card", { transformOrigin: "0 0", x: 271, y: 1950, scale: 0.54 }, 1.5);
-      body.to("#card", { y: 1250, duration: 0.3, ease: "back.out(1.4)" }, 1.5);
-      body.set("#card .fxoff", { opacity: 1 }, 1.5);
-      body.set("#card .kind", { transformOrigin: "2.5px 163px", rotation: -52 }, 1.5);
+      body.set("#card", { transformOrigin: "0 0", x: 303, y: 1330, scale: 0.48 }, 0.55);
+      body.to("#card", { y: 775, duration: 0.45, ease: "power3.out" }, 0.6);
+      body.set("#card .fxoff", { opacity: 1 }, 0.55);
+      body.set("#card .kind", { transformOrigin: "2.5px 163px", rotation: -52 }, 0.55);
       body.fromTo("#card .hl.listen", { opacity: 0 }, { opacity: 1, duration: 0.08 }, 1.97).to("#card .hl.listen", { opacity: 0, duration: 0.12 }, 2.4);
-      body.fromTo("#card .wglow", { opacity: 0.1 }, { opacity: 0.95, duration: 0.2, repeat: 13, yoyo: true, ease: "sine.inOut" }, 2.0);
+      body.fromTo("#card .wglow", { opacity: 0.15 }, { opacity: 0.55, duration: 0.7, repeat: 8, yoyo: true, ease: "sine.inOut" }, 2.0);
       body.fromTo("#card .hl.knob", { opacity: 0 }, { opacity: 1, duration: 0.1 }, 2.95).to("#card .hl.knob", { opacity: 0, duration: 0.1 }, 4.85);
       body.to("#card .kind", { rotation: 58, duration: 1.15, ease: "steps(4)" }, 3.05);
       body.to("#card .fxoff.ch", { opacity: 0, duration: 0.04 }, 5.27);
@@ -186,21 +186,16 @@
       body.to("#card .fxoff.tr", { opacity: 0, duration: 0.04 }, 5.72);
       body.fromTo("#card .hl.tr", { opacity: 0 }, { opacity: 1, duration: 0.08 }, 5.72).to("#card .hl.tr", { opacity: 0, duration: 0.12 }, 6.3);
       body.fromTo("#card .hl.ph", { opacity: 0 }, { opacity: 1, duration: 0.08 }, 6.32).to("#card .hl.ph", { opacity: 0, duration: 0.15 }, 6.8);
-      body.to("#card", { y: 1238, duration: 0.9, repeat: 5, yoyo: true, ease: "sine.inOut" }, 2.5);
-      body.to("#card", { scale: 0.64, x: 242, y: 1180, duration: 1.8, ease: "power2.in" }, 6.85);      // riser pushes the card in
-      body.fromTo("#card .wglow", { opacity: 0.4 }, { opacity: 1, duration: 0.1, repeat: 17, yoyo: true }, 6.85);
 
-      // ---------- Drop
-      body.fromTo("#flash-drop", { opacity: 0.6 }, { opacity: 0, duration: 0.2, ease: "power2.out" }, 8.667);
 
       // ---------- Price
-      body.fromTo("#price .bag", { scale: 0.2, opacity: 0, rotation: -20 }, { scale: 1, opacity: 1, rotation: 0, duration: 0.3, ease: "back.out(2.2)" }, 8.7);
+      body.fromTo("#price .name", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power2.out" }, 8.7);
       body.fromTo("#price .amount span", { scale: 0.3, opacity: 0 }, { scale: 1.1, opacity: 1, duration: 0.22, ease: "back.out(2)" }, 8.75)
         .to("#price .amount span", { scale: 1, duration: 0.12 }, 8.97)
         .to("#price .amount span", { scale: 1.05, duration: 0.4, repeat: 3, yoyo: true, ease: "sine.inOut" }, 9.1);
       body.fromTo("#price .once span", { y: 140, opacity: 0, scale: 0.8 }, { y: 0, opacity: 1, scale: 1, duration: 0.25, ease: "back.out(1.8)" }, 9.82);
       body.fromTo("#price .pay", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.25 }, 10.25);
-      body.to("#price .amount span, #price .bag, #price .once span, #price .pay", { y: "-=40", opacity: 0, duration: 0.15, ease: "power2.in" }, 10.88);
+      body.to("#price .name, #price .amount span, #price .once span, #price .pay", { y: "-=40", opacity: 0, duration: 0.15, ease: "power2.in" }, 10.88);
 
       // ---------- Mac / Windows
       body.fromTo("#os .chip", { y: 220, opacity: 0, scale: 0.8 }, { y: 0, opacity: 1, scale: 1, duration: 0.28, ease: "back.out(1.6)", stagger: 0.43 }, 11.1);
@@ -215,8 +210,6 @@
       // ---------- CTA
       body.fromTo("#cta .btn", { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.25, ease: "back.out(2)" }, 15.42);
       body.to("#cta .btn", { scale: 1.07, duration: 0.3, repeat: 3, yoyo: true, ease: "sine.inOut" }, 15.75);
-      body.fromTo("#cta .hand", { y: -50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.2 }, 15.6);
-      body.to("#cta .hand", { y: 28, duration: 0.25, repeat: 5, yoyo: true, ease: "sine.inOut" }, 15.8);
       body.fromTo("#cta .site", { opacity: 0 }, { opacity: 1, duration: 0.25 }, 15.9);
 
       tl.add(body, LEAD);

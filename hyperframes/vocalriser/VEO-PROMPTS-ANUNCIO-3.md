@@ -61,3 +61,18 @@ Ele já começa falando no primeiro segundo, sem pausa, direto para a câmera, e
 Gestos: conta nos dedos enquanto fala os passos; no fim aponta para baixo com o dedo indicador e dá uma piscadinha.
 Áudio: só a voz dele, sem música. Sem legendas e sem texto na tela.
 ```
+
+## T1-B — NOVA abertura (versão aprovável pela Meta: diz que é um plugin)
+
+Troca o T1. Mesma imagem inicial, mesmas regras. Depois: Voice Changer com o clone dele (guia 1x → volta sem edição), como nos outros takes.
+
+```
+Selfie vertical 9:16, câmera frontal do celular com o braço esticado, estável. O mesmo homem da imagem inicial, com o rosto idêntico ao da imagem em todos os quadros (mesmos olhos, relaxados e nunca arregalados, nariz, boca, cabelo e barba; pele lisa, sem rugas e sem manchas). Blusa de manga longa toda preta, larga, de algodão fosco, gola redonda lisa, sem capuz, sem cordão, sem estampa e sem logo, igual em todos os quadros, sem trocar de roupa. Mãos vazias, nunca na frente do rosto. Estúdio de música escuro à noite, igual ao da imagem de referência, mas com todas as luzes de LED removidas: parede de painéis acústicos pretos ripados, teto e paredes lisos e escuros sem nenhuma linha luminosa, dois monitores curvos atrás dele mostrando um software de música com ondas sonoras (desfocados), uma caixa de som de estúdio à direita, fones de ouvido na mesa, cadeira gamer preta com detalhes verdes. A única iluminação é uma luz baixa, quente e difusa de ambiente, deixando o fundo na penumbra. Sem fitas de LED, sem ring light, sem neon, sem luzes coloridas, sem nenhum outro objeto de iluminação.
+Ele já começa falando no primeiro segundo, sem pausa, direto para a câmera, em português do Brasil, com sotaque brasileiro, voz animada e natural, bem articulado, exatamente esta frase, uma vez só, sem trocar nenhuma palavra:
+"Esse plugin cria um riser de vocal com um clique."
+Gestos: apresenta com a mão aberta, como quem mostra algo na frente dele, sorrindo; no fim aperta um botão no ar com o dedo indicador.
+Áudio: só a voz dele, sem música. Sem legendas e sem texto na tela.
+```
+
+Depois de gerar: me mande o MP4 do take e o WAV do Voice Changer (a guia eu monto aqui, igual às anteriores). Estimativa de duração do filme com a nova frase: 17,9 a 18,2 s;
+se passar de 18 s eu tiro o respiro final (0,5 s) e a preparação de 0,3 s do início.

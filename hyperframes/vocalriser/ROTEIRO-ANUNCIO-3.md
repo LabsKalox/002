@@ -37,3 +37,12 @@ Exporte também o áudio desses trechos em WAV. Mande em MP4 1080p curto (abaixo
 
 ## Legenda
 A mesma do anúncio 2 (ver chat; termina com "Comenta RISER que eu te mando o link" / anúncio pago: "Toca em Saiba mais").
+
+## v4 — versão para a Meta (anúncio recusado por "venda de engajamento/contas")
+Objetivo: deixar óbvio que é um **plugin de áudio**. Mudanças:
+- Texto fixo 0–2 s: PLUGIN DE ÁUDIO · VST3 · AU. Nome do produto uma vez (tela de preço): VOCAL RISER BY KALOX.
+- Plugin visível desde 0,9 s, parado (sem balanço, sem zoom), na faixa central.
+- Faixa segura: tudo entre y=270 e y=1250, margem lateral 65 px (rosto reduzido e subido; legenda entre o rosto e o plugin; tela final e botão SAIBA MAIS dentro da faixa).
+- Sem emojis (zero na tela final; ícones de celular/e-mail/PC em linha), sem flash, sem "comenta"; "link na bio" removido; "SEM AUTOMAÇÃO" trocado por "AJUSTA TUDO DEPOIS".
+- Fala nova de abertura: "Esse plugin cria um riser de vocal com um clique." (T1-B em VEO-PROMPTS-ANUNCIO-3.md). PENDENTE: take do Veo + voz dele no Voice Changer.
+  A v4 provisória ainda usa "Escuta esse riser de vocal. Isso aqui foi um clique." (voz já aprovada).

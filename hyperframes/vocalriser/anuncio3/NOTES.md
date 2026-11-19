@@ -35,3 +35,15 @@
   (= 0,30 s da 1ª palavra −40 ms de adiantamento de sincronia, agora feito pela posição, não por corte). Riser de abertura e "ESCUTA ISSO"
   tocam já em 0 s. Todo o resto desloca +0,3 s (timeline GSAP filha `body` em `LEAD`; `data-start` +0,3).
 - Final: 17,5 s, −15,3 LUFS, pico −1,7 dBFS; voz = v2 + 297 ms (sincronia preservada); quadros do rosto sem repetir/pular; transcrição completa.
+
+## v4 (brief da Meta: deixar claro que é plugin de áudio; faixa segura)
+- Faixa segura y=270–1250, laterais 65 px. Medido na composição (caixas de todos os textos/plugin/ícones em cada cena, via script):
+  tudo dentro (plugin y 775–1246). Face: `gsap.set("#face",{y:-272})` + escala 0.72–0.78 (cabeça y≈275–650), bordas esfumadas por máscara sobre o `room-bg.png` desfocado.
+- Legenda (`top:668`) entre o rosto e o plugin, sobre o suéter preto. Textos: PLUGIN DE ÁUDIO · VST3 · AU (0–1,9 s) → 1 CLIQUE → REVERSE DE 1 A 4 COMPASSOS → CHORUS · TREMOLO · PHONE → AJUSTA TUDO DEPOIS.
+- Tela de preço: VOCAL RISER BY KALOX + R$ 9,99 + PAGAMENTO ÚNICO + PIX OU CARTÃO; selos Mac/Windows (logos reais); passos celular → e-mail → PC (ícones SVG) + SAIBA MAIS + kaloxproduction.com.
+- Removidos: todos os emojis, flash do drop, pulso rápido do brilho do plugin, balanço e empurrão do plugin, "link na bio".
+- Áudio: sem mudança. Origem: voz dele (Veo → ElevenLabs), riser real exportado do plugin, batida house 122 bpm sintetizada no repositório (`bankmaster/film/tools-beat.py`), SFX sintetizados no ffmpeg. Nada de terceiros.
+  A confirmar com o Lucas: o vocal usado para gerar o riser exportado (`riser.mp3`) é dele/livre?
+- Entrega: `film/out/vocalriser-anuncio3-v4.mp4` (17,5 s, -15,3 LUFS, pico -1,8 dBFS) e `...-v4-sem-texto.mp4` (CSS que esconde os textos; mesmo áudio/plugin).
+- Conferido no final: sem flash (nenhum pico curto de luminância), quadros do rosto sem repetir/pular, transcrição completa.
+- PENDENTE: fala nova "Esse plugin cria um riser de vocal com um clique." (precisa do take do Veo + voz dele).
